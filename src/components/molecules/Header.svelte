@@ -17,12 +17,13 @@
 
     header {
         height: 5rem;
+        width: 100%;
         padding: 1rem;
         background-color: #EDF1D6;
         display: flex;
         justify-content: space-between;
         align-items: center;
-        position: sticky;
+        position: fixed;
         top: 0;
     }
 

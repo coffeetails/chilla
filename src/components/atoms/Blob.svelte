@@ -1,0 +1,43 @@
+<script>
+
+    export let blobBgr = '';
+
+</script>
+
+    <div class="wrapper">
+        <div class="blob {blobBgr}"></div>
+    </div>
+
+<style lang="scss">
+
+    .wrapper {
+        min-height: 100dvh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .blob {
+        width: 15rem;
+        height: 15rem;
+        background-color: rgb(99, 215, 228);
+        border-radius: 50%;
+    }
+
+    .red {
+        background-color: red;
+    }
+
+    .blue {
+        background-color: blue;
+    }
+
+    .green {
+        background-color: green;
+    }
+
+    .yellow {
+        background-color: yellow;
+    }
+
+</style>
