@@ -1,15 +1,12 @@
 <script>
-    import HamburgerMenu from '../components/atoms/HamburgerMenu.svelte';
-import ScrollButtonDown from '../components/atoms/ScrollButtonDown.svelte';
-import ScrollButtonUp from '../components/atoms/ScrollButtonUp.svelte';
-import '../global.scss';
+    import Header from '../components/molecules/Header.svelte';
+    import ScrollButtonDown from '../components/atoms/ScrollButtonDown.svelte';
+    import ScrollButtonUp from '../components/atoms/ScrollButtonUp.svelte';
+    import '../global.scss';
 </script>
 
 <div class="app">
-    <header>
-        <HamburgerMenu/>
-        header
-    </header>
+    <Header />
     <main>
         <ScrollButtonUp/>
         <slot></slot>
@@ -19,5 +16,15 @@ import '../global.scss';
 </div>
 
 <style lang="scss">
+
+    .app {
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+    }
+
+    main {
+        flex-grow: 1;
+    }
 
 </style>
