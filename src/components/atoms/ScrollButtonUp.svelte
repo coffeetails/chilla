@@ -7,7 +7,7 @@
     const scrollUp = () => {
         const startY = window.pageYOffset;
         const endY = startY - window.innerHeight;
-        const duration = 200;
+        const duration = 500;
         const startTime = performance.now();
 
         function animate() {
