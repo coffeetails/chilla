@@ -37,4 +37,8 @@
 
 <style>
 
+    h3:hover {
+        opacity: 0.5;
+    }
+
 </style>
