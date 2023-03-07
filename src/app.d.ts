@@ -9,4 +9,6 @@ declare global {
 	}
 }
 
+type Theme = 'system' | 'light' | 'dark';
+
 export {};

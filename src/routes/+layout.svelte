@@ -1,7 +1,8 @@
 <script lang=ts>
     import Header from '../components/molecules/Header.svelte';
     import '../global.scss';
-
+    import { theme } from '../stores';
+    
     // const handleScroll = (event: { deltaY: any; }) => {
     //     const deltaY = event.deltaY;
     //     const vh = window.innerHeight;
@@ -21,16 +22,20 @@
     //     let vh = window.innerHeight * 0.01;
     //     document.documentElement.style.setProperty('--vh', `${vh}px`);
     // });
-
 </script>
+
+<svelte:head>
+    <meta name="color-scheme" content={$theme == 'system' ? 'light dark' : $theme}/> <link rel="stylesheet" href={`/theme/${$theme}.css`} />
+</svelte:head>
 
 <div class="app">
     <Header />
-    <!-- <main on:wheel = {handleScroll}> -->
     <main>
         <slot></slot>
     </main>
-    <footer>footer</footer>
+    <footer>footer
+        <ThemeSwitch/>
+    </footer>
 </div>
 
 <style lang="scss">
