@@ -20,7 +20,9 @@
 <ScrollButtonUp />
 
 <div class="colorTest">
-    <h1>Snel Hest</h1>
+    <h1>Snel Hest Snel Hest </h1>
+    <h2>Snel Hest Snel Hest </h2>
+    <h3>Snel Hest Snel Hest </h3>
     <p id="alpha">alpha</p>
     <p id="beta">beta</p>
     <p id="gamma">gamma</p>
@@ -36,6 +38,8 @@
 
 
 <style lang="scss">
+    
+    // Will be removed later on
     .colorTest { 
         margin-top: 15rem;
         margin-bottom: -20rem;

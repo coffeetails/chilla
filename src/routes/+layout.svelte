@@ -3,7 +3,6 @@
     import ThemeSwitch from '../components/molecules/ThemeSwitch.svelte';
     import '../global.scss';
     import { theme } from '../stores';
-    import ThemeSwitch from '../components/molecules/ThemeSwitch.svelte';
     
     // const handleScroll = (event: { deltaY: any; }) => {
     //     const deltaY = event.deltaY;
@@ -54,12 +53,13 @@
         align-items: center;
         justify-content: space-between;
         min-height: 100dvh;
-        padding: 4rem;
+        padding: var(--padding);
+        background-color: var(--bg-color);
     }
 
     footer {
-        background-color: rgb(36, 62, 36);
-        height: 5rem;
+        background-color: var(--bg-color);
+        height: calc(var(--baseline)*5);
         width: 100%;
         position: fixed;
         bottom: 0;

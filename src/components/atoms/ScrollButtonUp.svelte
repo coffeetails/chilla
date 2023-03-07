@@ -34,7 +34,7 @@
 
     i {
         position: fixed;
-        top: 5rem;
+        top: calc(var(--baseline)*5);
         cursor: pointer;
     }
 

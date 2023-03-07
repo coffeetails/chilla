@@ -18,8 +18,8 @@
     }
 
     .blob {
-        width: 15rem;
-        height: 15rem;
+        width: calc(var(--baseline)*15);
+        height: calc(var(--baseline)*15);
         background-color: rgb(99, 215, 228);
         border-radius: 50%;
     }

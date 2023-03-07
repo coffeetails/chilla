@@ -29,16 +29,7 @@
 
 <style lang="scss">
 
-    .wrapper {
-        margin: 5rem 0 5rem 0;
-        display: flex;
-        flex-direction: column;
-        gap: 2rem;
-        align-items: center;
-    }
-
     .wrapper :global() {
-            color: #1C315E;
 
             & :global(h1) {
             text-align: center;
@@ -59,27 +50,4 @@
                 align-items: center;
             }
         }
-
-        
-
-    
-    
-    // h1, h2, h3, p, a {
-    //     color: #1C315E;
-    // }
-
-    // h1 {
-    //     text-align: center;
-    // }
-
-    // a {
-    //     text-align: center;
-    // }
-
-    // h3 {
-    //     cursor: pointer;
-    // }
-
-    
-
 </style>
