@@ -1,8 +1,9 @@
 <script lang=ts>
     import Header from '../components/molecules/Header.svelte';
+    import ThemeSwitch from '../components/molecules/ThemeSwitch.svelte';
     import '../global.scss';
     import { theme } from '../stores';
-    
+
     // const handleScroll = (event: { deltaY: any; }) => {
     //     const deltaY = event.deltaY;
     //     const vh = window.innerHeight;
@@ -25,7 +26,7 @@
 </script>
 
 <svelte:head>
-    <meta name="color-scheme" content={$theme == 'system' ? 'light dark' : $theme}/> <link rel="stylesheet" href={`/theme/${$theme}.css`} />
+    <meta name="color-scheme" content={$theme == 'system' ? 'light dark' : $theme}/> <link rel="stylesheet" href={`/theme/${$theme}.scss`} />
 </svelte:head>
 
 <div class="app">
@@ -39,10 +40,6 @@
 </div>
 
 <style lang="scss">
-
-    // :global(html, body) {
-    //     scroll-behavior: smooth;
-    // }
 
     .app {
         display: flex;

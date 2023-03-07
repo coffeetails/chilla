@@ -1,3 +1,9 @@
+// @use '../static/theme/system.scss' as *;
+// @use '../static/theme/light.scss' as *;
+// @use '../static/theme/dark.scss' as *;
+@import "../theme/theme";
+
+
 * {
     margin: 0;
     box-sizing: border-box;
