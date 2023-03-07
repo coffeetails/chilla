@@ -1,10 +1,27 @@
-<script>
-    import HamburgerMenu from '../components/atoms/HamburgerMenu.svelte';
-    import ScrollButtonDown from '../components/atoms/ScrollButtonDown.svelte';
-    import ScrollButtonUp from '../components/atoms/ScrollButtonUp.svelte';
-    import ThemeSwitch from '../components/molecules/ThemeSwitch.svelte';
+<script lang=ts>
+    import Header from '../components/molecules/Header.svelte';
     import '../global.scss';
     import { theme } from '../stores';
+    
+    // const handleScroll = (event: { deltaY: any; }) => {
+    //     const deltaY = event.deltaY;
+    //     const vh = window.innerHeight;
+
+    //     if (deltaY < 0) {
+    //         window.scrollTo({ top: window.pageYOffset - vh, behavior: 'smooth' })
+    //     } else {
+    //         window.scrollTo({ top: window.pageYOffset + vh, behavior: 'smooth' })
+    //     }
+    // }
+
+    // let vh = window.innerHeight * 0.01;
+
+    // document.documentElement.style.setProperty('--vh', `${vh}px`);
+
+    // window.addEventListener('resize', () => {
+    //     let vh = window.innerHeight * 0.01;
+    //     document.documentElement.style.setProperty('--vh', `${vh}px`);
+    // });
 </script>
 
 <svelte:head>
@@ -12,19 +29,42 @@
 </svelte:head>
 
 <div class="app">
-    <header>
-        <HamburgerMenu/>
-        header
-        <ThemeSwitch/>
-    </header>
+    <Header />
     <main>
-        <ScrollButtonUp/>
         <slot></slot>
-        <ScrollButtonDown/>
     </main>
-    <footer>footer</footer>
+    <footer>footer
+        <ThemeSwitch/>
+    </footer>
 </div>
 
 <style lang="scss">
+
+    // :global(html, body) {
+    //     scroll-behavior: smooth;
+    // }
+
+    .app {
+        display: flex;
+        flex-direction: column;
+    }
+
+    main {
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        height: 100dvh;
+        
+    }
+
+    footer {
+        background-color: rgb(36, 62, 36);
+        height: 5rem;
+        width: 100%;
+        position: fixed;
+        bottom: 0;
+    }
 
 </style>

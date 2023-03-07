@@ -2,13 +2,18 @@
     margin: 0;
     box-sizing: border-box;
     font-family: 'Montserrat', sans-serif;
+    scrollbar-width: none;
+}
+
+::-webkit-scrollbar {
+    display: none;
 }
 
 h1 {
     background-color: red;
 }
 
-.navIcon {
+.nav-icon {
     text-decoration: none;
     color: rgba(0, 0, 0, 0.75);
 }
