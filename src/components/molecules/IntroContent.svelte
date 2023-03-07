@@ -15,7 +15,7 @@
     }
 
     function setBox() {
-        aboutContent.set('box');
+        aboutContent.set('478');
         console.log(content);
     }
 
