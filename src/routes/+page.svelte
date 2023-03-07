@@ -1,8 +1,5 @@
 <script>
     import { theme, settingsIsVisible } from '../stores';
-    // import '../static/system.scss';
-    // import '../static/light';
-    // import '../static/dark';
     import Blob from "../components/atoms/Blob.svelte";
     import ScrollButtonDown from "../components/atoms/ScrollButtonDown.svelte";
     import ScrollButtonUp from "../components/atoms/ScrollButtonUp.svelte";
@@ -21,34 +18,35 @@
 
 
 <ScrollButtonUp />
+
+<div class="colorTest">
+    <h1>Snel Hest</h1>
+    <p id="alpha">alpha</p>
+    <p id="beta">beta</p>
+    <p id="gamma">gamma</p>
+    <p id="psi">psi</p>
+    <p id="omega">omega</p>
+</div>
+
 <Blob blobBgr={blue}/>
 <Blob blobBgr={red}/>
 <Blob blobBgr={green}/>
 <Blob blobBgr={yellow}/>
-
-<div class="colorTest">
-    <p>alpha</p>
-    <p>beta</p>
-    <p>gamma</p>
-    <p>psi</p>
-    <p>omega</p>
-</div>
-
 <ScrollButtonDown />
 
 
 <style lang="scss">
-// @use '../static/system';
-// @use '../static/light';
-// @use '../static/dark';
-
-// .colorTest { 
-//     color: $font-color;
-//     background-color: $bg-color; 
-//     &:nth-child(0) {background-color: $color-alpha;}
-//     &:nth-child(1) {background-color: $color-beta;}
-//     &:nth-child(2) {background-color: $color-gamma;}
-//     &:nth-child(3) {background-color: $color-psi;}
-//     &:nth-child(4) {background-color: $color-omega;}
-// }
+    .colorTest { 
+        margin-top: 15rem;
+        margin-bottom: -20rem;
+        padding: 1rem;
+        color: var(--font-color);
+        background-color: var(--bg-color); 
+        #alpha {  background-color: var(--color-alpha); }
+        #beta { background-color: var(--color-beta); }
+        #gamma { background-color: var(--color-gamma); }
+        // #gamma { background-color: $color-gamma; }
+        #psi { background-color: var(--color-psi); }
+        #omega { background-color: var(--color-omega); }
+    }
 </style>
