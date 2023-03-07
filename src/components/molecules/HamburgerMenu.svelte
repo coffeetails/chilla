@@ -1,16 +1,24 @@
 <script lang="ts">
     import { activeMenu } from "../../stores";
+    import CloseIcon from "../atoms/CloseIcon.svelte";
 
     let menuIsActive: Boolean;
     activeMenu.subscribe(value => menuIsActive = value);
 
+    const closeMenu = () => {
+        activeMenu.set(false);
+    }
+
 </script>
 
     <section class="overlay" class:visible={ menuIsActive }>
-        <h3>Andas</h3>
-        <h3>Andas Rätt</h3>
-        <h3>Avslappningsljud</h3>
-        <h3>Om sidan</h3>
+        <CloseIcon />
+        <div class="wrapper">
+            <a on:click={closeMenu} href="/">Andas</a>
+            <a on:click={closeMenu} href="/andasratt">Andas rätt</a>
+            <a on:click={closeMenu} href="/avslappningsljud">Avslappningsljud</a>
+            <a on:click={closeMenu} href="/omoss">Om sidan</a>
+        </div>
     </section>
 
 <style lang="scss">
@@ -19,8 +27,8 @@
         background-color: #40513B;
         width: 100%;
         position: fixed;
-        top: 5rem;
-        bottom: 5rem;
+        top: 0;
+        bottom: 0;
         z-index: 2;
         transform: translateX(-100%);
         overflow-y: auto;
@@ -28,21 +36,25 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 2rem;
-        padding-top: 5rem;
     }
 
     .visible {
         transform: translate(0);
     }
 
-    h3 {
-        font-weight: 500;
+    .wrapper {
+        margin-top: 5rem;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    a {
+        text-decoration: none;
         color: #9DC08B;
-        cursor: pointer;
 
         &:hover {
-            opacity: 0.5;
+            opacity: .5;
         }
     }
 
