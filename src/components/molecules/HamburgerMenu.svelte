@@ -13,7 +13,7 @@
         <h3>Om sidan</h3>
     </section>
 
-<style>
+<style lang="scss">
 
     .overlay {
         background-color: #40513B;
@@ -39,6 +39,11 @@
     h3 {
         font-weight: 500;
         color: #9DC08B;
+        cursor: pointer;
+
+        &:hover {
+            opacity: 0.5;
+        }
     }
 
 </style>
