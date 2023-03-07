@@ -13,10 +13,10 @@
 <style>
 
     .back {
-        font-size: 16px;
-        margin-top: 2rem;
-        border: 1px solid #6c6c6c;
-        padding: .5rem 1rem;
+        font-size: 1rem;
+        margin-top: var(--margin-large);
+        border: 1px solid var(--color-beta);
+        padding: var(--padding-small) var(--padding);
         align-self: flex-start;
         cursor: pointer;
     }

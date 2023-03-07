@@ -22,10 +22,10 @@
 <style>
 
     header {
-        height: 5rem;
+        height: calc(var(--baseline)*5);
         width: 100%;
-        padding: 1rem;
-        background-color: #EDF1D6;
+        padding: var(--padding);
+        background-color: var(--bg-color);
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -35,7 +35,7 @@
 
     .wrapper {
         display: flex;
-        gap: 2rem;
+        gap: calc(var(--baseline)*5);
     }
 
 </style>

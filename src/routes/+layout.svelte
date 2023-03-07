@@ -1,6 +1,5 @@
 <script lang=ts>
     import '../global.scss';
-
     import Header from '../components/molecules/Header.svelte';
     import Footer from '../components/molecules/Footer.svelte';
     import HamburgerMenu from '../components/molecules/HamburgerMenu.svelte';
@@ -37,7 +36,7 @@
         align-items: center;
         justify-content: space-between;
         min-height: 100dvh;
-        padding: 4rem;
+        padding: var(--padding);
+        background-color: var(--bg-color);
     }
-
 </style>
