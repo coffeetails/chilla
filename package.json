@@ -20,7 +20,10 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"@sveltejs/adapter-static": "^2.0.1",
 		"animejs": "^3.2.1",
-		"sass": "^1.58.3"
+		"node-sass": "^8.0.0",
+		"sass": "^1.58.3",
+		"svelte-preprocess": "^5.0.1"
 	}
 }
