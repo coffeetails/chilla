@@ -1,11 +1,11 @@
 <script lang=ts>
-    import Header from '../components/molecules/Header.svelte';
-    import ThemeSwitch from '../components/molecules/ThemeSwitch.svelte';
     import '../global.scss';
-    import { theme } from '../stores';
-    import ThemeSwitch from '../components/molecules/ThemeSwitch.svelte';
-    import HamburgerMenu from '../components/molecules/HamburgerMenu.svelte';
+
+    import Header from '../components/molecules/Header.svelte';
     import Footer from '../components/molecules/Footer.svelte';
+    import HamburgerMenu from '../components/molecules/HamburgerMenu.svelte';
+    
+    import { theme } from '../stores';    
 
 </script>
 
@@ -15,8 +15,8 @@
 
 <div class="app">
     <Header />
+    <HamburgerMenu />
     <main>
-        <HamburgerMenu />
         <slot></slot>
     </main>
     <Footer />
