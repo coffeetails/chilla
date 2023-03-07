@@ -2,6 +2,7 @@
     import Header from '../components/molecules/Header.svelte';
     import '../global.scss';
     import { theme } from '../stores';
+    import ThemeSwitch from '../components/molecules/ThemeSwitch.svelte';
     
     // const handleScroll = (event: { deltaY: any; }) => {
     //     const deltaY = event.deltaY;
@@ -24,9 +25,9 @@
     // });
 </script>
 
-<svelte:head>
+<!-- <svelte:head>
     <meta name="color-scheme" content={$theme == 'system' ? 'light dark' : $theme}/> <link rel="stylesheet" href={`/theme/${$theme}.css`} />
-</svelte:head>
+</svelte:head> -->
 
 <div class="app">
     <Header />
@@ -55,8 +56,8 @@
         flex-direction: column;
         align-items: center;
         justify-content: space-between;
-        height: 100dvh;
-        
+        min-height: 100dvh;
+        padding: 4rem;
     }
 
     footer {
