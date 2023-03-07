@@ -1,5 +1,5 @@
 <script>
-    // import { theme } from '../stores';
+    import { theme } from '../stores';
     import Blob from "../components/atoms/Blob.svelte";
     import ScrollButtonDown from "../components/atoms/ScrollButtonDown.svelte";
     import ScrollButtonUp from "../components/atoms/ScrollButtonUp.svelte";
@@ -14,6 +14,7 @@
 <ScrollButtonUp />
 
 <div class="colorTest">
+    <h1>Snel Hest</h1>
     <p id="alpha">alpha</p>
     <p id="beta">beta</p>
     <p id="gamma">gamma</p>
@@ -34,12 +35,13 @@
         margin-top: 15rem;
         margin-bottom: -20rem;
         padding: 1rem;
-        color: $font-color;
-        background-color: $bg-color; 
-        #alpha {background-color: $color-alpha;}
-        #beta {background-color: $color-beta;}
-        #gamma {background-color: $color-gamma;}
-        #psi {background-color: $color-psi;}
-        #omega {background-color: $color-omega;}
+        color: var(--font-color);
+        background-color: var(--bg-color); 
+        #alpha {  background-color: var(--color-alpha); }
+        #beta { background-color: var(--color-beta); }
+        #gamma { background-color: var(--color-gamma); }
+        // #gamma { background-color: $color-gamma; }
+        #psi { background-color: var(--color-psi); }
+        #omega { background-color: var(--color-omega); }
     }
 </style>

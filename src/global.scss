@@ -1,8 +1,9 @@
 // @use '../static/theme/system.scss' as *;
 // @use '../static/theme/light.scss' as *;
 // @use '../static/theme/dark.scss' as *;
-@import "../theme/theme";
+// @import "../theme/theme";
 
+$color-gamma: var(--color-gamma);
 
 * {
     margin: 0;
@@ -16,10 +17,12 @@
 }
 
 h1 {
-    background-color: red;
+    background-color: $color-gamma;
+    // background-color: var(--color-gamma);
 }
 
 .nav-icon {
     text-decoration: none;
+    
     color: rgba(0, 0, 0, 0.75);
 }
