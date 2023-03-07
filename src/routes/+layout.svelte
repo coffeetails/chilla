@@ -14,8 +14,8 @@
 </svelte:head>
 
 <div class="app">
-    <Header />
     <HamburgerMenu />
+    <Header />
     <main>
         <slot></slot>
     </main>
@@ -30,6 +30,7 @@
     }
 
     main {
+        background-color: var(--bg-color);
         flex-grow: 1;
         display: flex;
         flex-direction: column;
