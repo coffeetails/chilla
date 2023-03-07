@@ -6,4 +6,6 @@ const settingsIsVisible = writable(false);
 
 const aboutContent = writable('intro');
 
-export { theme, settingsIsVisible, aboutContent };
+const activeMenu = writable(false);
+
+export { theme, settingsIsVisible, aboutContent, activeMenu };

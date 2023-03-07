@@ -3,26 +3,9 @@
     import '../global.scss';
     import { theme } from '../stores';
     import ThemeSwitch from '../components/molecules/ThemeSwitch.svelte';
-    
-    // const handleScroll = (event: { deltaY: any; }) => {
-    //     const deltaY = event.deltaY;
-    //     const vh = window.innerHeight;
+    import HamburgerMenu from '../components/molecules/HamburgerMenu.svelte';
+    import Footer from '../components/molecules/Footer.svelte';
 
-    //     if (deltaY < 0) {
-    //         window.scrollTo({ top: window.pageYOffset - vh, behavior: 'smooth' })
-    //     } else {
-    //         window.scrollTo({ top: window.pageYOffset + vh, behavior: 'smooth' })
-    //     }
-    // }
-
-    // let vh = window.innerHeight * 0.01;
-
-    // document.documentElement.style.setProperty('--vh', `${vh}px`);
-
-    // window.addEventListener('resize', () => {
-    //     let vh = window.innerHeight * 0.01;
-    //     document.documentElement.style.setProperty('--vh', `${vh}px`);
-    // });
 </script>
 
 <!-- <svelte:head>
@@ -32,11 +15,10 @@
 <div class="app">
     <Header />
     <main>
+        <HamburgerMenu />
         <slot></slot>
     </main>
-    <footer>footer
-        <ThemeSwitch/>
-    </footer>
+    <Footer />
 </div>
 
 <style lang="scss">
@@ -58,14 +40,6 @@
         justify-content: space-between;
         min-height: 100dvh;
         padding: 4rem;
-    }
-
-    footer {
-        background-color: rgb(36, 62, 36);
-        height: 5rem;
-        width: 100%;
-        position: fixed;
-        bottom: 0;
     }
 
 </style>
