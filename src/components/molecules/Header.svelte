@@ -1,7 +1,7 @@
 <script lang="ts">
-    import HamburgerMenu from "../atoms/HamburgerMenu.svelte";
-    import SettingsMenu from "../atoms/SettingsMenu.svelte";
-    import ThemesMenu from "../atoms/ThemesMenu.svelte";
+    import HamburgerIcon from "../atoms/HamburgerIcon.svelte";
+    import SettingsIcon from "../atoms/SettingsIcon.svelte";
+    import ThemesIcon from "../atoms/ThemesIcon.svelte";
     import { settingsIsVisible } from "../../stores";
 
     let visibleSettings :Boolean;
@@ -10,12 +10,12 @@
 </script>
 
     <header>
-        <HamburgerMenu />
+        <HamburgerIcon />
         <div class="wrapper">
             {#if visibleSettings}
-                <SettingsMenu />
+                <SettingsIcon />
             {/if}
-            <ThemesMenu />
+            <ThemesIcon />
         </div>
     </header>
 

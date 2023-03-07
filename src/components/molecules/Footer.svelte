@@ -1,0 +1,22 @@
+<script>
+    import ThemeSwitch from "./ThemeSwitch.svelte";
+
+
+</script>
+
+    <footer>
+        <ThemeSwitch />
+    </footer>
+
+<style>
+
+    footer {
+        background-color: rgb(36, 62, 36);
+        height: 5rem;
+        width: 100%;
+        position: fixed;
+        bottom: 0;
+    }
+    
+
+</style>
