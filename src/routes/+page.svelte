@@ -1,13 +1,19 @@
 <script>
-    import { theme } from '../stores';
+    import { theme, settingsIsVisible } from '../stores';
     import Blob from "../components/atoms/Blob.svelte";
     import ScrollButtonDown from "../components/atoms/ScrollButtonDown.svelte";
     import ScrollButtonUp from "../components/atoms/ScrollButtonUp.svelte";
+    import { onMount } from 'svelte';
 
     let blue = 'blue';
     let red = 'red';
     let green = 'green'
     let yellow = 'yellow';
+
+    onMount(() => {
+        settingsIsVisible.set(true);
+    });
+
 </script>
 
 
@@ -30,7 +36,6 @@
 
 
 <style lang="scss">
-
     .colorTest { 
         margin-top: 15rem;
         margin-bottom: -20rem;

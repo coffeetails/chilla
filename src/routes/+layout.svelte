@@ -3,7 +3,8 @@
     import ThemeSwitch from '../components/molecules/ThemeSwitch.svelte';
     import '../global.scss';
     import { theme } from '../stores';
-
+    import ThemeSwitch from '../components/molecules/ThemeSwitch.svelte';
+    
     // const handleScroll = (event: { deltaY: any; }) => {
     //     const deltaY = event.deltaY;
     //     const vh = window.innerHeight;
@@ -52,8 +53,8 @@
         flex-direction: column;
         align-items: center;
         justify-content: space-between;
-        height: 100vh;
-        
+        min-height: 100dvh;
+        padding: 4rem;
     }
 
     footer {

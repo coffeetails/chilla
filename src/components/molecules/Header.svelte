@@ -1,14 +1,20 @@
-<script>
+<script lang="ts">
     import HamburgerMenu from "../atoms/HamburgerMenu.svelte";
     import SettingsMenu from "../atoms/SettingsMenu.svelte";
     import ThemesMenu from "../atoms/ThemesMenu.svelte";
+    import { settingsIsVisible } from "../../stores";
+
+    let visibleSettings :Boolean;
+    settingsIsVisible.subscribe(value => visibleSettings = value);
 
 </script>
 
     <header>
         <HamburgerMenu />
         <div class="wrapper">
-            <SettingsMenu />
+            {#if visibleSettings}
+                <SettingsMenu />
+            {/if}
             <ThemesMenu />
         </div>
     </header>

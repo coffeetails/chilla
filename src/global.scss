@@ -25,9 +25,41 @@ $color-gamma: var(--color-gamma);
     display: none;
 }
 
+p {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 200%;
+    letter-spacing: 10%;
+    // margin: 2rem 0;
+}
+
 h1 {
-    background-color: $color-gamma;
+    // background-color: $color-gamma;
     // background-color: var(--color-gamma);
+    
+    font-size: 37px;
+    font-weight: 400;
+    line-height: 150%;
+    letter-spacing: 10%;
+}
+
+h2 {
+    font-size: 28px;
+    font-weight: 400;
+    line-height: 150%;
+    letter-spacing: 10%;
+
+}
+
+h3 {
+    font-size: 21px;
+    font-weight: 400;
+    line-height: 150%;
+    letter-spacing: 10%;
+}
+
+a {
+    line-height: 150%;
 }
 
 .nav-icon {
