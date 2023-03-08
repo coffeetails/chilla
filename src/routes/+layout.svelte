@@ -56,7 +56,6 @@
         align-items: center;
         justify-content: space-between;
         min-height: 100dvh;
-        // padding: var(--padding);
         background-color: var(--bg-color);
     }
 </style>
