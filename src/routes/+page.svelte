@@ -3,8 +3,8 @@
     import { onDestroy, onMount } from 'svelte';
     
     import Blob from "../components/atoms/Blob.svelte";
-    import ScrollButtonDown from "../components/atoms/ScrollButtonDown.svelte";
-    import ScrollButtonUp from "../components/atoms/ScrollButtonUp.svelte";
+    import ScrollButtonDown from "../components/atoms/icons/ScrollButtonDown.svelte";
+    import ScrollButtonUp from "../components/atoms/icons/ScrollButtonUp.svelte";
 
     let blue = 'blue';
     let red = 'red';

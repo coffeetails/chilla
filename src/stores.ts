@@ -8,4 +8,6 @@ const aboutContent = writable('intro');
 
 const activeMenu = writable(false);
 
-export { theme, settingsIsVisible, aboutContent, activeMenu };
+const playAudio = writable(false);
+
+export { theme, settingsIsVisible, aboutContent, activeMenu, playAudio };
