@@ -14,9 +14,15 @@
 
 <style lang="scss">
 
-    .wrapper :global() {
-            // color: #1C315E;
-        }
+    .wrapper {
+        margin-top: calc(var(--margin)*5);
+        margin-bottom: calc(var(--margin)*15);
+        display: flex;
+        flex-direction: column;
+        gap: calc(var(--baseline)*2);
+        align-items: center;
+        max-width: calc(var(--baseline)*50);
+    }
 
     h2 {
         text-align: center;

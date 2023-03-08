@@ -7,18 +7,24 @@
 
 </script>
 
-    <!-- svelte-ignore a11y-click-events-have-key-events -->
-    <h3 on:click={ setIntro } class="back">Tillbaka</h3>
+    <button on:click={ setIntro } class="back">Tillbaka</button>
 
-<style>
+<style lang=scss>
 
     .back {
         font-size: 1rem;
+        background-color: transparent;
+        color: var(--font-color);
         margin-top: var(--margin-large);
         border: 1px solid var(--color-beta);
         padding: var(--padding-small) var(--padding);
         align-self: flex-start;
         cursor: pointer;
+
+        &:hover {
+            // color: rgba(var(--font-color), 0.5);
+            opacity: .5;
+        }
     }
 
 </style>
