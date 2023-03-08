@@ -16,7 +16,7 @@
         justify-content: center;
         align-items: center;
 
-        scroll-snap-align: start;
+        scroll-snap-align: center;
         scroll-snap-stop: always;
     }
 

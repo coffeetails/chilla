@@ -1,9 +1,10 @@
 <script>
-    import { theme, settingsIsVisible } from '../stores';
+    import { settingsIsVisible, numberOfBlobs } from '../stores';
     import Blob from "../components/atoms/Blob.svelte";
     import ScrollButtonDown from "../components/atoms/ScrollButtonDown.svelte";
     import ScrollButtonUp from "../components/atoms/ScrollButtonUp.svelte";
     import { onMount } from 'svelte';
+    import SectionSticks from '../components/molecules/SectionSticks.svelte';
 
     let blue = 'blue';
     let red = 'red';
@@ -12,7 +13,11 @@
 
     onMount(() => {
         settingsIsVisible.set(true);
+        const blobElems = document.querySelectorAll('.blob');
+        numberOfBlobs.set(blobElems.length);
     });
+
+    // console.log($numberOfBlobs);
 
 </script>
 
@@ -34,11 +39,12 @@
 <Blob blobBgr={red}/>
 <Blob blobBgr={green}/>
 <Blob blobBgr={yellow}/>
-<ScrollButtonDown />
 
+<ScrollButtonDown />
+<SectionSticks />
 
 <style lang="scss">
-    
+
     // Will be removed later on
     // .colorTest { 
     //     margin-top: 15rem;
