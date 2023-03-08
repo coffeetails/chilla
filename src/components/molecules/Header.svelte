@@ -11,7 +11,7 @@
 
     <header>
         <HamburgerIcon />
-        <div class="wrapper">
+        <div class="header-wrapper">
             {#if visibleSettings}
                 <SettingsIcon />
             {/if}
@@ -33,7 +33,7 @@
         top: 0;
     }
 
-    .wrapper {
+    .header-wrapper {
         display: flex;
         gap: calc(var(--baseline)*5);
     }

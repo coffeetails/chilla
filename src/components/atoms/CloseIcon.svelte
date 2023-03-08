@@ -14,9 +14,10 @@
 
     i {
         align-self: flex-start;
-        padding-left: 1.5rem;
-        padding-top: 1rem;
+        padding-left: var(--padding-large);
+        padding-top: var(--padding-large);
         cursor: pointer;
+        color: var(--color-omega);
     }
 
 </style>
