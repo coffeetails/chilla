@@ -1,6 +1,6 @@
 <script lang="ts">
     import { activeMenu } from "../../stores";
-    import CloseIcon from "../atoms/CloseIcon.svelte";
+    import CloseIcon from "../atoms/icons/CloseIcon.svelte";
     import Link from "../atoms/Link.svelte";
 
     let menuIsActive: Boolean;

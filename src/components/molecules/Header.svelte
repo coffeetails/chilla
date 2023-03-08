@@ -1,7 +1,7 @@
 <script lang="ts">
-    import HamburgerIcon from "../atoms/HamburgerIcon.svelte";
-    import SettingsIcon from "../atoms/SettingsIcon.svelte";
-    import ThemesIcon from "../atoms/ThemesIcon.svelte";
+    import HamburgerIcon from "../atoms/icons/HamburgerIcon.svelte";
+    import SettingsIcon from "../atoms/icons/SettingsIcon.svelte";
+    import ThemesIcon from "../atoms/icons/ThemesIcon.svelte";
     import { settingsIsVisible } from "../../stores";
 
     let visibleSettings :Boolean;
