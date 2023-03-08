@@ -12,4 +12,4 @@ const numberOfBlobs = writable(Array);
 
 const playAudio = writable(false);
 
-export { theme, settingsIsVisible, aboutContent, activeMenu, playAudio, numberOfBlobs };
+export { theme, settingsIsVisible, aboutContent, activeMenu, numberOfBlobs, playAudio };
