@@ -17,7 +17,7 @@
         padding-left: var(--padding-large);
         padding-top: var(--padding-large);
         cursor: pointer;
-        color: var(--color-omega);
+        color: var(--font-color);
     }
 
 </style>

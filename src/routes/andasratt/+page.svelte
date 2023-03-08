@@ -1,5 +1,5 @@
 <script lang=ts>
-    import BackButton from "../../components/atoms/BackButton.svelte";
+    import Button from "../../components/atoms/Button.svelte";
     import BoxContent from "../../components/molecules/BoxContent.svelte";
     import FourSevenEightContent from "../../components/molecules/FourSevenEightContent.svelte";
     import IntroContent from "../../components/molecules/IntroContent.svelte";
@@ -10,18 +10,24 @@
     let content: String;
     aboutContent.subscribe(value => content = value);
 
+    function setIntro() {
+        aboutContent.set('intro');
+    }
+
+    let btnText = 'Tillbaka'
+
 </script>
 
     <div class="wrapper">
         {#if content == '478'}
             <FourSevenEightContent />
-            <BackButton />
+            <Button on:click={setIntro} {btnText} />
         {:else if content == 'pranayama'}
             <PranayamaContent />
-            <BackButton />
+            <Button on:click={setIntro} {btnText} />
         {:else if content == 'box'}
             <BoxContent />
-            <BackButton />
+            <Button on:click={setIntro} {btnText} />
         {:else}
             <IntroContent />
         {/if}

@@ -1,17 +1,14 @@
-<script>
-    import { aboutContent } from "../../stores";
+<script lang="ts">
 
-    function setIntro() {
-        aboutContent.set('intro');
-    }
+    export let btnText: string;
 
 </script>
 
-    <button on:click={ setIntro } class="back">Tillbaka</button>
+    <button on:click >{btnText}</button>
 
 <style lang=scss>
 
-    .back {
+    button {
         font-size: 1rem;
         background-color: transparent;
         color: var(--font-color);

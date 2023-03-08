@@ -14,6 +14,7 @@
 
     i {
         cursor: pointer;
+        color: var(--font-color);
     }
 
 </style>
