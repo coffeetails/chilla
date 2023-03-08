@@ -1,5 +1,5 @@
 <script>
-    import { activeMenu } from "../../stores";
+    import { activeMenu } from "../../../stores";
 
     function setMenu() {
         activeMenu.set(false);
@@ -16,8 +16,6 @@
         align-self: flex-start;
         padding-left: var(--padding-large);
         padding-top: var(--padding-large);
-        cursor: pointer;
-        color: var(--color-omega);
     }
 
 </style>

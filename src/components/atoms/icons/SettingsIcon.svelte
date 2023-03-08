@@ -6,8 +6,4 @@
 
 <style>
 
-    i {
-        cursor: pointer;
-    }
-
 </style>

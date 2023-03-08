@@ -22,6 +22,7 @@
         gap: calc(var(--baseline)*2);
         align-items: center;
         max-width: calc(var(--baseline)*50);
+        padding: var(--padding);
     }
 
     h2 {

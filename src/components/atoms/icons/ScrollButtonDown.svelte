@@ -1,12 +1,8 @@
 <script>
 
-    // const scrollUp = () => {
-    //     window.scrollBy(0, -window.innerHeight);
-    // }
-
-    const scrollUp = () => {
+    const scrollDown = () => {
         const startY = window.pageYOffset;
-        const endY = startY - window.innerHeight;
+        const endY = startY + window.innerHeight;
         const duration = 500;
         const startTime = performance.now();
 
@@ -24,17 +20,17 @@
 
         requestAnimationFrame(animate);
     }
-    
+
 </script>
 
     <!-- svelte-ignore a11y-click-events-have-key-events -->
-    <i on:click={scrollUp} class="fa-solid fa-chevron-up fa-5x nav-icon"></i>
+    <i on:click={scrollDown} class="fa-solid fa-chevron-down fa-5x nav-icon"></i>
 
 <style>
+
     i {
         position: fixed;
-        top: calc(var(--baseline)*5);
-        cursor: pointer;
+        bottom: calc(var(--baseline)*5);
     }
 
 </style>
