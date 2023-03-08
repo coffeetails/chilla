@@ -27,7 +27,6 @@
     <i on:click={scrollUp} class="fa-solid fa-chevron-up fa-5x nav-icon"></i>
 
 <style>
-
     i {
         position: fixed;
         top: calc(var(--baseline)*5);
