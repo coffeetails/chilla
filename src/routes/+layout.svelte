@@ -10,6 +10,26 @@
 
 <svelte:head>
     <meta name="color-scheme" content={$theme == 'system' ? 'light dark' : $theme}/> <link rel="stylesheet" href={`/theme/${$theme}.scss`} />
+    <!-- <script>
+			
+        window.addEventListener('wheel', function(e) {
+            if (e.deltaY > 0) {
+                let vh = window.innerHeight;
+                window.scrollBy({
+                    top: vh,
+                    behavior: 'smooth'
+                });
+            } else {
+                let vh = window.innerHeight;
+                window.scrollBy({
+                    top: -vh,
+                    behavior: 'smooth'
+                });
+                e.preventDefault();
+            }
+        }, { passive: false });
+
+    </script> -->
 </svelte:head>
 
 <div class="app">
@@ -36,7 +56,7 @@
         align-items: center;
         justify-content: space-between;
         min-height: 100dvh;
-        padding: var(--padding);
+        // padding: var(--padding);
         background-color: var(--bg-color);
     }
 </style>
