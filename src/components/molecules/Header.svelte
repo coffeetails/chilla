@@ -35,7 +35,7 @@
 
     .header-wrapper {
         display: flex;
-        gap: calc(var(--baseline)*5);
+        gap: calc(var(--baseline)*2);
     }
 
 </style>

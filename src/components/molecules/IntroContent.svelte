@@ -1,6 +1,7 @@
 <script lang="ts">
 
     import { aboutContent } from "../../stores";
+    import Link from "../atoms/Link.svelte";
 
     let content: String = 'intro';
 
@@ -15,7 +16,7 @@
     }
 
     function setBox() {
-        aboutContent.set('478');
+        aboutContent.set('box');
         console.log(content);
     }
 
@@ -27,18 +28,11 @@
     <p>När du kommit in i andingsövningarna och kanske hittat en favorit så kan du med fördel använda dig av övningarna i andra situationer som t.ex. yoga eller promenader.</p>
     <h2>Några tekniker</h2>
     <div class="link-wrapper">
-        <!-- svelte-ignore a11y-click-events-have-key-events -->
-        <h3 on:click={ set478 }>4-7-8-andning</h3>
-        <!-- svelte-ignore a11y-click-events-have-key-events -->
-        <h3 on:click={ setPranayama }>Pranayama-andning</h3>
-        <!-- svelte-ignore a11y-click-events-have-key-events -->
-        <h3 on:click={ setBox }>Box-andning</h3>
+        <Link target='' on:click={set478} linkDescription='4-7-8-andning' linkPath='#' />
+        <Link target='' on:click={setPranayama} linkDescription='Pranayama-andning' linkPath='#' />
+        <Link target='' on:click={setBox} linkDescription='Box-andning' linkPath='#' />
     </div>
 
 <style>
-
-    h3:hover {
-        opacity: 0.5;
-    }
 
 </style>

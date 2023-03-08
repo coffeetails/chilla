@@ -1,9 +1,5 @@
 <script>
 
-    // const scrollUp = () => {
-    //     window.scrollBy(0, -window.innerHeight);
-    // }
-
     const scrollUp = () => {
         const startY = window.pageYOffset;
         const endY = startY - window.innerHeight;
@@ -36,6 +32,7 @@
         position: fixed;
         top: calc(var(--baseline)*5);
         cursor: pointer;
+        color: var(--font-color);
     }
 
 </style>

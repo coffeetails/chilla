@@ -1,6 +1,7 @@
 <script lang="ts">
     import { activeMenu } from "../../stores";
     import CloseIcon from "../atoms/CloseIcon.svelte";
+    import Link from "../atoms/Link.svelte";
 
     let menuIsActive: Boolean;
     activeMenu.subscribe(value => menuIsActive = value);
@@ -14,10 +15,10 @@
     <section class="overlay" class:visible={ menuIsActive }>
         <CloseIcon />
         <div class="wrapper">
-            <a on:click={closeMenu} href="/">Andas</a>
-            <a on:click={closeMenu} href="/andasratt">Andas rätt</a>
-            <a on:click={closeMenu} href="/avslappningsljud">Avslappningsljud</a>
-            <a on:click={closeMenu} href="/omoss">Om sidan</a>
+            <Link target='' on:click={closeMenu} linkDescription='Andas' linkPath='/'/>
+            <Link target='' on:click={closeMenu} linkDescription='Andas rätt' linkPath='/andasratt'/>
+            <Link target='' on:click={closeMenu} linkDescription='Avslappningsljud' linkPath='/avslappningsljud'/>
+            <Link target='' on:click={closeMenu} linkDescription='Om oss' linkPath='/omoss'/>
         </div>
     </section>
 
@@ -47,15 +48,14 @@
         display: flex;
         flex-direction: column;
         gap: 2rem;
+        text-align: center;
     }
 
-    a {
+    .wrapper :global(a) {
         text-decoration: none;
-        color: #9DC08B;
-
-        &:hover {
-            opacity: .5;
-        }
+        font-size: 28px;
+        font-weight: 600;
+        color: var(--color-psi);
     }
 
 </style>

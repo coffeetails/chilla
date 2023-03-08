@@ -1,9 +1,10 @@
 <script>
     import { theme, settingsIsVisible } from '../stores';
+    import { onDestroy, onMount } from 'svelte';
+    
     import Blob from "../components/atoms/Blob.svelte";
     import ScrollButtonDown from "../components/atoms/ScrollButtonDown.svelte";
     import ScrollButtonUp from "../components/atoms/ScrollButtonUp.svelte";
-    import { onMount } from 'svelte';
 
     let blue = 'blue';
     let red = 'red';
@@ -13,6 +14,12 @@
     onMount(() => {
         settingsIsVisible.set(true);
     });
+
+    function disableVisibleSettings() {
+        settingsIsVisible.set(false);
+    }
+
+    onDestroy(disableVisibleSettings);
 
 </script>
 
