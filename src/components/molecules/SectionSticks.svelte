@@ -2,7 +2,7 @@
 // @ts-nocheck
 
     import { onMount } from "svelte";
-    import { numberOfBlobs } from "../../stores";
+    import { numberOfBlobs, activeBlob } from "../../stores";
     import Stick from "../atoms/Stick.svelte";
 
     onMount(() => {
@@ -20,6 +20,7 @@
             // The first with a positive y coordination is the current visible blob
             if(blobLocation.y > 0 ) {
                 console.log(blob.id);
+                activeBlob.set(blob.id);
                 break;
             }
         }
