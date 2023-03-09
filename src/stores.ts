@@ -14,7 +14,7 @@ const activeThemes = writable(false);
 
 const activeDimmer = writable(false);
 
-const numberOfBlobs = writable(Array);
+const numberOfBlobs = writable([]);
 
 const activeBlob = writable('');
 
