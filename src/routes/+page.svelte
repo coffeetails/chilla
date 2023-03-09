@@ -1,11 +1,10 @@
 <script>
-    import { settingsIsVisible } from '../stores';
-    import { onDestroy, onMount } from 'svelte';
-    import SectionSticks from '../components/molecules/SectionSticks.svelte';
+    import { settingsIsVisible, numberOfBlobs } from '../stores';
     import Blob from "../components/atoms/Blob.svelte";
     import ScrollButtonDown from "../components/atoms/icons/ScrollButtonDown.svelte";
     import ScrollButtonUp from "../components/atoms/icons/ScrollButtonUp.svelte";
-
+    import SectionSticks from '../components/molecules/SectionSticks.svelte';
+    import { onDestroy, onMount } from 'svelte';
 
     let blue = 'blue';
     let red = 'red';
@@ -14,6 +13,9 @@
 
     onMount(() => {
         settingsIsVisible.set(true);
+        
+        const blobElems = document.querySelectorAll('.blob');
+        numberOfBlobs.set(blobElems);
     });
 
     function disableVisibleSettings() {

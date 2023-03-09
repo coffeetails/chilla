@@ -3,7 +3,7 @@
     const scrollDown = () => {
         const startY = window.pageYOffset;
         const endY = startY + window.innerHeight;
-        const duration = 500;
+        const duration = 0;
         const startTime = performance.now();
 
         function animate() {
