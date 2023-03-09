@@ -11,7 +11,7 @@
 <style>
 
     footer {
-        background-color: rgb(36, 62, 36);
+        background-color: var(--bg-color);
         height: 5rem;
         width: 100%;
         position: fixed;

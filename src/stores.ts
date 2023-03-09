@@ -8,7 +8,7 @@ const aboutContent = writable('intro');
 
 const activeMenu = writable(false);
 
-const numberOfBlobs = writable();
+const numberOfBlobs = writable([]);
 const activeBlob = writable('');
 
 const playAudio = writable(false);
