@@ -14,6 +14,7 @@
     onMount(() => {
         settingsIsVisible.set(true);
         const blobElems = document.querySelectorAll('.blob');
+        // @ts-ignore
         numberOfBlobs.set(blobElems);
     });
 

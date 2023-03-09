@@ -1,11 +1,11 @@
 <script>
-    import ThemeSwitch from "./ThemeSwitch.svelte";
+    
 
 
 </script>
 
     <footer>
-        <ThemeSwitch />
+        här var det tomt!
     </footer>
 
 <style>

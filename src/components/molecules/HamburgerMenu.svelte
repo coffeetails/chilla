@@ -13,7 +13,7 @@
 </script>
 
     <section class="overlay" class:visible={ menuIsActive }>
-        <CloseIcon />
+        <CloseIcon on:click={closeMenu}/>
         <div class="wrapper">
             <Link target='' on:click={closeMenu} linkDescription='Andas' linkPath='/'/>
             <Link target='' on:click={closeMenu} linkDescription='Andas rätt' linkPath='/andasratt'/>
