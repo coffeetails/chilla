@@ -1,6 +1,8 @@
 <script>
+// @ts-nocheck
+
     import { onMount } from "svelte";
-    import { numberOfBlobs } from "../../stores";
+    import { numberOfBlobs, activeBlob } from "../../stores";
     import Stick from "../atoms/Stick.svelte";
 
     onMount(() => {
@@ -9,17 +11,31 @@
         console.log(blobElems);
     });
 
-    console.log($numberOfBlobs);
+    // console.log($numberOfBlobs);
+    function checkViewport(event) {
+        // console.log(event);
+        for(let blob of $numberOfBlobs) {
+            const blobLocation = blob.getBoundingClientRect();
 
-    let component = Stick;
+            // The first with a positive y coordination is the current visible blob
+            if(blobLocation.y > 0 ) {
+                console.log(blob.id);
+                activeBlob.set(blob.id);
+                break;
+            }
+        }
+    }
+    
 
 </script>
 
+<svelte:window on:scroll={checkViewport} />
+
 <div class="wrapper">
-    <Stick />
-    <!-- {#each $numberOfBlobs as elem}
-        <svelte:component this={component} />    
-    {/each} -->
+    <!-- Argument of type 'unknown' is not assignable to parameter of type 'ArrayLike<unknown>'.js(2345) -->
+    {#each $numberOfBlobs as elem}
+        <svelte:component this={Stick} id={elem.id} />    
+    {/each}
 </div>
 
 <style lang="scss">
