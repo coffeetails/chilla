@@ -5,6 +5,9 @@
     import HamburgerMenu from '../components/molecules/HamburgerMenu.svelte';
     
     import { theme } from '../stores';    
+    import SettingsOverlay from '../components/organisms/SettingsOverlay.svelte';
+    import ThemesOverlay from '../components/organisms/ThemesOverlay.svelte';
+    import Dimmer from '../components/atoms/Dimmer.svelte';
 
 </script>
 
@@ -33,8 +36,11 @@
 </svelte:head>
 
 <div class="app">
+    <Dimmer />
     <HamburgerMenu />
     <Header />
+    <SettingsOverlay />
+    <ThemesOverlay />
     <main>
         <slot></slot>
     </main>

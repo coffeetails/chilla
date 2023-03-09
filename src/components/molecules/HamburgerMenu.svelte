@@ -13,7 +13,7 @@
 </script>
 
     <section class="overlay" class:visible={ menuIsActive }>
-        <CloseIcon />
+        <CloseIcon on:click={closeMenu}/>
         <div class="wrapper">
             <Link target='' on:click={closeMenu} linkDescription='Andas' linkPath='/'/>
             <Link target='' on:click={closeMenu} linkDescription='Andas rätt' linkPath='/andasratt'/>
@@ -25,7 +25,7 @@
 <style lang="scss">
 
     .overlay {
-        background-color: #40513B;
+        background-color: var(--color-psi);
         width: 100%;
         position: fixed;
         top: 0;
@@ -55,7 +55,7 @@
         text-decoration: none;
         font-size: 28px;
         font-weight: 600;
-        color: var(--color-psi);
+        // color: var(--color-psi);
     }
 
 </style>
