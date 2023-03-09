@@ -27,16 +27,16 @@
 
 <ScrollButtonUp />
 
-<Blob blobBgr={blue}/>
-<Blob blobBgr={red}/>
-<Blob blobBgr={green}/>
-<Blob blobBgr={yellow}/>
+<Blob blobBgr={blue} id="blueBlob"/>
+<Blob blobBgr={red} id="redBlob"/>
+<Blob blobBgr={green} id="greenBlob"/>
+<Blob blobBgr={yellow} id="yellowBlob"/>
 
 <ScrollButtonDown />
 
 <SectionSticks />
 
 
-<style lang="scss">
+<!-- <style lang="scss">
 
-</style>
+</style> -->

@@ -1,11 +1,12 @@
 <script>
 
     export let blobBgr = '';
+    export let id = '';
 
 </script>
 
     <div class="wrapper">
-        <div class="blob {blobBgr}"></div>
+        <div class="blob {blobBgr}" id={id}></div>
     </div>
 
 <style lang="scss">

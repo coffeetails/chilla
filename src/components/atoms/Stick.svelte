@@ -1,8 +1,9 @@
 <script>
+    export let id = '';
 
 </script>
 
-<div></div>
+<div id={id}></div>
 
 <style lang="scss">
     div {

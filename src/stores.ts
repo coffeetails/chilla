@@ -8,8 +8,9 @@ const aboutContent = writable('intro');
 
 const activeMenu = writable(false);
 
-const numberOfBlobs = writable(Array);
+const numberOfBlobs = writable();
+const activeBlob = writable('');
 
 const playAudio = writable(false);
 
-export { theme, settingsIsVisible, aboutContent, activeMenu, numberOfBlobs, playAudio };
+export { theme, settingsIsVisible, aboutContent, activeMenu, numberOfBlobs, playAudio, activeBlob };
