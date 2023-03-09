@@ -9,6 +9,6 @@ declare global {
 	}
 }
 
-type Theme = 'system' | 'light' | 'dark';
+type Theme = 'system' | 'light' | 'dark' | 'lightSea' | 'darkSea' | 'lightBlue' | 'darkBlue';
 
 export {};
