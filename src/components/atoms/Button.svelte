@@ -14,6 +14,7 @@
         color: var(--font-color);
         margin-top: var(--margin-large);
         border: 1px solid var(--color-beta);
+        border-radius: var(--radius-small);
         padding: var(--padding-small) var(--padding);
         align-self: flex-start;
         cursor: pointer;
