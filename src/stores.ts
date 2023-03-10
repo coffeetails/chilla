@@ -2,6 +2,8 @@ import { writable } from 'svelte/store';
 
 const theme = writable('system');
 
+const themes = ['system', 'light', 'dark', 'lightSea', 'darkSea', 'lightBlue', 'darkBlue'];
+
 const settingsIsVisible = writable(false);
 
 const aboutContent = writable('intro');
@@ -20,4 +22,4 @@ const activeBlob = writable('');
 
 const playAudio = writable(false);
 
-export { theme, settingsIsVisible, aboutContent, activeMenu, numberOfBlobs, playAudio, activeSettings, activeThemes, activeDimmer, activeBlob };
+export { theme, themes, settingsIsVisible, aboutContent, activeMenu, numberOfBlobs, playAudio, activeSettings, activeThemes, activeDimmer, activeBlob };
