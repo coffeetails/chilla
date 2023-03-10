@@ -79,7 +79,7 @@
     }
 
     .controls-wrapper :global(button:nth-child(2)) {
-        width: 3.75rem;
+        width: 4rem;
     }
 
     .controls-wrapper :global(i) {

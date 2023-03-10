@@ -7,6 +7,7 @@
     import { settingsIsVisible, numberOfBlobs } from '../stores';
     import { onDestroy, onMount } from 'svelte';
     import Button from "../components/atoms/Button.svelte";
+    import AnimationTwo from "../components/atoms/AnimationTwo.svelte";
 
     let blue = 'blue';
     let red = 'red';
@@ -76,6 +77,7 @@
     </Button>
 
     <Blob blobBgr={blue} id="blueBlob"/>
+    <!-- <AnimationTwo /> -->
     <Blob blobBgr={red} id="redBlob"/>
     <Blob blobBgr={green} id="greenBlob"/>
     <Blob blobBgr={yellow} id="yellowBlob"/>
