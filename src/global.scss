@@ -29,6 +29,10 @@
     --padding: var(--baseline);
     --padding-small: calc(var(--baseline)*0.5);
     --padding-large: calc(var(--baseline)*1.5);
+
+    --border: 1px solid var(--color-gamma);
+    --radius: calc(var(--baseline)*0.5);
+    --radius-small: calc(var(--baseline)*0.25);
 }
 
 html {
