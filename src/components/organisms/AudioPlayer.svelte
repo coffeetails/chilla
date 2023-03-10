@@ -3,6 +3,7 @@
     import ForwardIcon from "../../components/atoms/icons/ForwardIcon.svelte";
     import PlayIcon from "../../components/atoms/icons/PlayIcon.svelte";
     import PauseIcon from "../atoms/icons/PauseIcon.svelte";
+    import Button from "../atoms/Button.svelte";
 
     import { playAudio } from "../../stores";
 
@@ -41,13 +42,21 @@
             <h3>{title}</h3>
         </div>
         <div class="controls-wrapper">
-            <BackwardIcon on:click={last} />
+            <Button btnClass='' on:click={last} btnText=''>
+                <BackwardIcon />
+            </Button>
             {#if audioPlaying}
-                <PauseIcon on:click={pause} />  
+                <Button btnClass='' on:click={pause} btnText=''>
+                    <PauseIcon /> 
+                </Button> 
             {:else}
-                <PlayIcon on:click={play} />
+                <Button btnClass='' on:click={play} btnText=''>
+                    <PlayIcon />
+                </Button>
             {/if}
-            <ForwardIcon on:click={next} />
+            <Button btnClass='' btnText=''>
+                <ForwardIcon on:click={next} />
+            </Button>
         </div>
         <div class="progress-bar">
             <input type="range">
@@ -64,10 +73,13 @@
     }
 
     .controls-wrapper {
-        width: 18rem;
         display: flex;
         justify-content: space-between;
         gap: 3rem;
+    }
+
+    .controls-wrapper :global(button:nth-child(2)) {
+        width: 3.75rem;
     }
 
     .controls-wrapper :global(i) {

@@ -2,20 +2,45 @@
     import HamburgerIcon from "../atoms/icons/HamburgerIcon.svelte";
     import SettingsIcon from "../atoms/icons/SettingsIcon.svelte";
     import ThemesIcon from "../atoms/icons/ThemesIcon.svelte";
-    import { settingsIsVisible } from "../../stores";
+    import Button from "../atoms/Button.svelte";
+
+    import { settingsIsVisible, activeMenu, activeSettings, activeThemes, activeDimmer } from "../../stores";
+    
 
     let visibleSettings :Boolean;
     settingsIsVisible.subscribe(value => visibleSettings = value);
 
+    const setMenu = () => {
+        activeMenu.update(value => !value);
+    }
+
+    const setSettings = () => {
+        activeSettings.set(true);
+        activeThemes.set(false);
+        activeDimmer.set(true);
+    }
+
+    const setThemes = () => {
+        activeThemes.set(true);
+        activeSettings.set(false);
+        activeDimmer.set(true);
+    }
+
 </script>
 
     <header>
-        <HamburgerIcon />
+        <Button on:click={ setMenu } btnText='' btnClass=''>
+            <HamburgerIcon />
+        </Button>
         <div class="header-wrapper">
             {#if visibleSettings}
-                <SettingsIcon />
+                <Button on:click={ setSettings } btnText='' btnClass=''>
+                    <SettingsIcon />
+                </Button>
             {/if}
-            <ThemesIcon />
+            <Button on:click={ setThemes } btnText='' btnClass=''>
+                <ThemesIcon />
+            </Button>
         </div>
     </header>
 
