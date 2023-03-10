@@ -1,5 +1,6 @@
 <script lang=ts>
     import { activeDimmer, activeThemes } from "../../stores";
+    import Button from "../atoms/Button.svelte";
     import CloseIcon from "../atoms/icons/CloseIcon.svelte";
     import ThemeSwitch from "../molecules/ThemeSwitch.svelte";
 
@@ -14,13 +15,18 @@
 </script>
 
     <div class="themes" class:visible={themesIsActive}>
-        <CloseIcon on:click={closeOverlay}/>
+        <!-- <CloseIcon on:click={closeOverlay}/> -->
         <ThemeSwitch />
+        <div class="buttonWrapper">
+        <Button btnText="Spara" />
+        <Button btnText="Stäng" />
+        </div>
     </div>
 
 <style lang=scss>
 
     .themes {
+        padding: var(--padding);
         background-color: var(--bg-color);
         display: none;
         position: fixed;
@@ -28,7 +34,16 @@
         left: 50%;
         transform: translate(-50%, -50%);
         z-index: 5;
-        border: 2px solid var(--color-gamma);
+        border: var(--border);
+        border-radius: var(--radius);
+
+        .buttonWrapper {
+            width: 100%;
+
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+        }
     }
 
     .visible {
