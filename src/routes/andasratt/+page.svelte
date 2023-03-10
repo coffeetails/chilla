@@ -21,13 +21,13 @@
     <div class="wrapper">
         {#if content == '478'}
             <FourSevenEightContent />
-            <Button on:click={setIntro} {btnText} />
+            <Button btnClass='' on:click={setIntro} {btnText} />
         {:else if content == 'pranayama'}
             <PranayamaContent />
-            <Button on:click={setIntro} {btnText} />
+            <Button btnClass='' on:click={setIntro} {btnText} />
         {:else if content == 'box'}
             <BoxContent />
-            <Button on:click={setIntro} {btnText} />
+            <Button btnClass='' on:click={setIntro} {btnText} />
         {:else}
             <IntroContent />
         {/if}

@@ -1,5 +1,7 @@
 <script lang="ts">
     import { activeMenu } from "../../stores";
+    import Button from "../atoms/Button.svelte";
+
     import CloseIcon from "../atoms/icons/CloseIcon.svelte";
     import Link from "../atoms/Link.svelte";
 
@@ -13,7 +15,9 @@
 </script>
 
     <section class="overlay" class:visible={ menuIsActive }>
-        <CloseIcon on:click={closeMenu}/>
+        <Button on:click={closeMenu} btnClass='btnClose' btnText=''>
+            <CloseIcon />
+        </Button>
         <div class="wrapper">
             <Link target='' on:click={closeMenu} linkDescription='Andas' linkPath='/'/>
             <Link target='' on:click={closeMenu} linkDescription='Andas rätt' linkPath='/andasratt'/>
@@ -55,7 +59,12 @@
         text-decoration: none;
         font-size: 28px;
         font-weight: 600;
-        // color: var(--color-psi);
+    }
+
+    :global(.btnClose) {
+        align-self: flex-start;
+        padding-left: var(--padding-large);
+        padding-top: var(--padding-large);
     }
 
 </style>

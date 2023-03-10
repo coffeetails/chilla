@@ -1,10 +1,13 @@
 <script lang="ts">
 
     export let btnText: string;
+    export let btnClass: string;
 
 </script>
 
-    <button on:click >{btnText}</button>
+    <button on:click class={btnClass} >{btnText}
+        <slot></slot>
+    </button>
 
 <style lang=scss>
 
@@ -12,11 +15,7 @@
         font-size: 1rem;
         background-color: transparent;
         color: var(--font-color);
-        margin-top: var(--margin-large);
-        border: 1px solid var(--color-beta);
-        border-radius: var(--radius-small);
-        padding: var(--padding-small) var(--padding);
-        align-self: flex-start;
+        border: none;
         cursor: pointer;
 
         &:hover {
