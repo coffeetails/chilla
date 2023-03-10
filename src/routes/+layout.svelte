@@ -1,13 +1,14 @@
 <script lang=ts>
     import '../global.scss';
+    
     import Header from '../components/molecules/Header.svelte';
     import Footer from '../components/molecules/Footer.svelte';
     import HamburgerMenu from '../components/molecules/HamburgerMenu.svelte';
-    
-    import { theme } from '../stores';    
     import SettingsOverlay from '../components/organisms/SettingsOverlay.svelte';
     import ThemesOverlay from '../components/organisms/ThemesOverlay.svelte';
     import Dimmer from '../components/atoms/Dimmer.svelte';
+    
+    import { theme } from '../stores';    
 
 </script>
 

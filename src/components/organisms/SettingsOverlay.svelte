@@ -2,7 +2,6 @@
     import { activeDimmer, activeSettings } from "../../stores";
 
     import Button from "../atoms/Button.svelte";
-    import CloseIcon from "../atoms/icons/CloseIcon.svelte";
     import RadioButton from "../molecules/RadioButton.svelte";
     import SettingsSlider from "../molecules/SettingsSlider.svelte";
 
@@ -19,7 +18,6 @@
 </script>
 
     <div class="settings" class:visible={settingsIsActive}>
-        <!-- <CloseIcon on:click={closeOverlay}/> -->
         <h2>Andningsintervall</h2>
         <div class="controls-wrapper">
             <SettingsSlider labelFor='inandning' labelText='Inandning' seconds={seconds} />
@@ -35,8 +33,8 @@
             <RadioButton radioGroup='tech' labelFor='4-7-8' labelText='4-7-8-andning'/>
         </div>
         <div class="btn-wrapper">
-            <Button btnText='Spara' />
-            <Button on:click={closeOverlay} btnText='Stäng' />
+            <Button btnClass='' btnText='Spara' />
+            <Button btnClass='' on:click={closeOverlay} btnText='Stäng' />
         </div>
     </div>
 
@@ -59,8 +57,15 @@
     }
 
     .settings :global(button) {
-            background-color: var(--color-omega);
+            
+            margin-top: var(--margin-large);
+            border: 1px solid var(--color-beta);
+            padding: var(--padding-small) var(--padding);
         }
+
+    .settings :global(button:nth-child(1)) {
+        background-color: var(--color-omega);
+    }
 
     .visible {
         display: inline-block;
