@@ -18,8 +18,8 @@
         <!-- <CloseIcon on:click={closeOverlay}/> -->
         <ThemeSwitch />
         <div class="buttonWrapper">
-        <Button btnClass='' btnText="Spara" />
-        <Button btnClass='' btnText="Stäng" />
+        <Button btnClass="" btnText="Spara" />
+        <Button btnClass="" btnText="Stäng" />
         </div>
     </div>
 
