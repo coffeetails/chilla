@@ -77,10 +77,10 @@
     </Button>
 
     <Blob blobBgr={blue} id="blueBlob"/>
-    <!-- <AnimationTwo /> -->
-    <Blob blobBgr={red} id="redBlob"/>
-    <Blob blobBgr={green} id="greenBlob"/>
-    <Blob blobBgr={yellow} id="yellowBlob"/>
+    <AnimationTwo />
+    <!-- <Blob blobBgr={red} id="redBlob"/> -->
+    <!-- <Blob blobBgr={green} id="greenBlob"/> -->
+    <!-- <Blob blobBgr={yellow} id="yellowBlob"/> -->
 
     <Button btnClass='btnDown' on:click={ scrollDown } btnText=''>
         <ScrollButtonDown />
