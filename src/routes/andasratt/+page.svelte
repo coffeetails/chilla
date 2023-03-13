@@ -2,23 +2,20 @@
     import Button from "../../components/atoms/Button.svelte";
     import BoxContent from "../../components/molecules/BoxContent.svelte";
     import FourSevenEightContent from "../../components/molecules/FourSevenEightContent.svelte";
+    import InfoContent from "../../components/molecules/InfoContent.svelte";
     import IntroContent from "../../components/molecules/IntroContent.svelte";
     import PranayamaContent from "../../components/molecules/PranayamaContent.svelte";
+
+    import data from '../../content.json';
     
-    import { aboutContent } from "../../stores";
-
-    let content: String;
-    aboutContent.subscribe(value => content = value);
-
-    function setIntro() {
-        aboutContent.set('intro');
-    }
+    // export let heading: string;
+    // export let content: string;
 
     let btnText = 'Tillbaka'
 
 </script>
 
-    <div class="wrapper">
+    <!-- <div class="wrapper">
         {#if content == '478'}
             <FourSevenEightContent />
             <Button btnClass='' on:click={setIntro} {btnText} />
@@ -31,6 +28,11 @@
         {:else}
             <IntroContent />
         {/if}
+    </div> -->
+    <div class="wrapper">
+
+        <InfoContent />
+
     </div>
 
 <style lang="scss">

@@ -1,0 +1,66 @@
+{
+    "about": 
+        {
+            "heading": "Om sidan",
+            "content": "Det är lätt att vi spänner oss när vi är stressade, nedstämda eller oroliga för något. Andningsövningar är ett effektivt och enkelt sätt att bli mer avslappnad oavsett om du väntar på ett viktigt möte, har svårt att sova eller har mått dåligt en längre tid. Som du kanske känner till så finns det många sätt att förbättra måendet och bli mer avslappnad, bl.a. yoga, meditation, lyssna på musik, promenad eller annan aktivitet.",
+            "links": []
+        },
+
+    "whyBreathing": 
+        {
+            "heading": "Varför just andning?",
+            "content": "Att vi har valt att arbeta med andning är för att alla kan göra det och det kan göras när som helst och var som helst. Både någon minut innan ett samtal eller en längre stund innan sömn, som exempel. Det går också att kombinera andningsövningar med andra aktiviter som yoga, promenader och meditation.",
+            "links": []
+        },
+
+    "intro": 
+        {
+        "heading": "Andas rätt",
+        "content": "Det är bra om du sitter eller ligger bekvämt på en plats där du inte blir störd när du börjar göra övningarna. De första gångerna du gör övningen kan du känna dig rastlös. De flesta vänjer sig efter några gånger och då kommer avslappningen snabbare. Tänk på att försöka andas med magen eftersom att andning med bröstkorgen skapar spänningar i överkroppen, men all medveten andning är bra för avslappning och välmående. När du kommit in i andingsövningarna och kanske hittat en favorit så kan du med fördel använda dig av övningarna i andra situationer som t.ex. yoga eller promenader.",
+        "links": []
+        },
+
+    "fourSevenEight": 
+        {
+        "heading": "4-7-8-andning",
+        "content": "Denna andningsteknik utvecklades av Dr Andrew Weil. Det är en djup andningsövning som man enkelt kan göra när- och var som helst. Om man konsekvent använder denna andningsteknik kan man förvänta sig många fördelar, bland annat dämpade ångestnivåer, bättre sömn och bättre fokus.",
+        "links": [ 
+                    {
+                        "url": "https://www.drweil.com/videos-features/videos/breathing-exercises-4-7-8-breath",
+                        "description": "Dr Weils hemsida"
+                    },
+                    {
+                        "url": "https://www.anahana.com/sv/breathing-exercise/478-breathingh",
+                        "description": "Anahanas sida med mer info om 4-7-8-andning"
+                    }
+                ]
+        },
+
+    "pranayama": 
+        {
+        "heading": "Pranayama-andning",
+        "content": "Detta är en yoga-övning som fokuserar på andningen för att rensa sinnet och kroppen. Några av de positiva effekterna av Pranayama-andning är förbättrad sömn, lägre blodtryck, förbättrad fokus och förbättrat immunförsvar. En vanlig Pranayama-övning går ut på att man andas in genom näsan i 4 sekunder, håller andan i 16 sekunder och andas ut genom näsan i 8 sekunder. Detta upprepas i flera cykler.",
+        "links": [
+                    {
+                        "url": "https://www.anahana.com/sv/breathing-exercise/pranayama-breathing",
+                        "description": "Anahanas sida med mer info om Pranayama-andning"
+                    }
+                ]
+        },
+        
+    "box":
+        {
+            "heading": "Box-andning",
+            "content": "Box-andning, även kallad fyrkants-andning, har varit förknippad med allt från förbättrad hjärthälsa, minskad ångest och förbättrad kognitiv funktion. Tekniken är enkel och innebär att man andas in genom näsan i 4 sekunder, håller andan i 4 sekunder, andas ut genom munnen i 4 sekunder och håller andan i 4 sekunder. Man upprepar detta i flera cykler.",
+            "links": [
+                {
+                    "url": "https://www.medicalnewstoday.com/articles/321805",
+                    "description": "Mer info om Box-andning"
+                },
+                {
+                    "url": "https://www.anahana.com/sv/breathing-exercise/box-breathing",
+                    "description": "Anahanas sida med mer info om Box-andning"
+                }
+            ]
+        }  
+}
