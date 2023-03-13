@@ -1,34 +1,8 @@
 <script lang=ts>
-    import Button from "../../components/atoms/Button.svelte";
-    import BoxContent from "../../components/molecules/BoxContent.svelte";
-    import FourSevenEightContent from "../../components/molecules/FourSevenEightContent.svelte";
     import InfoContent from "../../components/molecules/InfoContent.svelte";
-    import IntroContent from "../../components/molecules/IntroContent.svelte";
-    import PranayamaContent from "../../components/molecules/PranayamaContent.svelte";
-
-    import data from '../../content.json';
-    
-    // export let heading: string;
-    // export let content: string;
-
-    let btnText = 'Tillbaka'
 
 </script>
 
-    <!-- <div class="wrapper">
-        {#if content == '478'}
-            <FourSevenEightContent />
-            <Button btnClass='' on:click={setIntro} {btnText} />
-        {:else if content == 'pranayama'}
-            <PranayamaContent />
-            <Button btnClass='' on:click={setIntro} {btnText} />
-        {:else if content == 'box'}
-            <BoxContent />
-            <Button btnClass='' on:click={setIntro} {btnText} />
-        {:else}
-            <IntroContent />
-        {/if}
-    </div> -->
     <div class="wrapper">
 
         <InfoContent />
@@ -65,6 +39,12 @@
                 flex-direction: column;
                 gap: 1rem;
                 align-items: center;
+            }
+
+            & :global(button) {
+                align-self: flex-start;
+                border: 1px solid var(--color-psi);
+                padding: var(--padding-small) var(--padding);
             }
         }
 </style>
