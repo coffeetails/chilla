@@ -64,5 +64,11 @@
                 gap: 1rem;
                 align-items: center;
             }
+
+            & :global(button) {
+                align-self: flex-start;
+                border: 1px solid var(--color-psi);
+                padding: var(--padding-small) var(--padding);
+            }
         }
 </style>
