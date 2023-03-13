@@ -72,7 +72,7 @@
     <p>{content}</p>
     <h2>{linkHeading}</h2>
     <div class="link-wrapper">
-        {#if activeContent == '478' || activeContent == 'pranayama' || activeContent == 'box'}
+        {#if activeContent !== 'intro'}
             {#each links as link}
                 <Link target='_blank' linkDescription={link.description} linkPath={link.url} />
             {/each} 
@@ -81,7 +81,7 @@
             <Link target='' on:click={setPranayama} linkDescription='Pranayama-andning' linkPath='#' />
             <Link target='' on:click={setBox} linkDescription='Box-andning' linkPath='#' />
         {/if}
-        {#if activeContent == '478' || activeContent == 'pranayama' || activeContent == 'box'}
+        {#if activeContent !== 'intro'}
             <Button btnClass='' on:click={setIntro} {btnText} />
         {/if}
         

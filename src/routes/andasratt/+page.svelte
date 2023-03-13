@@ -4,9 +4,7 @@
 </script>
 
     <div class="wrapper">
-
         <InfoContent />
-
     </div>
 
 <style lang="scss">
