@@ -11,6 +11,8 @@
         links: [];
     }
 
+    let btnText = 'Tillbaka'
+
     let intro = data.intro;
 
     console.log(intro);
@@ -47,16 +49,17 @@
             linkHeading = 'Mer info';
             links = data.box.links;
         } 
-        // else {
-        //     heading = data.intro.heading;
-        //     content = data.intro.content;
-        //     linkHeading = 'Våra andningsövningar'
-        // }
+        else {
+            heading = data.intro.heading;
+            content = data.intro.content;
+            linkHeading = 'Våra andningsövningar'
+        }
     }
     
     
     function setIntro() {
-        aboutContent.set('intro');       
+        aboutContent.set('intro');
+        updateContent();       
     }
     
     function set478() {
@@ -90,7 +93,7 @@
         <!-- <Link target='' on:click={set478} linkDescription='4-7-8-andning' linkPath='#' />
         <Link target='' on:click={setPranayama} linkDescription='Pranayama-andning' linkPath='#' />
         <Link target='' on:click={setBox} linkDescription='Box-andning' linkPath='#' /> -->
-        {#if !activeContent == 'intro'}
+        {#if activeContent == '478'}
             {#each links as link}
                 <Link target='' linkDescription={link.description} linkPath={link.url}/>
             {/each} 
@@ -99,7 +102,8 @@
             <Link target='' on:click={setPranayama} linkDescription='Pranayama-andning' linkPath='#' />
             <Link target='' on:click={setBox} linkDescription='Box-andning' linkPath='#' />
         {/if}
-        <Button />
+        <Button btnClass='' on:click={setIntro} {btnText} />
+        
     </div>
 
 <style lang=scss>
