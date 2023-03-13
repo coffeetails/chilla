@@ -1,9 +1,9 @@
 <script lang=ts>
     import Link from "../atoms/Link.svelte";
-    
-    import { aboutContent } from "../../stores";
     import data from '../../content.json';
     import Button from "../atoms/Button.svelte";
+    
+    import { aboutContent } from "../../stores";
 
     let btnText = 'Tillbaka'
     

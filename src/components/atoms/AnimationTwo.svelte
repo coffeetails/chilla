@@ -6,45 +6,30 @@
     export let id = '';
     
     onMount(() => {
-        let colorAlpha = getColor("alpha");
-        let colorBeta = getColor("beta");
-        let colorGamma = getColor("gamma");
-        let colorPsi = getColor("psi");
-        let colorOmega = getColor("omega");
-        
-        // console.log("$theme ", $theme);
-        // console.log("colors1", colorAlpha, colorBeta, colorGamma, colorPsi, colorOmega);
+        // let colorAlpha = getColor("alpha");
+        // let colorBeta = getColor("beta");
+        // let colorGamma = getColor("gamma");
+        // let colorPsi = getColor("psi");
+        // let colorOmega = getColor("omega");
 
-        // let activeTheme;
-        // theme.subscribe(value => {
-        //     colorAlpha = getColor("alpha");
-        //     colorBeta = getColor("beta");
-        //     colorGamma = getColor("gamma");
-        //     colorPsi = getColor("psi");
-        //     colorOmega = getColor("omega");
-        //     // console.log("$theme ", $theme);
-        //     console.log("colors2", colorAlpha, colorBeta, colorGamma, colorPsi, colorOmega);
-        //     activeTheme = value;
-        // });
-
-        function getColor(color: string) {
-            // console.log("getColor ", getComputedStyle(document.documentElement).getPropertyValue('--color-' + color));
-            return getComputedStyle(document.documentElement).getPropertyValue('--color-' + color);
-        }
+        // function getColor(color: string) {
+        //     // console.log("getColor ", getComputedStyle(document.documentElement).getPropertyValue('--color-' + color));
+        //     return getComputedStyle(document.documentElement).getPropertyValue('--color-' + color);
+        // }
         
-            let breathIn = 4000;
-            let pauseIn = 4000;
-            let breathOut = 4000;
-            let pauseOut = 4000;
+            let breathIn = 2000;
+            let pauseIn = 2000;
+            let breathOut = 2000;
+            let pauseOut = 2000;
+            let textFade = 50;
 
             anime({
                 targets: ['.animTwo'],
                 easing: 'linear',
                 keyframes: [
                     {
-                        duration: pauseOut/2,
+                        duration: pauseOut,
                         scale: 1,
-                        // background: '#fff'
                     },
                     {
                         duration: breathIn,
@@ -61,83 +46,120 @@
                         scale: 1,
                         background: '#EAFDFC'
                     },
-                    {
-                        duration: pauseOut/2,
-                        scale: 1,
-                        // background: '#fff'
-                    }
                 ],
                 loop: true
             });
 
-            // setInterval(() => {
-            //     setTimeout(() => {
-            //         text = "andas in"
-            //         setTimeout(() => {
-            //             text = "håll andan";
-            //             setTimeout(() => {
-            //                 text = "andas ut";
-            //                 setTimeout(() => {
-            //                     text = "håll andan";
-            //                 },pauseOut/2);
-            //             }, breathOut);
-            //         }, pauseIn);
-            //     }, breathIn+(pauseOut/2));
-            // }, breathIn+breathOut+pauseIn+pauseOut);
+            anime({
+                targets: ['.text'],
+                easing: 'linear',
+                keyframes: [
+                    {
+                        duration: textFade,
+                        opacity: 0
+                    },
+                    
+                    {
+                        duration: breathIn - (textFade * 2),
+                        opacity: 1
+                    },
+                    {
+                        duration: textFade,
+                        opacity: 0
+                    },
+                    {
+                        duration: textFade,
+                        opacity: 0
+                    },
+                    
+                    {
+                        duration: pauseIn - (textFade * 2),
+                        opacity: 1
+                    },
+                    {
+                        duration: textFade,
+                        opacity: 0
+                    },
+                    {
+                        duration: textFade,
+                        opacity: 0
+                    },
+                    
+                    {
+                        duration: breathOut - (textFade * 2),
+                        opacity: 1
+                    },
+                    {
+                        duration: textFade,
+                        opacity: 0
+                    },
+                    {
+                        duration: textFade,
+                        opacity: 0
+                    },
+                    
+                    {
+                        duration: pauseOut - (textFade * 2),
+                        opacity: 1
+                    },
+                    {
+                        duration: textFade,
+                        opacity: 0
+                    },
+                ],
+                loop: true
+            });
             
-            let blah = document.querySelector(".text");
             anime.timeline({
                 targets: '.text',
                 loop: true,
             }).add({
-                duration: pauseOut/2,
-                innerHTML: "Håll andan",
-                opacity: [0, 1]
+                duration: pauseOut,
+                textContent: "Håll andan",
             }).add({
                 duration: breathIn,
-                innerHTML: "Andas in",
-                opacity: [0, 1]
+                textContent: "Andas in",
+                
             }).add({
                 duration: pauseIn,
-                innerHTML: "Håll andan",
-                opacity: [0, 1]
+                textContent: "Håll andan",
+                
             }).add({
                 duration: breathOut,
-                innerHTML: "Andas ut",
-                opacity: [0, 1]
-            }).add({
-                duration: pauseOut/2,
-                innerHTML: "Håll andan",
-                opacity: [0, 1]
+                textContent: "Andas ut"
             });
             
-    //DO NOT TOUCH
     });
-    //DO NOT TOUCH
+
 </script>
 
     <div class="wrapper">
-        <div class="animTwo" id={id}></div>
-        <h3 class="text" >andas</h3>
+        <div class="blob animTwo" id={id}></div>
+        <h3 class="text"> </h3>
     </div>
 
 <style lang="scss">
 
     .wrapper {
         min-height: 100dvh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
+        display: grid;
+        place-items: center;
 
         scroll-snap-align: center;
         scroll-snap-stop: always;
+    }
+
+    .wrapper > * {
+        grid-column: 1 / -1;
+        grid-row: 1 / -1;
     }
 
     .animTwo {
         width: calc(var(--baseline)*10);
         height: calc(var(--baseline)*10);
         background-color: #EAFDFC;
+        box-shadow: 0 0 4px 2px var(--color-alpha);
+        box-shadow: 0 0 2px 4px inset var(--color-omega);
         border-radius: 50%;
         opacity: 0.5;
         display: flex;
@@ -146,23 +168,8 @@
     }
 
     .text {
-        position: absolute;
+        z-index: 1;
+        opacity: 0;
     }
-
-    // .red {
-    //     background-color: red;
-    // }
-
-    // .blue {
-    //     background-color: blue;
-    // }
-
-    // .green {
-    //     background-color: green;
-    // }
-
-    // .yellow {
-    //     background-color: yellow;
-    // }
 
 </style>
