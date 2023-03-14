@@ -1,8 +1,9 @@
 <script lang=ts>
+    export let seconds: number;
 
 </script>
 
-    <input type="range">
+    <input bind:value={seconds} min="0" max="10" on:change type="range">
 
 <style lang=scss>
 
