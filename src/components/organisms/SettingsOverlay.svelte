@@ -1,5 +1,5 @@
 <script lang=ts>
-    import { activeDimmer, activeSettings, inanding, pauseOne, utandning, pauseTwo, all } from "../../stores";
+    import { activeDimmer, activeSettings, inandning, pauseOne, utandning, pauseTwo, all } from "../../stores";
 
     import Button from "../atoms/Button.svelte";
     import RadioButton from "../molecules/RadioButton.svelte";
@@ -14,7 +14,7 @@
     }
 
     let storeInandning: number;
-    inanding.subscribe(value => storeInandning = value);
+    inandning.subscribe(value => storeInandning = value);
 
     let storePauseOne: number;
     pauseOne.subscribe(value => storePauseOne = value);
@@ -29,8 +29,9 @@
     all.subscribe(value => storeAll = value);
 
     function setInandning(event: any) {
-        inanding.set(event.target.value);
+        inandning.set(event.target.value);
         console.log('inandning:', storeInandning);
+        // localStorage.setItem('inandning', storeInandning);
     }
 
     function setPauseOne(event: any) {

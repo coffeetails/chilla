@@ -24,7 +24,7 @@ const playAudio = writable(false);
 
 // SETTINGS
 
-export const inanding = writable(2);
+export const inandning = writable(2);
 export const pauseOne = writable(2);
 export const utandning = writable(2);
 export const pauseTwo = writable(2);

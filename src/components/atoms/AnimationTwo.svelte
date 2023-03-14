@@ -1,26 +1,29 @@
 <script lang=ts>
-    import { inanding, pauseOne, utandning, pauseTwo, all } from "../../stores";
+    import { inandning, pauseOne, utandning, pauseTwo, all } from "../../stores";
     import anime from 'animejs';
     import { onMount } from 'svelte';
     // export let blobBgr = '';
     export let id = '';
 
-    let storeInandning: number;
-    inanding.subscribe(value => storeInandning = value);
+    let storeInandning: any = $inandning;
+    inandning.subscribe(value => storeInandning = value);
 
-    let storePauseOne: number;
+    let storePauseOne: any = $pauseOne;
     pauseOne.subscribe(value => storePauseOne = value);
 
-    let storeUtandning: number;
+    let storeUtandning: any = $utandning;
     utandning.subscribe(value => storeUtandning = value);
 
-    let storePauseTwo: number;
+    let storePauseTwo: any = $pauseTwo;
     pauseTwo.subscribe(value => storePauseTwo = value);
 
-    let storeAll: number;
+    let storeAll: any = $all;
     all.subscribe(value => storeAll = value);
     
+
+    // window.addEventListener("load", () => {
     onMount(() => {
+
         // let colorAlpha = getColor("alpha");
         // let colorBeta = getColor("beta");
         // let colorGamma = getColor("gamma");
@@ -31,6 +34,8 @@
         //     // console.log("getColor ", getComputedStyle(document.documentElement).getPropertyValue('--color-' + color));
         //     return getComputedStyle(document.documentElement).getPropertyValue('--color-' + color);
         // }
+
+    
         
             let breathIn = 2000;
             let pauseIn = 2000;
@@ -145,6 +150,7 @@
             });
             
     });
+    // });
 
     let text = 'Andas';
 
