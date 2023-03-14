@@ -1,9 +1,24 @@
 <script lang=ts>
-    // import { theme } from '../../stores';
+    import { inanding, pauseOne, utandning, pauseTwo, all } from "../../stores";
     import anime from 'animejs';
     import { onMount } from 'svelte';
     // export let blobBgr = '';
     export let id = '';
+
+    let storeInandning: number;
+    inanding.subscribe(value => storeInandning = value);
+
+    let storePauseOne: number;
+    pauseOne.subscribe(value => storePauseOne = value);
+
+    let storeUtandning: number;
+    utandning.subscribe(value => storeUtandning = value);
+
+    let storePauseTwo: number;
+    pauseTwo.subscribe(value => storePauseTwo = value);
+
+    let storeAll: number;
+    all.subscribe(value => storeAll = value);
     
     onMount(() => {
         // let colorAlpha = getColor("alpha");
@@ -28,21 +43,21 @@
                 easing: 'linear',
                 keyframes: [
                     {
-                        duration: pauseOut,
+                        duration: storePauseOne * 1000,
                         scale: 1,
                     },
                     {
-                        duration: breathIn,
+                        duration: storeInandning * 1000,
                         scale: 2.5,
                         background: '#91D8E3'
                     },
                     {
-                        duration: pauseIn,
+                        duration: storePauseTwo * 1000,
                         scale: 2.5,
                         background: '#91D8E3'
                     },
                     {
-                        duration: breathOut,
+                        duration: storeUtandning * 1000,
                         scale: 1,
                         background: '#EAFDFC'
                     },
@@ -60,7 +75,7 @@
                     },
                     
                     {
-                        duration: breathIn - (textFade * 2),
+                        duration: (storePauseOne * 1000) - (textFade * 2),
                         opacity: 1
                     },
                     {
@@ -73,7 +88,7 @@
                     },
                     
                     {
-                        duration: pauseIn - (textFade * 2),
+                        duration: (storeInandning * 1000) - (textFade * 2),
                         opacity: 1
                     },
                     {
@@ -86,7 +101,7 @@
                     },
                     
                     {
-                        duration: breathOut - (textFade * 2),
+                        duration: (storePauseTwo * 1000) - (textFade * 2),
                         opacity: 1
                     },
                     {
@@ -99,7 +114,7 @@
                     },
                     
                     {
-                        duration: pauseOut - (textFade * 2),
+                        duration: (storeUtandning * 1000) - (textFade * 2),
                         opacity: 1
                     },
                     {
@@ -114,18 +129,18 @@
                 targets: '.animTwoText',
                 loop: true,
             }).add({
-                duration: pauseOut,
+                duration: storePauseOne * 1000,
                 innerHTML: "0----Håll andan-----0",
             }).add({
-                duration: breathIn,
+                duration: storeInandning * 1000,
                 innerHTML: "0----Andas in-----0",
                 
             }).add({
-                duration: pauseIn,
+                duration: storePauseTwo * 1000,
                 innerHTML: "0----Håll andan-----0",
                 
             }).add({
-                duration: breathOut,
+                duration: storeUtandning * 1000,
                 innerHTML: "0----Andas ut-----0"
             });
             
