@@ -51,7 +51,7 @@
             });
 
             anime({
-                targets: ['.text'],
+                targets: ['.animTwoText'],
                 easing: 'linear',
                 keyframes: [
                     {
@@ -111,31 +111,33 @@
             });
             
             anime.timeline({
-                targets: '.text',
+                targets: '.animTwoText',
                 loop: true,
             }).add({
                 duration: pauseOut,
-                textContent: "Håll andan",
+                innerHTML: "0----Håll andan-----0",
             }).add({
                 duration: breathIn,
-                textContent: "Andas in",
+                innerHTML: "0----Andas in-----0",
                 
             }).add({
                 duration: pauseIn,
-                textContent: "Håll andan",
+                innerHTML: "0----Håll andan-----0",
                 
             }).add({
                 duration: breathOut,
-                textContent: "Andas ut"
+                innerHTML: "0----Andas ut-----0"
             });
             
     });
+
+    let text = 'Andas';
 
 </script>
 
     <div class="wrapper">
         <div class="blob animTwo" id={id}></div>
-        <h3 class="text"> </h3>
+        <h3 class="animTwoText">{text}</h3>
     </div>
 
 <style lang="scss">
@@ -167,9 +169,28 @@
         align-items: center;
     }
 
-    .text {
+    .animTwoText {
         z-index: 1;
-        opacity: 0;
     }
+
+    // .animTwoText::before {
+    //     z-index: 1;
+    //     animation: fade 8s infinite ease-in;
+    //     content: 'Andas in'
+    // }
+
+    // @keyframes fade {
+    //     0% { opacity: 0; }
+    //     10% { opacity: 1; content: 'Andas in' }
+    //     20% { opacity: 1; content: 'Andas in' }
+    //     30% { opacity: 0;  }
+    //     40% { opacity: 1; content: 'Håll andan' }
+    //     50% { opacity: 1; content: 'Håll andan' }
+    //     60% { opacity: 0;  }
+    //     70% { opacity: 1; content: 'Andas ut' }
+    //     80% { opacity: 1; content: 'Andas ut' }
+    //     90% { opacity: 0;  }
+    //     100% { opacity: 1; content: 'Håll andan' }
+    // }
 
 </style>

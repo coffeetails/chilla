@@ -66,6 +66,11 @@
             padding: 0 var(--padding);
 
             color: var(--font-color);
+            cursor: pointer;
+        }
+
+        .radiobutton > * {
+            cursor: pointer;
         }
     }
 
