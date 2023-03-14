@@ -13,18 +13,29 @@
         activeDimmer.set(false);
     }
 
-    let seconds = '?';
+    let seconds: number;
+
+    let inandning: number = 2;
+    let paus1: number = 2;
+    let utandning: number = 2;
+    let paus2: number = 2;
+    let all: number = 2;
+
+
+    // function test(event: any) {
+    //     inandning = event.target.value;
+    // }
     
 </script>
 
     <div class="settings" class:visible={settingsIsActive}>
         <h2>Andningsintervall</h2>
         <div class="controls-wrapper">
-            <SettingsSlider labelFor='inandning' labelText='Inandning' seconds={seconds} />
-            <SettingsSlider labelFor='paus-one' labelText='Paus' seconds={seconds} />
-            <SettingsSlider labelFor='utandning' labelText='Utandning' seconds={seconds} />
-            <SettingsSlider labelFor='paus-two' labelText='Paus' seconds={seconds} />
-            <SettingsSlider labelFor='all' labelText='Justera alla' seconds={seconds} />
+            <SettingsSlider bind:seconds={inandning} labelFor='inandning' labelText='Inandning' />
+            <SettingsSlider bind:seconds={paus1} labelFor='paus-one' labelText='Paus' />
+            <SettingsSlider bind:seconds={utandning} labelFor='utandning' labelText='Utandning' />
+            <SettingsSlider bind:seconds={paus2} labelFor='paus-two' labelText='Paus' />
+            <SettingsSlider bind:seconds={all} labelFor='all' labelText='Justera alla' />
         </div>
         <div class="techniques-wrapper">
             <h3>Andningstekniker</h3>
