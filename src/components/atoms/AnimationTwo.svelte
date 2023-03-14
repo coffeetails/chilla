@@ -5,11 +5,8 @@
     // export let blobBgr = '';
     export let id = '';
 
-    
-    
-
     // window.addEventListener("load", () => {
-    onMount(() => {
+    const test = onMount(() => {
 
         let storeInandning: any = $inandning;
         let storePauseOne: any = $pauseOne;
@@ -17,6 +14,8 @@
         let storePauseTwo: any = $pauseTwo;
         let storeAll: any = $all;
     
+        let animation: any;
+        let textAnimation: any;
 
         // let colorAlpha = getColor("alpha");
         // let colorBeta = getColor("beta");
@@ -32,7 +31,7 @@
         let textFade = 50;
 
         const updateAnim = () => {
-            anime ({
+            animation = anime ({
                 targets: ['.animTwo'],
                 easing: 'linear',
                 keyframes: [
@@ -61,10 +60,22 @@
         }
 
         const updateTextFade = () => {
-            anime({
+            textAnimation = anime({
                 targets: ['.animTwoText'],
                 easing: 'linear',
                 keyframes: [
+                    {
+                        duration: textFade,
+                        opacity: 0
+                    },
+                    {
+                        duration: (storeInandning * 1000) - (textFade * 2),
+                        opacity: 1
+                    },
+                    {
+                        duration: textFade,
+                        opacity: 0
+                    },
                     {
                         duration: textFade,
                         opacity: 0
@@ -74,19 +85,7 @@
                         duration: (storePauseOne * 1000) - (textFade * 2),
                         opacity: 1
                     },
-                    {
-                        duration: textFade,
-                        opacity: 0
-                    },
-                    {
-                        duration: textFade,
-                        opacity: 0
-                    },
                     
-                    {
-                        duration: (storeInandning * 1000) - (textFade * 2),
-                        opacity: 1
-                    },
                     {
                         duration: textFade,
                         opacity: 0
@@ -128,16 +127,24 @@
                 loop: true,
             }).add({
                 duration: storeInandning * 1000,
-                innerHTML: "0----Andas in-----0", 
+                // innerHTML: "0----Andas in-----0", 
+                // innerHTML: "Andas in",
+                innerHTML: textArr[0].toString().replace(/0/g, '')
             }).add({
                 duration: storePauseOne * 1000,
-                innerHTML: "0----Håll andan-----0",
+                // innerHTML: "0----Håll andan-----0",
+                // innerHTML: "Håll andan",
+                innerHTML: textArr[1]
             }).add({
                 duration: storeUtandning * 1000,
-                innerHTML: "0----Andas ut-----0"
+                // innerHTML: "0----Andas ut-----0"
+                // innerHTML: "Andas ut"
+                innerHTML: textArr[2]
             }).add({
                 duration: storePauseTwo * 1000,
-                innerHTML: "0----Håll andan-----0",
+                // innerHTML: "0----Håll andan-----0",
+                // innerHTML: "Håll andan",
+                innerHTML: textArr[1]
             });
         }
 
@@ -146,6 +153,8 @@
             updateAnim();
             updateTextFade();
             updateText();
+            // animation.restart;
+            // textAnimation.restart;
         });
 
         pauseOne.subscribe(value => {
@@ -153,6 +162,8 @@
             updateAnim();
             updateTextFade();
             updateText();
+            // animation.restart;
+            // textAnimation.restart;
         });
 
         utandning.subscribe(value => {
@@ -160,6 +171,8 @@
             updateAnim();
             updateTextFade();
             updateText();
+            // animation.restart;
+            // textAnimation.restart;
         });
 
         pauseTwo.subscribe(value => {
@@ -167,6 +180,8 @@
             updateAnim();
             updateTextFade();
             updateText();
+            // animation.restart;
+            // textAnimation.restart;
         });
 
         all.subscribe(value => {
@@ -174,10 +189,13 @@
             updateAnim();
             updateTextFade();
             updateText();
+            // animation.restart;
+            // textAnimation.restart;
         });       
     });
 
     // let text = 'Andas';
+    let textArr = ['Andas in', 'Håll andan', 'Andas ut'];
 
 </script>
 
