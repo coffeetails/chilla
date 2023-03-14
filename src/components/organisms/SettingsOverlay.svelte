@@ -1,5 +1,5 @@
 <script lang=ts>
-    import { activeDimmer, activeSettings } from "../../stores";
+    import { activeDimmer, activeSettings, inanding, pauseOne, utandning, pauseTwo, all } from "../../stores";
 
     import Button from "../atoms/Button.svelte";
     import RadioButton from "../molecules/RadioButton.svelte";
@@ -13,29 +13,56 @@
         activeDimmer.set(false);
     }
 
-    let seconds: number;
+    let storeInandning: number;
+    inanding.subscribe(value => storeInandning = value);
 
-    let inandning: number = 2;
-    let paus1: number = 2;
-    let utandning: number = 2;
-    let paus2: number = 2;
-    let all: number = 2;
+    let storePauseOne: number;
+    pauseOne.subscribe(value => storePauseOne = value);
 
+    let storeUtandning: number;
+    utandning.subscribe(value => storeUtandning = value);
 
-    // function test(event: any) {
-    //     inandning = event.target.value;
-    // }
-    
+    let storePauseTwo: number;
+    pauseTwo.subscribe(value => storePauseTwo = value);
+
+    let storeAll: number;
+    all.subscribe(value => storeAll = value);
+
+    function setInandning(event: any) {
+        inanding.set(event.target.value);
+        console.log('inandning:', storeInandning);
+    }
+
+    function setPauseOne(event: any) {
+        pauseOne.set(event.target.value);
+        console.log('pauseOne:', storePauseOne);
+    }
+
+    function setUtandning(event: any) {
+        utandning.set(event.target.value);
+        console.log('utandning:', storeUtandning);
+    }
+
+    function setPauseTwo(event: any) {
+        pauseTwo.set(event.target.value);
+        console.log('pauseTwo:', storePauseTwo);
+    }
+
+    function setAll(event: any) {
+        all.set(event.target.value);
+        console.log('all:', storeAll);
+    }
+
 </script>
 
     <div class="settings" class:visible={settingsIsActive}>
         <h2>Andningsintervall</h2>
         <div class="controls-wrapper">
-            <SettingsSlider bind:seconds={inandning} labelFor='inandning' labelText='Inandning' />
-            <SettingsSlider bind:seconds={paus1} labelFor='paus-one' labelText='Paus' />
-            <SettingsSlider bind:seconds={utandning} labelFor='utandning' labelText='Utandning' />
-            <SettingsSlider bind:seconds={paus2} labelFor='paus-two' labelText='Paus' />
-            <SettingsSlider bind:seconds={all} labelFor='all' labelText='Justera alla' />
+            <SettingsSlider on:change={setInandning} bind:seconds={storeInandning} labelFor='inandning' labelText='Inandning' />
+            <SettingsSlider on:change={setPauseOne} bind:seconds={storePauseOne} labelFor='paus-one' labelText='Paus' />
+            <SettingsSlider on:change={setUtandning} bind:seconds={storeUtandning} labelFor='utandning' labelText='Utandning' />
+            <SettingsSlider on:change={setPauseTwo} bind:seconds={storePauseTwo} labelFor='paus-two' labelText='Paus' />
+            <SettingsSlider on:change={setAll} bind:seconds={storeAll} labelFor='all' labelText='Justera alla' />
         </div>
         <div class="techniques-wrapper">
             <h3>Andningstekniker</h3>
