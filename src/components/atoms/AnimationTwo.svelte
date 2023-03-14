@@ -5,24 +5,18 @@
     // export let blobBgr = '';
     export let id = '';
 
-    let storeInandning: any = $inandning;
-    inandning.subscribe(value => storeInandning = value);
-
-    let storePauseOne: any = $pauseOne;
-    pauseOne.subscribe(value => storePauseOne = value);
-
-    let storeUtandning: any = $utandning;
-    utandning.subscribe(value => storeUtandning = value);
-
-    let storePauseTwo: any = $pauseTwo;
-    pauseTwo.subscribe(value => storePauseTwo = value);
-
-    let storeAll: any = $all;
-    all.subscribe(value => storeAll = value);
+    
     
 
     // window.addEventListener("load", () => {
     onMount(() => {
+
+        let storeInandning: any = $inandning;
+        let storePauseOne: any = $pauseOne;
+        let storeUtandning: any = $utandning;
+        let storePauseTwo: any = $pauseTwo;
+        let storeAll: any = $all;
+    
 
         // let colorAlpha = getColor("alpha");
         // let colorBeta = getColor("beta");
@@ -35,41 +29,38 @@
         //     return getComputedStyle(document.documentElement).getPropertyValue('--color-' + color);
         // }
 
-    
-        
-            let breathIn = 2000;
-            let pauseIn = 2000;
-            let breathOut = 2000;
-            let pauseOut = 2000;
-            let textFade = 50;
+        let textFade = 50;
 
-            anime({
+        const updateAnim = () => {
+            anime ({
                 targets: ['.animTwo'],
                 easing: 'linear',
                 keyframes: [
-                    {
-                        duration: storePauseOne * 1000,
-                        scale: 1,
-                    },
                     {
                         duration: storeInandning * 1000,
                         scale: 2.5,
                         background: '#91D8E3'
                     },
                     {
-                        duration: storePauseTwo * 1000,
-                        scale: 2.5,
-                        background: '#91D8E3'
+                        duration: storePauseOne * 1000,
+                        scale: 2.5
                     },
                     {
                         duration: storeUtandning * 1000,
                         scale: 1,
                         background: '#EAFDFC'
                     },
+                    {
+                        duration: storePauseTwo * 1000,
+                        scale: 1,
+                        background: '#91D8E3'
+                    },
                 ],
                 loop: true
             });
+        }
 
+        const updateTextFade = () => {
             anime({
                 targets: ['.animTwoText'],
                 easing: 'linear',
@@ -129,36 +120,70 @@
                 ],
                 loop: true
             });
-            
+        }
+
+        const updateText = () => {
             anime.timeline({
                 targets: '.animTwoText',
                 loop: true,
             }).add({
+                duration: storeInandning * 1000,
+                innerHTML: "0----Andas in-----0", 
+            }).add({
                 duration: storePauseOne * 1000,
                 innerHTML: "0----Håll andan-----0",
             }).add({
-                duration: storeInandning * 1000,
-                innerHTML: "0----Andas in-----0",
-                
+                duration: storeUtandning * 1000,
+                innerHTML: "0----Andas ut-----0"
             }).add({
                 duration: storePauseTwo * 1000,
                 innerHTML: "0----Håll andan-----0",
-                
-            }).add({
-                duration: storeUtandning * 1000,
-                innerHTML: "0----Andas ut-----0"
             });
-            
-    });
-    // });
+        }
 
-    let text = 'Andas';
+        inandning.subscribe(value => {
+            storeInandning = value;
+            updateAnim();
+            updateTextFade();
+            updateText();
+        });
+
+        pauseOne.subscribe(value => {
+            storePauseOne = value;
+            updateAnim();
+            updateTextFade();
+            updateText();
+        });
+
+        utandning.subscribe(value => {
+            storeUtandning = value;
+            updateAnim();
+            updateTextFade();
+            updateText();
+        });
+
+        pauseTwo.subscribe(value => {
+            storePauseTwo = value;
+            updateAnim();
+            updateTextFade();
+            updateText();
+        });
+
+        all.subscribe(value => {
+            storeAll = value;
+            updateAnim();
+            updateTextFade();
+            updateText();
+        });       
+    });
+
+    // let text = 'Andas';
 
 </script>
 
     <div class="wrapper">
         <div class="blob animTwo" id={id}></div>
-        <h3 class="animTwoText">{text}</h3>
+        <h3 class="animTwoText"> </h3>
     </div>
 
 <style lang="scss">
