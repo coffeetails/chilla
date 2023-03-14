@@ -9,27 +9,32 @@
     onMount(() => {
         
         theme.subscribe(() => {
-            console.log("light theme ", $theme);
+            console.log("theme ", $theme);
             displayThemes = [];
-            console.log("2 displayThemes", displayThemes);
-            for(let themePick of themes) {
-                if(themePick.includes("light")) {
-                    displayThemes.push(themePick);
-                } else if(themePick.includes("dark")) {
-                    displayThemes.push(themePick);
-                // } else if(window.matchMedia('(prefers-color-scheme: dark)').matches) {
-                //     displayThemes.push(themePick);
-                //     console.log("system dark theme ", $theme);
-                // } else if(window.matchMedia('(prefers-color-scheme: dark)').matches) {
-                //     displayThemes.push(themePick);
-                //     console.log("system light theme ", $theme);
-                } else {
-                    console.log("wtf");
+            if($theme == "system") {
+                for(let themePick of themes) {
+                    if(window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                        displayThemes.push(themePick);
+                        console.log("system dark theme ", $theme);
+                    } else if(window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                        displayThemes.push(themePick);
+                        console.log("system light theme ", $theme);
+                    } else {
+                        console.log("wtf");
+                    }
+                }        
+            } else {
+                for(let themePick of themes) {
+                    if(themePick.includes("light")) {
+                        displayThemes.push(themePick);
+                    } else if(themePick.includes("dark")) {
+                        displayThemes.push(themePick);
+                    } else {
+                        console.log("wtf");
+                    }
                 }
             }
-            console.log("3 displayThemes", displayThemes);
         });
-        console.log("4 displayThemes", displayThemes);
     });
 
 </script>
