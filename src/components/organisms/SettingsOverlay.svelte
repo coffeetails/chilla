@@ -1,5 +1,5 @@
 <script lang=ts>
-    import { activeDimmer, activeSettings, inandning, pauseOne, utandning, pauseTwo, all } from "../../stores";
+    import { activeDimmer, activeSettings, breathIn, pauseIn, breathOut, pauseOut, all } from "../../stores";
 
     import Button from "../atoms/Button.svelte";
     import RadioButton from "../molecules/RadioButton.svelte";
@@ -13,40 +13,40 @@
         activeDimmer.set(false);
     }
 
-    let storeInandning: number;
-    inandning.subscribe(value => storeInandning = value);
+    let storeBreathIn: number;
+    breathIn.subscribe(value => storeBreathIn = value);
 
-    let storePauseOne: number;
-    pauseOne.subscribe(value => storePauseOne = value);
+    let storePauseIn: number;
+    pauseIn.subscribe(value => storePauseIn = value);
 
-    let storeUtandning: number;
-    utandning.subscribe(value => storeUtandning = value);
+    let storeBreathOut: number;
+    breathOut.subscribe(value => storeBreathOut = value);
 
-    let storePauseTwo: number;
-    pauseTwo.subscribe(value => storePauseTwo = value);
+    let storePauseOut: number;
+    pauseOut.subscribe(value => storePauseOut = value);
 
     let storeAll: number;
     all.subscribe(value => storeAll = value);
 
-    function setInandning(event: any) {
-        inandning.set(event.target.value);
-        console.log('inandning:', storeInandning);
+    function setBreathIn(event: any) {
+        breathIn.set(event.target.value);
+        console.log('inandning:', storeBreathIn);
         // localStorage.setItem('inandning', storeInandning);
     }
 
-    function setPauseOne(event: any) {
-        pauseOne.set(event.target.value);
-        console.log('pauseOne:', storePauseOne);
+    function setPauseIn(event: any) {
+        pauseIn.set(event.target.value);
+        console.log('pauseOne:', storePauseIn);
     }
 
-    function setUtandning(event: any) {
-        utandning.set(event.target.value);
-        console.log('utandning:', storeUtandning);
+    function setBreathOut(event: any) {
+        breathOut.set(event.target.value);
+        console.log('utandning:', storeBreathOut);
     }
 
-    function setPauseTwo(event: any) {
-        pauseTwo.set(event.target.value);
-        console.log('pauseTwo:', storePauseTwo);
+    function setPauseOut(event: any) {
+        pauseOut.set(event.target.value);
+        console.log('pauseTwo:', storePauseOut);
     }
 
     function setAll(event: any) {
@@ -59,10 +59,10 @@
     <div class="settings" class:visible={settingsIsActive}>
         <h2>Andningsintervall</h2>
         <div class="controls-wrapper">
-            <SettingsSlider on:change={setInandning} bind:seconds={storeInandning} labelFor='inandning' labelText='Inandning' />
-            <SettingsSlider on:change={setPauseOne} bind:seconds={storePauseOne} labelFor='paus-one' labelText='Paus' />
-            <SettingsSlider on:change={setUtandning} bind:seconds={storeUtandning} labelFor='utandning' labelText='Utandning' />
-            <SettingsSlider on:change={setPauseTwo} bind:seconds={storePauseTwo} labelFor='paus-two' labelText='Paus' />
+            <SettingsSlider on:change={setBreathIn} bind:seconds={storeBreathIn} labelFor='breathIn' labelText='Inandning' />
+            <SettingsSlider on:change={setPauseIn} bind:seconds={storePauseIn} labelFor='pauseIn' labelText='Paus' />
+            <SettingsSlider on:change={setBreathOut} bind:seconds={storeBreathOut} labelFor='breathOut' labelText='Utandning' />
+            <SettingsSlider on:change={setPauseOut} bind:seconds={storePauseOut} labelFor='pauseOut' labelText='Paus' />
             <SettingsSlider on:change={setAll} bind:seconds={storeAll} labelFor='all' labelText='Justera alla' />
         </div>
         <div class="techniques-wrapper">

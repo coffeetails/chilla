@@ -1,207 +1,41 @@
 <script lang=ts>
-    import { inandning, pauseOne, utandning, pauseTwo, all } from "../../stores";
-    import anime from 'animejs';
-    import { onMount } from 'svelte';
-    // export let blobBgr = '';
+    import { onMount } from "svelte";
+    import { breathIn, pauseIn, breathOut, pauseOut, all } from "../../stores";
     export let id = '';
-
-    // window.addEventListener("load", () => {
-    onMount(() => {
-
-        let storeInandning: any = $inandning;
-        let storePauseOne: any = $pauseOne;
-        let storeUtandning: any = $utandning;
-        let storePauseTwo: any = $pauseTwo;
-        let storeAll: any = $all;
+    import { animateText } from '../../textAnimation';
     
-        let animation: any;
-        let textAnimation: any;
+    
+    let breathInElem: HTMLHeadingElement;
+    let pauseInElem: HTMLHeadingElement;
+    let breathOutElem: HTMLHeadingElement;
+    let pauseOutElem: HTMLHeadingElement;
+    
+    let storeBreathIn: any = $breathIn;
+    let storePauseIn: any = $pauseIn;
+    let storeBreathOut: any = $breathOut;
+    let storePauseOut: any = $pauseOut;
+    let storeAll: any = $all;
+    
+    breathIn.subscribe(value => { storeBreathIn = value; });
+    pauseIn.subscribe(value => { storePauseIn = value; });
+    breathOut.subscribe(value => { storeBreathOut = value; });
+    pauseOut.subscribe(value => { storePauseOut = value; });
+    all.subscribe(value => { storeAll = value; });
+    
+    onMount(() => {
+        animateText(breathInElem, pauseInElem, breathOutElem, pauseOutElem);
 
-        // let colorAlpha = getColor("alpha");
-        // let colorBeta = getColor("beta");
-        // let colorGamma = getColor("gamma");
-        // let colorPsi = getColor("psi");
-        // let colorOmega = getColor("omega");
-
-        // function getColor(color: string) {
-        //     // console.log("getColor ", getComputedStyle(document.documentElement).getPropertyValue('--color-' + color));
-        //     return getComputedStyle(document.documentElement).getPropertyValue('--color-' + color);
-        // }
-
-        let textFade = 50;
-
-        const updateAnim = () => {
-            animation = anime ({
-                targets: ['.animTwo'],
-                easing: 'linear',
-                keyframes: [
-                    {
-                        duration: storeInandning * 1000,
-                        scale: 2.5,
-                        background: '#91D8E3'
-                    },
-                    {
-                        duration: storePauseOne * 1000,
-                        scale: 2.5
-                    },
-                    {
-                        duration: storeUtandning * 1000,
-                        scale: 1,
-                        background: '#EAFDFC'
-                    },
-                    {
-                        duration: storePauseTwo * 1000,
-                        scale: 1,
-                        background: '#91D8E3'
-                    },
-                ],
-                loop: true
-            });
-        }
-
-        const updateTextFade = () => {
-            textAnimation = anime({
-                targets: ['.animTwoText'],
-                easing: 'linear',
-                keyframes: [
-                    {
-                        duration: textFade,
-                        opacity: 0
-                    },
-                    {
-                        duration: (storeInandning * 1000) - (textFade * 2),
-                        opacity: 1
-                    },
-                    {
-                        duration: textFade,
-                        opacity: 0
-                    },
-                    {
-                        duration: textFade,
-                        opacity: 0
-                    },
-                    
-                    {
-                        duration: (storePauseOne * 1000) - (textFade * 2),
-                        opacity: 1
-                    },
-                    
-                    {
-                        duration: textFade,
-                        opacity: 0
-                    },
-                    {
-                        duration: textFade,
-                        opacity: 0
-                    },
-                    
-                    {
-                        duration: (storePauseTwo * 1000) - (textFade * 2),
-                        opacity: 1
-                    },
-                    {
-                        duration: textFade,
-                        opacity: 0
-                    },
-                    {
-                        duration: textFade,
-                        opacity: 0
-                    },
-                    
-                    {
-                        duration: (storeUtandning * 1000) - (textFade * 2),
-                        opacity: 1
-                    },
-                    {
-                        duration: textFade,
-                        opacity: 0
-                    },
-                ],
-                loop: true
-            });
-        }
-
-        const updateText = () => {
-            anime.timeline({
-                targets: '.animTwoText',
-                loop: true,
-            }).add({
-                duration: storeInandning * 1000,
-                // innerHTML: "0----Andas in-----0", 
-                // innerHTML: "Andas in",
-                innerHTML: textArr[0].toString().replace(/0/g, '')
-            }).add({
-                duration: storePauseOne * 1000,
-                // innerHTML: "0----Håll andan-----0",
-                // innerHTML: "Håll andan",
-                innerHTML: textArr[1]
-            }).add({
-                duration: storeUtandning * 1000,
-                // innerHTML: "0----Andas ut-----0"
-                // innerHTML: "Andas ut"
-                innerHTML: textArr[2]
-            }).add({
-                duration: storePauseTwo * 1000,
-                // innerHTML: "0----Håll andan-----0",
-                // innerHTML: "Håll andan",
-                innerHTML: textArr[1]
-            });
-        }
-
-        inandning.subscribe(value => {
-            storeInandning = value;
-            updateAnim();
-            updateTextFade();
-            updateText();
-            animation.restart;
-            textAnimation.restart;
-        });
-
-        pauseOne.subscribe(value => {
-            storePauseOne = value;
-            updateAnim();
-            updateTextFade();
-            updateText();
-            animation.restart;
-            textAnimation.restart;
-        });
-
-        utandning.subscribe(value => {
-            storeUtandning = value;
-            updateAnim();
-            updateTextFade();
-            updateText();
-            animation.restart;
-            textAnimation.restart;
-        });
-
-        pauseTwo.subscribe(value => {
-            storePauseTwo = value;
-            updateAnim();
-            updateTextFade();
-            updateText();
-            animation.restart;
-            textAnimation.restart;
-        });
-
-        all.subscribe(value => {
-            storeAll = value;
-            updateAnim();
-            updateTextFade();
-            updateText();
-            animation.restart;
-            textAnimation.restart;
-        });       
     });
-
-    // let text = 'Andas';
-    let textArr = ['Andas in', 'Håll andan', 'Andas ut'];
-
+    
 </script>
 
     <div class="wrapper">
         <div class="blob animTwo" id={id}></div>
-        <h3 class="animTwoText"> </h3>
+
+        <h3 class="animText-1" bind:this={breathInElem}>Andas in 1</h3>
+        <h3 class="animText-2" bind:this={pauseInElem}>Håll andan 2</h3>
+        <h3 class="animText-3" bind:this={breathOutElem}>Andas ut 3</h3>
+        <h3 class="animText-4" bind:this={pauseOutElem}>Håll andan 4</h3>
     </div>
 
 <style lang="scss">
@@ -233,28 +67,56 @@
         align-items: center;
     }
 
-    .animTwoText {
-        z-index: 1;
+    @for $i from 1 through 4 {
+        .animText-#{$i} {
+            z-index: 1;
+            opacity: 0;
+            transition: 0.5s;
+            // animation: fade-#{$i} 8s ease-in infinite;
+        }
     }
 
-    // .animTwoText::before {
-    //     z-index: 1;
-    //     animation: fade 8s infinite ease-in;
-    //     content: 'Andas in'
+    // @keyframes fade-1 {
+    //     0% { opacity: 1; }
+    //     14% { opacity: 1; }
+    //     27% { opacity: 0; }
+    //     43% { opacity: 0; }
+    //     57% { opacity: 0; }
+    //     72% { opacity: 0; }
+    //     86% { opacity: 0; }
+    //     100% { opacity: 0; }
     // }
 
-    // @keyframes fade {
+    // @keyframes fade-2 {
     //     0% { opacity: 0; }
-    //     10% { opacity: 1; content: 'Andas in' }
-    //     20% { opacity: 1; content: 'Andas in' }
-    //     30% { opacity: 0;  }
-    //     40% { opacity: 1; content: 'Håll andan' }
-    //     50% { opacity: 1; content: 'Håll andan' }
-    //     60% { opacity: 0;  }
-    //     70% { opacity: 1; content: 'Andas ut' }
-    //     80% { opacity: 1; content: 'Andas ut' }
-    //     90% { opacity: 0;  }
-    //     100% { opacity: 1; content: 'Håll andan' }
+    //     14% { opacity: 0; }
+    //     27% { opacity: 1; }
+    //     57% { opacity: 1; }
+    //     62% { opacity: 0; }
+    //     72% { opacity: 0; }
+    //     86% { opacity: 0; }
+    //     100% { opacity: 0; }
+    // }
+
+    // @keyframes fade-3 {
+    //     0% { opacity: 0; }
+    //     14% { opacity: 0; }
+    //     27% { opacity: 0; }
+    //     43% { opacity: 0; }
+    //     57% { opacity: 1; }
+    //     72% { opacity: 1; }
+    //     86% { opacity: 0; }
+    //     100% { opacity: 0; }
+    // }
+    // @keyframes fade-4 {
+    //     0% { opacity: 0; }
+    //     14% { opacity: 0; }
+    //     27% { opacity: 0; }
+    //     43% { opacity: 0; }
+    //     57% { opacity: 0; }
+    //     72% { opacity: 0; }
+    //     86% { opacity: 1; }
+    //     100% { opacity: 1; }
     // }
 
 </style>

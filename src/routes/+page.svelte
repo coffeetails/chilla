@@ -1,12 +1,12 @@
 <script>
-    import Blob from "../components/atoms/Blob.svelte";
     import ScrollButtonDown from "../components/atoms/icons/ScrollButtonDown.svelte";
     import ScrollButtonUp from "../components/atoms/icons/ScrollButtonUp.svelte";
     import SectionSticks from '../components/molecules/SectionSticks.svelte';
-
+    
     import { settingsIsVisible, numberOfBlobs } from '../stores';
     import { onDestroy, onMount } from 'svelte';
     import Button from "../components/atoms/Button.svelte";
+    import AnimationOne from "../components/atoms/AnimationOne.svelte";
     import AnimationTwo from "../components/atoms/AnimationTwo.svelte";
 
     let blue = 'blue';
@@ -76,11 +76,8 @@
         <ScrollButtonUp />
     </Button>
 
-    <Blob blobBgr={blue} id="blueBlob"/>
-    <AnimationTwo />
-    <!-- <Blob blobBgr={red} id="redBlob"/> -->
-    <!-- <Blob blobBgr={green} id="greenBlob"/> -->
-    <!-- <Blob blobBgr={yellow} id="yellowBlob"/> -->
+    <AnimationOne id="animationOne" />
+    <AnimationTwo id="animationTwo" />
 
     <Button btnClass='btnDown' on:click={ scrollDown } btnText=''>
         <ScrollButtonDown />
