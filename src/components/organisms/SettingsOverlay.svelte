@@ -59,11 +59,11 @@
     <div class="settings" class:visible={settingsIsActive}>
         <h2>Andningsintervall</h2>
         <div class="controls-wrapper">
-            <SettingsSlider on:change={setInandning} bind:seconds={storeInandning} labelFor='inandning' labelText='Inandning' />
-            <SettingsSlider on:change={setPauseOne} bind:seconds={storePauseOne} labelFor='paus-one' labelText='Paus' />
-            <SettingsSlider on:change={setUtandning} bind:seconds={storeUtandning} labelFor='utandning' labelText='Utandning' />
-            <SettingsSlider on:change={setPauseTwo} bind:seconds={storePauseTwo} labelFor='paus-two' labelText='Paus' />
-            <SettingsSlider on:change={setAll} bind:seconds={storeAll} labelFor='all' labelText='Justera alla' />
+            <SettingsSlider on:input={setInandning} bind:seconds={storeInandning} labelFor='inandning' labelText='Inandning' />
+            <SettingsSlider on:input={setPauseOne} bind:seconds={storePauseOne} labelFor='paus-one' labelText='Paus' />
+            <SettingsSlider on:input={setUtandning} bind:seconds={storeUtandning} labelFor='utandning' labelText='Utandning' />
+            <SettingsSlider on:input={setPauseTwo} bind:seconds={storePauseTwo} labelFor='paus-two' labelText='Paus' />
+            <SettingsSlider on:input={setAll} bind:seconds={storeAll} labelFor='all' labelText='Justera alla' />
         </div>
         <div class="techniques-wrapper">
             <h3>Andningstekniker</h3>
