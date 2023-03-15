@@ -6,7 +6,7 @@
     export let id = '';
 
     // window.addEventListener("load", () => {
-    const test = onMount(() => {
+    onMount(() => {
 
         let storeInandning: any = $inandning;
         let storePauseOne: any = $pauseOne;
@@ -153,8 +153,8 @@
             updateAnim();
             updateTextFade();
             updateText();
-            // animation.restart;
-            // textAnimation.restart;
+            animation.restart;
+            textAnimation.restart;
         });
 
         pauseOne.subscribe(value => {
@@ -162,8 +162,8 @@
             updateAnim();
             updateTextFade();
             updateText();
-            // animation.restart;
-            // textAnimation.restart;
+            animation.restart;
+            textAnimation.restart;
         });
 
         utandning.subscribe(value => {
@@ -171,8 +171,8 @@
             updateAnim();
             updateTextFade();
             updateText();
-            // animation.restart;
-            // textAnimation.restart;
+            animation.restart;
+            textAnimation.restart;
         });
 
         pauseTwo.subscribe(value => {
@@ -180,8 +180,8 @@
             updateAnim();
             updateTextFade();
             updateText();
-            // animation.restart;
-            // textAnimation.restart;
+            animation.restart;
+            textAnimation.restart;
         });
 
         all.subscribe(value => {
@@ -189,8 +189,8 @@
             updateAnim();
             updateTextFade();
             updateText();
-            // animation.restart;
-            // textAnimation.restart;
+            animation.restart;
+            textAnimation.restart;
         });       
     });
 
