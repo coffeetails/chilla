@@ -1,110 +1,82 @@
 <script lang=ts>
-    // import { theme } from '../../stores';
-    import anime from 'animejs';
-    import { onMount } from 'svelte';
-    // import { inandning, pauseOne, utandning, pauseTwo, all } from "../../stores";
+    import { onMount } from "svelte";
+    import { breathIn, pauseIn, breathOut, pauseOut, all } from "../../stores";
     export let id = '';
+    import { animateText } from '../../textAnimation';
     
-    // onMount(() => {
-    //     let storeInandning: any = $inandning;
-    //     let storePauseOne: any = $pauseOne;
-    //     let storeUtandning: any = $utandning;
-    //     let storePauseTwo: any = $pauseTwo;
-    //     let storeAll: any = $all;
-
-    //     function getColor(color: string) {
-    //         return getComputedStyle(document.documentElement).getPropertyValue('--color-' + color);
-    //     }
-        
-    //         let breathIn = 4000;
-    //         let pauseIn = 4000;
-    //         let breathOut = 4000;
-    //         let pauseOut = 4000;
-
-    //         anime({
-    //             targets: ['.blob'],
-    //             easing: 'linear',
-    //             keyframes: [
-    //                 {
-    //                     duration: pauseOut/2,
-    //                     translateX: -100,
-    //                     background: '#fff'
-    //                 },
-    //                 {
-    //                     duration: breathIn,
-    //                     translateY: -200,
-    //                     background: '#000'
-    //                 },
-    //                 {
-    //                     duration: pauseIn,
-    //                     translateX: 100,
-    //                     background: '#fff'
-    //                 },
-    //                 {
-    //                     duration: breathOut,
-    //                     translateY: 0,
-    //                     background: '#000'
-    //                 },
-    //                 {
-    //                     duration: pauseOut/2,
-    //                     translateX: 0,
-    //                     background: '#fff'
-    //                 }
-    //             ],
-    //             loop: true
-    //         });
-            
-    //         anime.timeline({
-    //             targets: '.text',
-    //             loop: true,
-    //         }).add({
-    //             duration: pauseOut/2,
-    //             innerHTML: "Håll andan",
-    //             opacity: [0, 1]
-    //         }).add({
-    //             duration: breathIn,
-    //             innerHTML: "Andas in",
-    //             opacity: [0, 1]
-    //         }).add({
-    //             duration: pauseIn,
-    //             innerHTML: "Håll andan",
-    //             opacity: [0, 1]
-    //         }).add({
-    //             duration: breathOut,
-    //             innerHTML: "Andas ut",
-    //             opacity: [0, 1]
-    //         }).add({
-    //             duration: pauseOut/2,
-    //             innerHTML: "Håll andan",
-    //             opacity: [0, 1]
-    //         });
-    // });
+    let breathInElem: HTMLHeadingElement;
+    let pauseInElem: HTMLHeadingElement;
+    let breathOutElem: HTMLHeadingElement;
+    let pauseOutElem: HTMLHeadingElement;
+    
+    let storeBreathIn: any = $breathIn;
+    breathIn.subscribe(value => { storeBreathIn = value; });
+    
+    let storePauseIn: any = $pauseIn;
+    pauseIn.subscribe(value => { storePauseIn = value; });
+    
+    let storeBreathOut: any = $breathOut;
+    breathOut.subscribe(value => { storeBreathOut = value; });
+    
+    let storePauseOut: any = $pauseOut;
+    pauseOut.subscribe(value => { storePauseOut = value; });
+    
+    let storeAll: any = $all;
+    all.subscribe(value => { storeAll = value; });
+    
+    onMount(() => {
+        animateText(breathInElem, pauseInElem, breathOutElem, pauseOutElem);
+    });
     
 </script>
 
     <div class="wrapper">
-        <div class="blob" id={id}> </div>
-        <h3 class="text" >andas</h3>
+        <!-- create your animation here -->
+        <div class="blob animTwo" id={id}></div>
+
+        <h3 class="animText-1" bind:this={breathInElem}>Andas in 1</h3>
+        <h3 class="animText-2" bind:this={pauseInElem}>Håll andan 2</h3>
+        <h3 class="animText-3" bind:this={breathOutElem}>Andas ut 3</h3>
+        <h3 class="animText-4" bind:this={pauseOutElem}>Håll andan 4</h3>
     </div>
 
 <style lang="scss">
 
     .wrapper {
         min-height: 100dvh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
+        display: grid;
+        place-items: center;
 
         scroll-snap-align: center;
         scroll-snap-stop: always;
     }
 
-    .blob {
-        width: calc(var(--baseline)*5);
-        height: calc(var(--baseline)*5);
-        background-color: var(--color-gamma);
+    .wrapper > * {
+        grid-column: 1 / -1;
+        grid-row: 1 / -1;
+    }
+    
+    @for $i from 1 through 4 {
+        .animText-#{$i} {
+            z-index: 1;
+            opacity: 0;
+            transition: 0.5s;
+        }
+    }
+    
+
+    // style you elements and add animations as needed
+    .animTwo {
+        width: calc(var(--baseline)*10);
+        height: calc(var(--baseline)*10);
+        background-color: #EAFDFC;
+        box-shadow: 0 0 4px 2px var(--color-alpha);
+        box-shadow: 0 0 2px 4px inset var(--color-omega);
         border-radius: 50%;
         opacity: 0.5;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
+
 </style>
