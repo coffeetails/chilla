@@ -1,19 +1,16 @@
 <script lang=ts>
-    import AudioTitle from "../atoms/AudioTitle.svelte";
-    import AudioControls from "../organisms/AudioControls.svelte";
     import AudioPlayer from "../organisms/AudioPlayer.svelte";
-    import AudioVolume from "../organisms/AudioVolume.svelte";
 
-    let audioTitle: string;
-    let volume: number;
+    // let audioTitle: string;
+    // let volume: number;
+    // export let audioPlayer;
+    // export let audioTrack: any;
 
 </script>
 
     <footer>
         <div class="wrapper">
-            <!-- <AudioTitle bind:audioTitle={audioTitle} /> -->
-            <!-- <AudioControls /> -->
-            <!-- <AudioVolume bind:volume={volume} /> -->
+            <h1>Avslappningsljud</h1>
             <AudioPlayer />
         </div>
     </footer>
@@ -23,6 +20,7 @@
     footer {
         background-color: var(--bg-color);
         height: 5rem;
+        height: calc(100% - 5rem);
         width: 100%;
         position: fixed;
         bottom: 0;

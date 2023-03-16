@@ -29,7 +29,8 @@
         <div class="wrapper">
             <Link target='' on:click={closeMenu} linkDescription='Andas' linkPath='/'/>
             <Link target='' on:click={setIntro} linkDescription='Andas rätt' linkPath='/andasratt'/>
-            <Link target='' on:click={closeMenu} linkDescription='Avslappningsljud' linkPath='/avslappningsljud'/>
+            <!-- Kanske ändra nedan Link till nåt bättre nu när den egentligen inte är en "länk" -->
+            <Link target='' on:click={closeMenu} linkDescription='Avslappningsljud' linkPath=''/>
             <Link target='' on:click={closeMenu} linkDescription='Om oss' linkPath='/omoss'/>
         </div>
     </section>

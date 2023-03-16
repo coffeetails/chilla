@@ -12,7 +12,7 @@
 
     let trackIndex = 0;
     let audioTitle = audioData[trackIndex].name;
-    let audioTrack = audioData[trackIndex].url;
+    export let audioTrack = audioData[trackIndex].url;
     
     let audioPlayer: any
 
