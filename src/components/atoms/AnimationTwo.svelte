@@ -11,20 +11,22 @@
     let pauseOutElem: HTMLHeadingElement;
     
     let storeBreathIn: any = $breathIn;
-    let storePauseIn: any = $pauseIn;
-    let storeBreathOut: any = $breathOut;
-    let storePauseOut: any = $pauseOut;
-    let storeAll: any = $all;
-    
     breathIn.subscribe(value => { storeBreathIn = value; });
+    
+    let storePauseIn: any = $pauseIn;
     pauseIn.subscribe(value => { storePauseIn = value; });
+    
+    let storeBreathOut: any = $breathOut;
     breathOut.subscribe(value => { storeBreathOut = value; });
+    
+    let storePauseOut: any = $pauseOut;
     pauseOut.subscribe(value => { storePauseOut = value; });
+    
+    let storeAll: any = $all;
     all.subscribe(value => { storeAll = value; });
     
     onMount(() => {
         animateText(breathInElem, pauseInElem, breathOutElem, pauseOutElem);
-
     });
     
 </script>
@@ -72,51 +74,7 @@
             z-index: 1;
             opacity: 0;
             transition: 0.5s;
-            // animation: fade-#{$i} 8s ease-in infinite;
         }
     }
-
-    // @keyframes fade-1 {
-    //     0% { opacity: 1; }
-    //     14% { opacity: 1; }
-    //     27% { opacity: 0; }
-    //     43% { opacity: 0; }
-    //     57% { opacity: 0; }
-    //     72% { opacity: 0; }
-    //     86% { opacity: 0; }
-    //     100% { opacity: 0; }
-    // }
-
-    // @keyframes fade-2 {
-    //     0% { opacity: 0; }
-    //     14% { opacity: 0; }
-    //     27% { opacity: 1; }
-    //     57% { opacity: 1; }
-    //     62% { opacity: 0; }
-    //     72% { opacity: 0; }
-    //     86% { opacity: 0; }
-    //     100% { opacity: 0; }
-    // }
-
-    // @keyframes fade-3 {
-    //     0% { opacity: 0; }
-    //     14% { opacity: 0; }
-    //     27% { opacity: 0; }
-    //     43% { opacity: 0; }
-    //     57% { opacity: 1; }
-    //     72% { opacity: 1; }
-    //     86% { opacity: 0; }
-    //     100% { opacity: 0; }
-    // }
-    // @keyframes fade-4 {
-    //     0% { opacity: 0; }
-    //     14% { opacity: 0; }
-    //     27% { opacity: 0; }
-    //     43% { opacity: 0; }
-    //     57% { opacity: 0; }
-    //     72% { opacity: 0; }
-    //     86% { opacity: 1; }
-    //     100% { opacity: 1; }
-    // }
 
 </style>
