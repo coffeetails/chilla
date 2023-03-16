@@ -61,8 +61,10 @@
             const newY = startY + (endY - startY) * progress;
 
             window.scroll(0, newY);
+            //Ändra newY till 100
 
             if (progress < 1) {
+                // Behöver kika på progress och se om animate körs
                 requestAnimationFrame(animate);
             }
         }
