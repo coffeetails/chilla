@@ -210,6 +210,8 @@
         min-height: 100dvh;
         display: grid;
         place-items: center;
+        width: 100%;
+        overflow: hidden;
 
         scroll-snap-align: center;
         scroll-snap-stop: always;

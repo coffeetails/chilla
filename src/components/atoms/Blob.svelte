@@ -129,6 +129,7 @@
         justify-content: center;
         align-items: center;
         flex-direction: column;
+        width: 100%;
 
         scroll-snap-align: center;
         scroll-snap-stop: always;

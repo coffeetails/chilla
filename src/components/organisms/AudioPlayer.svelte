@@ -53,8 +53,10 @@
         <audio id="player" bind:this={audioPlayer} src={audioTrack} loop ></audio>
 
         <AudioTitle bind:audioTitle={audioTitle}/>
+        <!-- <div class="wrapper"> -->
         <AudioControls on:back={back} on:playPause={playPause} on:forward={forward} />
         <AudioVolume bind:volume={volume} on:adjustVolume={adjustVolume}/>
+        <!-- </div> -->
         
     </div>
 

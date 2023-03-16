@@ -1,5 +1,9 @@
 <script lang=ts>
     import AudioPlayer from "../organisms/AudioPlayer.svelte";
+    import { activeFooter } from "../../stores";
+
+    let footerIsActive: boolean;
+    activeFooter.subscribe(value => footerIsActive = value);
 
     // let audioTitle: string;
     // let volume: number;
@@ -8,9 +12,9 @@
 
 </script>
 
-    <footer>
+    <footer class:maximized={ footerIsActive }>
         <div class="wrapper">
-            <h1>Avslappningsljud</h1>
+            <h1 class:visible={ footerIsActive }>Avslappningsljud</h1>
             <AudioPlayer />
         </div>
     </footer>
@@ -20,26 +24,37 @@
     footer {
         background-color: var(--bg-color);
         height: 5rem;
-        height: calc(100% - 5rem);
         width: 100%;
         position: fixed;
         bottom: 0;
+        transition: height .3s ease-in-out;
     }
 
+    h1 {
+        display: none;
+        margin-top: 5rem;
+        margin-bottom: 15rem;
+        text-align: center;
+        width: 100%;
+    }
+    
     .wrapper :global(.player) {
-        flex-direction: row;
+        flex-direction: column;
         gap: 1rem;
-        padding: .5rem;
 
-        & :global(h3) {
-            font-size: 14px;
-        }
-
+        
         & :global(.controls-wrapper) {
-            gap: .5rem;
-            margin: 0 2rem;
+            width: 100%;
+            padding: 0 3rem;
         }
     }
     
-
+    .maximized {
+        height: calc(100% - 5rem);
+    }
+    
+    .visible {
+        display: inline-block;
+    }
+    
 </style>

@@ -4,7 +4,7 @@
     import ThemesIcon from "../atoms/icons/ThemesIcon.svelte";
     import Button from "../atoms/Button.svelte";
 
-    import { settingsIsVisible, activeMenu, activeSettings, activeThemes, activeDimmer } from "../../stores";
+    import { settingsIsVisible, activeMenu, activeSettings, activeThemes, activeDimmer, activeFooter } from "../../stores";
     
 
     let visibleSettings :Boolean;
@@ -12,6 +12,7 @@
 
     const setMenu = () => {
         activeMenu.update(value => !value);
+        activeFooter.set(false);
     }
 
     const setSettings = () => {
