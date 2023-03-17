@@ -2,14 +2,14 @@
     import { onMount } from "svelte";
     import { breathIn, pauseIn, breathOut, pauseOut, all } from "../../stores";
     export let id = '';
-    import { animateText } from '../../textAnimation';
     
-    
+    let blobElem: HTMLDivElement;
+
     let breathInElem: HTMLHeadingElement;
     let pauseInElem: HTMLHeadingElement;
     let breathOutElem: HTMLHeadingElement;
     let pauseOutElem: HTMLHeadingElement;
-    
+
     let storeBreathIn: any = $breathIn;
     breathIn.subscribe(value => { storeBreathIn = value; });
     
@@ -22,21 +22,98 @@
     let storePauseOut: any = $pauseOut;
     pauseOut.subscribe(value => { storePauseOut = value; });
     
-    let storeAll: any = $all;
-    all.subscribe(value => { storeAll = value; });
-    
-    let blob: any;
     onMount(() => {
-        animateText(breathInElem, pauseInElem, breathOutElem, pauseOutElem);
-        console.log(blob.getAnimations());
-        console.log(blob.getAttribute('style'));
+        runAnimation();
     });
+
+    function runAnimation() {
+        console.log("start animation");
+        animateOne();
+
+        function animateOne() {
+                breathInElem.setAttribute("style", "opacity: 1;");
+                pauseInElem.setAttribute("style", "opacity: 0;");
+                breathOutElem.setAttribute("style", "opacity: 0;");
+                pauseOutElem.setAttribute("style", "opacity: 0;");
+                
+                blobElem.animate(
+                    [
+                        { transform: "scale(1)", background: "var(--color-beta)" },
+                        { transform: "scale(2)", background: "var(--color-psi)" },
+                    ], {
+                        duration: storeBreathIn*1000,
+                        iterations: 1,
+                    });
+            setTimeout(() => {
+                blobElem.style.transform = "scale(2)";
+                blobElem.style.background = "var(--color-psi)";
+                animateTwo();
+            }, (storeBreathIn)*1000);
+        }
+
+        function animateTwo() {
+                breathInElem.setAttribute("style", "opacity: 0;");
+                pauseInElem.setAttribute("style", "opacity: 1;");
+                breathOutElem.setAttribute("style", "opacity: 0;");
+                pauseOutElem.setAttribute("style", "opacity: 0;");
+
+                blobElem.animate(
+                    [
+                        { transform: "scale(2)", background: "var(--color-psi)" },
+                    ], {
+                        duration: storePauseIn*1000,
+                        iterations: 1,
+                    });
+            setTimeout(() => {
+                animateThree();
+            }, (storePauseIn)*1000);
+        }
+
+        function animateThree() {
+                breathInElem.setAttribute("style", "opacity: 0;");
+                pauseInElem.setAttribute("style", "opacity: 0;");
+                breathOutElem.setAttribute("style", "opacity: 1;");
+                pauseOutElem.setAttribute("style", "opacity: 0;");
+
+                blobElem.animate(
+                    [
+                        { transform: "scale(2)", background: "var(--color-psi)" },
+                        { transform: "scale(1)", background: "var(--color-beta)" },
+                    ], {
+                        duration: storeBreathOut*1000,
+                        iterations: 1,
+                    });
+            setTimeout(() => {
+                blobElem.style.transform = "scale(1)";
+                blobElem.style.background = "var(--color-beta)";
+                animateFour();
+            }, (storeBreathOut)*1000);
+        }
+
+        function animateFour() {
+                breathInElem.setAttribute("style", "opacity: 0;");
+                pauseInElem.setAttribute("style", "opacity: 0;");
+                breathOutElem.setAttribute("style", "opacity: 0;");
+                pauseOutElem.setAttribute("style", "opacity: 1;");
+
+                blobElem.animate(
+                    [
+                        { transform: "scale(1)", background: "var(--color-beta)" },
+                    ], {
+                        duration: storePauseOut*1000,
+                        iterations: 1,
+                    }); 
+            setTimeout(() => {
+                animateOne();
+            }, (storePauseOut)*1000);
+        }
+    }
+        
+    </script>
     
-
-</script>
-
     <div class="wrapper">
-        <div class="blob animate" id={id} bind:this={blob}></div>
+        <!-- create your animation here -->
+        <div class="blob" bind:this={blobElem} id={id}></div>
 
         <h3 class="animText-1" bind:this={breathInElem}>Andas in 1</h3>
         <h3 class="animText-2" bind:this={pauseInElem}>Håll andan 2</h3>
@@ -59,45 +136,26 @@
         grid-column: 1 / -1;
         grid-row: 1 / -1;
     }
-
-    .blob {
-        width: calc(var(--baseline)*10);
-        height: calc(var(--baseline)*10);
-        background-color: #EAFDFC;
-        box-shadow: 0 0 4px 2px var(--color-alpha);
-        box-shadow: 0 0 2px 4px inset var(--color-omega);
-        border-radius: 50%;
-        opacity: 0.5;
-
-        // transition: #{storeBreathIn}s transform;
-        // transition: height 2s;
-        // animation: name duration timing-function delay iteration-count direction fill-mode;
-        // animation: grow 2s ease-in infinite, shrink 2s ease-in 2s infinite;
-        animation: grow 4s ease-in infinite;
-    }
-
-    @keyframes grow {
-        0% { transform: scale(1); }
-        50% { transform: scale(1.5); }
-        100% { transform: scale(1); }
-    }
-    @keyframes shrink {
-        0% { transform: scale(1.5); }
-        50% { transform: scale(1); }
-        100% {  }
-    }
-
-
-    // .animate {
-    //     height: calc(var(--baseline)*15);
-    // }
-
+    
     @for $i from 1 through 4 {
         .animText-#{$i} {
             z-index: 1;
             opacity: 0;
             transition: 0.5s;
         }
+    }
+    
+
+    .blob {
+        width: calc(var(--baseline)*10);
+        height: calc(var(--baseline)*10);
+        box-shadow: 0 0 4px 2px var(--color-alpha);
+        box-shadow: 0 0 2px 4px inset var(--color-omega);
+        border-radius: 50%;
+        opacity: 0.5;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
 </style>
