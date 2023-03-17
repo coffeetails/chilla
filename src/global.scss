@@ -64,6 +64,9 @@ p, a, label {
     line-height: 200%;
 }
 
+h1, h2, h3, label, i, a {
+    user-select: none;
+}
 
 h1, h2, h3 {
     padding-top: var(--padding);

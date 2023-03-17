@@ -8,6 +8,8 @@
     import Button from "../components/atoms/Button.svelte";
     import AnimationOne from "../components/atoms/AnimationOne.svelte";
     import AnimationTwo from "../components/atoms/AnimationTwo.svelte";
+    import AnimationThree from "../components/atoms/AnimationThree.svelte";
+    import AnimationFour from "../components/atoms/AnimationFour.svelte";
 
     let blue = 'blue';
     let red = 'red';
@@ -80,6 +82,8 @@
 
     <AnimationOne id="animationOne" />
     <AnimationTwo id="animationTwo" />
+    <AnimationThree id="animatonThree" />
+    <AnimationFour id="animationFour" />
 
     <Button btnClass='btnDown' on:click={ scrollDown } btnText=''>
         <ScrollButtonDown />
