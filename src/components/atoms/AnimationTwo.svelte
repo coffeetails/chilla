@@ -38,14 +38,14 @@
                 
                 blobElem.animate(
                     [
-                        { transform: "translate(0, 200%)", background: "var(--color-psi)" },
-                        { transform: "translate(0, -200%)", background: "var(--color-beta)" },
+                        { transform: "translate(-150%, 200%)", background: "var(--color-psi)" },
+                        { transform: "translate(-150%, -200%)", background: "var(--color-beta)" },
                     ], {
                         duration: storeBreathIn*1000,
                         iterations: 1,
                     });
             setTimeout(() => {
-                blobElem.style.transform = "translate(0, -200%)";
+                blobElem.style.transform = "translate(-150%, -200%)";
                 blobElem.style.background = "var(--color-beta)";
                 animateTwo();
             }, (storeBreathIn)*1000);
@@ -59,13 +59,13 @@
 
                 blobElem.animate(
                     [
-                        { transform: "translate(400%, -200%)", background: "var(--color-psi)" },
+                        { transform: "translate(150%, -200%)", background: "var(--color-psi)" },
                     ], {
                         duration: storePauseIn*1000,
                         iterations: 1,
                     });
             setTimeout(() => {
-                blobElem.style.transform = "translate(400%, -200%)";
+                blobElem.style.transform = "translate(150%, -200%)";
                 blobElem.style.background = "var(--color-psi)";
                 animateThree();
             }, (storePauseIn)*1000);
@@ -79,13 +79,13 @@
 
                 blobElem.animate(
                     [
-                        { transform: "translate(400%, 200%)", background: "var(--color-beta)" },
+                        { transform: "translate(150%, 200%)", background: "var(--color-beta)" },
                     ], {
                         duration: storeBreathOut*1000,
                         iterations: 1,
                     });
             setTimeout(() => {
-                blobElem.style.transform = "translate(400%, 200%)";
+                blobElem.style.transform = "translate(150%, 200%)";
                 blobElem.style.background = "var(--color-beta)";
                 animateFour();
             }, (storeBreathOut)*1000);
@@ -99,7 +99,7 @@
 
                 blobElem.animate(
                     [
-                        { transform: "translate(0, 200%)", background: "var(--color-psi)" },
+                        { transform: "translate(-150%, 200%)", background: "var(--color-psi)" },
                     ], {
                         duration: storePauseOut*1000,
                         iterations: 1,
@@ -127,8 +127,8 @@
     .wrapper {
         min-height: 100dvh;
         display: grid;
-        place-items: center start;
-        width: 80%;
+        place-items: center;
+        // width: 80%;
 
         scroll-snap-align: center;
         scroll-snap-stop: always;
@@ -155,10 +155,10 @@
         box-shadow: 0 0 2px 4px inset var(--color-omega);
         border-radius: 50%;
         opacity: 0.5;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        transform: translate(0, 200%);
+        // display: flex;
+        // justify-content: center;
+        // align-items: center;
+        // transform: translate(0, 200%);
     }
 
     h3 {
