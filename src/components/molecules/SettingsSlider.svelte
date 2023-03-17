@@ -4,7 +4,7 @@
     export let labelFor: string;
     export let labelText: string;
     export let seconds: number;
-    let name: string;
+    export let name: string;
 
 </script>
 

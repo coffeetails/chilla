@@ -45,15 +45,17 @@
         console.log('pauseTwo:', storePauseOut);
     }
 
+    let name: string;
+
 </script>
 
     <div class="settings" class:visible={settingsIsActive}>
         <h2>Andningsintervall</h2>
         <div class="controls-wrapper">
-            <SettingsSlider on:change={setBreathIn} bind:seconds={storeBreathIn} labelFor='breathIn' labelText='Inandning' />
-            <SettingsSlider on:change={setPauseIn} bind:seconds={storePauseIn} labelFor='pauseIn' labelText='Paus' />
-            <SettingsSlider on:change={setBreathOut} bind:seconds={storeBreathOut} labelFor='breathOut' labelText='Utandning' />
-            <SettingsSlider on:change={setPauseOut} bind:seconds={storePauseOut} labelFor='pauseOut' labelText='Paus' />
+            <SettingsSlider {name} on:change={setBreathIn} bind:seconds={storeBreathIn} labelFor='breathIn' labelText='Inandning' />
+            <SettingsSlider {name} on:change={setPauseIn} bind:seconds={storePauseIn} labelFor='pauseIn' labelText='Paus' />
+            <SettingsSlider {name} on:change={setBreathOut} bind:seconds={storeBreathOut} labelFor='breathOut' labelText='Utandning' />
+            <SettingsSlider {name} on:change={setPauseOut} bind:seconds={storePauseOut} labelFor='pauseOut' labelText='Paus' />
         </div>
         <div class="techniques-wrapper">
             <h3>Andningstekniker</h3>
