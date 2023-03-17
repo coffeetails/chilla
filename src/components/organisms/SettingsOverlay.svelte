@@ -1,5 +1,5 @@
 <script lang=ts>
-    import { activeDimmer, activeSettings, breathIn, pauseIn, breathOut, pauseOut, all } from "../../stores";
+    import { activeDimmer, activeSettings, breathIn, pauseIn, breathOut, pauseOut } from "../../stores";
 
     import Button from "../atoms/Button.svelte";
     import RadioButton from "../molecules/RadioButton.svelte";
@@ -25,13 +25,9 @@
     let storePauseOut: number;
     pauseOut.subscribe(value => storePauseOut = value);
 
-    let storeAll: number;
-    all.subscribe(value => storeAll = value);
-
     function setBreathIn(event: any) {
         breathIn.set(event.target.value);
         console.log('inandning:', storeBreathIn);
-        // localStorage.setItem('inandning', storeInandning);
     }
 
     function setPauseIn(event: any) {
@@ -49,11 +45,6 @@
         console.log('pauseTwo:', storePauseOut);
     }
 
-    function setAll(event: any) {
-        all.set(event.target.value);
-        console.log('all:', storeAll);
-    }
-
 </script>
 
     <div class="settings" class:visible={settingsIsActive}>
@@ -63,7 +54,6 @@
             <SettingsSlider on:change={setPauseIn} bind:seconds={storePauseIn} labelFor='pauseIn' labelText='Paus' />
             <SettingsSlider on:change={setBreathOut} bind:seconds={storeBreathOut} labelFor='breathOut' labelText='Utandning' />
             <SettingsSlider on:change={setPauseOut} bind:seconds={storePauseOut} labelFor='pauseOut' labelText='Paus' />
-            <SettingsSlider on:change={setAll} bind:seconds={storeAll} labelFor='all' labelText='Justera alla' />
         </div>
         <div class="techniques-wrapper">
             <h3>Andningstekniker</h3>
@@ -86,7 +76,7 @@
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        z-index: 5;
+        z-index: 12;
         padding: var(--padding-large);
         border: 2px solid var(--color-gamma);
     }
