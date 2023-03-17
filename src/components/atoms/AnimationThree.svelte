@@ -38,15 +38,15 @@
                 
                 blobElem.animate(
                     [
-                        { transform: "translate(-150%, 200%)", background: "var(--color-psi)" },
-                        { transform: "translate(-150%, -200%)", background: "var(--color-beta)" },
+                        { transform: "scale(1)", background: "var(--color-beta)" },
+                        { transform: "scale(2)", background: "var(--color-psi)" },
                     ], {
                         duration: storeBreathIn*1000,
                         iterations: 1,
                     });
             setTimeout(() => {
-                blobElem.style.transform = "translate(-150%, -200%)";
-                blobElem.style.background = "var(--color-beta)";
+                blobElem.style.transform = "scale(2)";
+                blobElem.style.background = "var(--color-psi)";
                 animateTwo();
             }, (storeBreathIn)*1000);
         }
@@ -59,14 +59,12 @@
 
                 blobElem.animate(
                     [
-                        { transform: "translate(150%, -200%)", background: "var(--color-psi)" },
+                        { transform: "scale(2)", background: "var(--color-psi)" },
                     ], {
                         duration: storePauseIn*1000,
                         iterations: 1,
                     });
             setTimeout(() => {
-                blobElem.style.transform = "translate(150%, -200%)";
-                blobElem.style.background = "var(--color-psi)";
                 animateThree();
             }, (storePauseIn)*1000);
         }
@@ -79,13 +77,14 @@
 
                 blobElem.animate(
                     [
-                        { transform: "translate(150%, 200%)", background: "var(--color-beta)" },
+                        { transform: "scale(2)", background: "var(--color-psi)" },
+                        { transform: "scale(1)", background: "var(--color-beta)" },
                     ], {
                         duration: storeBreathOut*1000,
                         iterations: 1,
                     });
             setTimeout(() => {
-                blobElem.style.transform = "translate(150%, 200%)";
+                blobElem.style.transform = "scale(1)";
                 blobElem.style.background = "var(--color-beta)";
                 animateFour();
             }, (storeBreathOut)*1000);
@@ -99,7 +98,7 @@
 
                 blobElem.animate(
                     [
-                        { transform: "translate(-150%, 200%)", background: "var(--color-psi)" },
+                        { transform: "scale(1)", background: "var(--color-beta)" },
                     ], {
                         duration: storePauseOut*1000,
                         iterations: 1,
@@ -128,7 +127,6 @@
         min-height: 100dvh;
         display: grid;
         place-items: center;
-        // width: 80%;
 
         scroll-snap-align: center;
         scroll-snap-stop: always;
@@ -149,20 +147,15 @@
     
 
     .blob {
-        width: calc(var(--baseline)*5);
-        height: calc(var(--baseline)*5);
+        width: calc(var(--baseline)*10);
+        height: calc(var(--baseline)*10);
         box-shadow: 0 0 4px 2px var(--color-alpha);
         box-shadow: 0 0 2px 4px inset var(--color-omega);
         border-radius: 50%;
         opacity: 0.5;
-        // display: flex;
-        // justify-content: center;
-        // align-items: center;
-        // transform: translate(0, 200%);
-    }
-
-    h3 {
-        place-self: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
 </style>

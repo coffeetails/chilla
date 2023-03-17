@@ -49,7 +49,7 @@
         position: fixed;
         top: 0;
         bottom: 0;
-        z-index: 2;
+        z-index: 14;
         transform: translateX(-100%);
         overflow-y: auto;
         transition: transform .3s ease-in-out;

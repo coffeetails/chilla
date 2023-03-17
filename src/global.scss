@@ -52,7 +52,7 @@ html {
     display: none;
 }
 
-p, h1, h2, h3, a {
+p, h1, h2, h3, a, label {
     color: var(--font-color);
     font-weight: 400;
     letter-spacing: .1rem;
@@ -64,6 +64,9 @@ p, a, label {
     line-height: 200%;
 }
 
+h1, h2, h3, label, i, a {
+    user-select: none;
+}
 
 h1, h2, h3 {
     padding-top: var(--padding);
