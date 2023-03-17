@@ -4,7 +4,7 @@
 
 </script>
 
-    <input {name} bind:value={value} min="0" max="10" on:input type="range">
+    <input name={name} bind:value={value} min="0" max="10" on:input type="range">
 
 <style lang=scss>
 
