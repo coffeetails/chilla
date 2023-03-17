@@ -12,35 +12,46 @@ pauseOut.subscribe(value => { storePauseOut = value; });
 
 
 export function animateText(breathInElem: HTMLHeadingElement, pauseInElem: HTMLHeadingElement, breathOutElem: HTMLHeadingElement, pauseOutElem: HTMLHeadingElement) {
+    console.log("start text animation");
+    animateOne();
 
-    
-    breathInElem.setAttribute("style", "opacity: 1;");
-    setInterval(() => {
-        
-        breathInElem.setAttribute("style", "opacity: 1;");
-        pauseInElem.setAttribute("style", "opacity: 0;");
-        breathOutElem.setAttribute("style", "opacity: 0;");
-        pauseOutElem.setAttribute("style", "opacity: 0;");
-        
+    function animateOne() {
+        setTimeout(() => {
+            breathInElem.setAttribute("style", "opacity: 1;");
+            pauseInElem.setAttribute("style", "opacity: 0;");
+            breathOutElem.setAttribute("style", "opacity: 0;");
+            pauseOutElem.setAttribute("style", "opacity: 0;");
+            animateTwo();
+        }, (storeBreathIn)*1000);
+    }
+
+    function animateTwo() {
         setTimeout(() => {
             breathInElem.setAttribute("style", "opacity: 0;");
             pauseInElem.setAttribute("style", "opacity: 1;");
             breathOutElem.setAttribute("style", "opacity: 0;");
             pauseOutElem.setAttribute("style", "opacity: 0;");
-        }, (storeBreathIn)*1000);
-        
+            animateThree();
+        }, (storePauseIn)*1000);
+    }
+
+    function animateThree() {
         setTimeout(() => {
             breathInElem.setAttribute("style", "opacity: 0;");
             pauseInElem.setAttribute("style", "opacity: 0;");
             breathOutElem.setAttribute("style", "opacity: 1;");
             pauseOutElem.setAttribute("style", "opacity: 0;");
-        }, (storeBreathIn+storePauseIn)*1000);
-        
+            animateFour();
+        }, (storeBreathOut)*1000);
+    }
+
+    function animateFour() {
         setTimeout(() => {
             breathInElem.setAttribute("style", "opacity: 0;");
             pauseInElem.setAttribute("style", "opacity: 0;");
             breathOutElem.setAttribute("style", "opacity: 0;");
             pauseOutElem.setAttribute("style", "opacity: 1;");
-        }, (storeBreathIn+storePauseIn+storeBreathOut)*1000);
-    }, (storeBreathIn+storePauseIn+storeBreathOut+storePauseOut)*1000);
+            animateOne();
+        }, (storePauseOut)*1000);
+    }
 }

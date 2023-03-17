@@ -2,37 +2,136 @@
     import { onMount } from "svelte";
     import { breathIn, pauseIn, breathOut, pauseOut, all } from "../../stores";
     export let id = '';
-    import { animateText } from '../../textAnimation';
+    // import { animateText } from '../../textAnimation';
     
+    let blobElem: HTMLDivElement;
+
     let breathInElem: HTMLHeadingElement;
     let pauseInElem: HTMLHeadingElement;
     let breathOutElem: HTMLHeadingElement;
     let pauseOutElem: HTMLHeadingElement;
     
+    // let storeBreathIn: any = $breathIn;
+    // let storePauseIn: any = $pauseIn;
+    // let storeBreathOut: any = $breathOut;
+    // let storePauseOut: any = $pauseOut;
+
+
     let storeBreathIn: any = $breathIn;
-    breathIn.subscribe(value => { storeBreathIn = value; });
-    
-    let storePauseIn: any = $pauseIn;
-    pauseIn.subscribe(value => { storePauseIn = value; });
-    
-    let storeBreathOut: any = $breathOut;
-    breathOut.subscribe(value => { storeBreathOut = value; });
-    
-    let storePauseOut: any = $pauseOut;
-    pauseOut.subscribe(value => { storePauseOut = value; });
-    
-    let storeAll: any = $all;
-    all.subscribe(value => { storeAll = value; });
-    
-    onMount(() => {
-        animateText(breathInElem, pauseInElem, breathOutElem, pauseOutElem);
+    breathIn.subscribe(value => { 
+        storeBreathIn = value; 
     });
     
-</script>
+    let storePauseIn: any = $pauseIn;
+    pauseIn.subscribe(value => { 
+        storePauseIn = value; 
+    });
+    
+    let storeBreathOut: any = $breathOut;
+    breathOut.subscribe(value => { 
+        storeBreathOut = value; 
+    });
+    
+    let storePauseOut: any = $pauseOut;
+    pauseOut.subscribe(value => { 
+        storePauseOut = value; 
+    });
+    
+    onMount(() => {
+        // animateText(breathInElem, pauseInElem, breathOutElem, pauseOutElem);
+        runAnimation();
+    });
 
+    function runAnimation() {
+        console.log("start animation");
+        animateOne();
+
+        function animateOne() {
+            // setTimeout(() => {
+                breathInElem.setAttribute("style", "opacity: 1;");
+                pauseInElem.setAttribute("style", "opacity: 0;");
+                breathOutElem.setAttribute("style", "opacity: 0;");
+                pauseOutElem.setAttribute("style", "opacity: 0;");
+                
+                blobElem.animate(
+                    [
+                        { transform: "scale(1)" },
+                        { transform: "scale(2)" },
+                    ], {
+                        duration: storeBreathIn*1000,
+                        iterations: 1,
+                    });
+            setTimeout(() => {
+                blobElem.style.transform = "scale(2)";
+                animateTwo();
+            }, (storeBreathIn)*1000);
+        }
+
+        function animateTwo() {
+            // setTimeout(() => {
+                breathInElem.setAttribute("style", "opacity: 0;");
+                pauseInElem.setAttribute("style", "opacity: 1;");
+                breathOutElem.setAttribute("style", "opacity: 0;");
+                pauseOutElem.setAttribute("style", "opacity: 0;");
+
+                blobElem.animate(
+                    [
+                        { transform: "scale(2)" },
+                    ], {
+                        duration: storePauseIn*1000,
+                        iterations: 1,
+                    });
+            setTimeout(() => {
+                animateThree();
+            }, (storePauseIn)*1000);
+        }
+
+        function animateThree() {
+            // setTimeout(() => {
+                breathInElem.setAttribute("style", "opacity: 0;");
+                pauseInElem.setAttribute("style", "opacity: 0;");
+                breathOutElem.setAttribute("style", "opacity: 1;");
+                pauseOutElem.setAttribute("style", "opacity: 0;");
+
+                blobElem.animate(
+                    [
+                        { transform: "scale(2)" },
+                        { transform: "scale(1)" },
+                    ], {
+                        duration: storeBreathOut*1000,
+                        iterations: 1,
+                    });
+            setTimeout(() => {
+                blobElem.style.transform = "scale(1)";
+                animateFour();
+            }, (storeBreathOut)*1000);
+        }
+
+        function animateFour() {
+            // setTimeout(() => {
+                breathInElem.setAttribute("style", "opacity: 0;");
+                pauseInElem.setAttribute("style", "opacity: 0;");
+                breathOutElem.setAttribute("style", "opacity: 0;");
+                pauseOutElem.setAttribute("style", "opacity: 1;");
+
+                blobElem.animate(
+                    [
+                        { transform: "scale(1)" },
+                    ], {
+                        duration: storePauseOut*1000,
+                        iterations: 1,
+                    }); 
+            setTimeout(() => {
+                animateOne();
+            }, (storePauseOut)*1000);
+        }
+    }
+        
+    </script>
+    
     <div class="wrapper">
         <!-- create your animation here -->
-        <div class="blob animTwo" id={id}></div>
+        <div class="blob" bind:this={blobElem} id={id}></div>
 
         <h3 class="animText-1" bind:this={breathInElem}>Andas in 1</h3>
         <h3 class="animText-2" bind:this={pauseInElem}>Håll andan 2</h3>
@@ -66,7 +165,7 @@
     
 
     // style you elements and add animations as needed
-    .animTwo {
+    .blob {
         width: calc(var(--baseline)*10);
         height: calc(var(--baseline)*10);
         background-color: #EAFDFC;
