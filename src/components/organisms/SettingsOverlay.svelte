@@ -86,7 +86,7 @@
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        z-index: 5;
+        z-index: 12;
         padding: var(--padding-large);
         border: 2px solid var(--color-gamma);
     }
