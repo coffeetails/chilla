@@ -14,7 +14,7 @@
 
     <div class:visible={footerIsActive} class="volume-bar-wrapper">
         <label for="volume">0</label>
-        <Input name="volume" on:input={() => { dispatch('adjustVolume') }} bind:value={volume} />
+        <Input on:input={() => { dispatch('adjustVolume') }} bind:value={volume} />
         <label for="volume">{volume}</label>
     </div>
 

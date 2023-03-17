@@ -28,6 +28,8 @@
         position: fixed;
         bottom: 0;
         transition: height .3s ease-in-out;
+        display: flex;
+        justify-content: center;
     }
 
     h1 {
@@ -41,7 +43,6 @@
     .wrapper :global(.player) {
         flex-direction: column;
         gap: 1rem;
-
         
         & :global(.controls-wrapper) {
             width: 100%;
