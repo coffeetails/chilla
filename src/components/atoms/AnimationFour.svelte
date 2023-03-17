@@ -1,6 +1,6 @@
 <script lang=ts>
     import { onMount } from "svelte";
-    import { breathIn, pauseIn, breathOut, pauseOut, all } from "../../stores";
+    import { breathIn, pauseIn, breathOut, pauseOut } from "../../stores";
     export let id = '';
     
     let blobElem: HTMLDivElement;
@@ -316,12 +316,9 @@
     .blob {
         width: calc(var(--baseline)*5);
         height: calc(var(--baseline)*5);
-        // box-shadow: 0 0 4px 2px var(--color-alpha);
-        // box-shadow: 0 0 2px 4px inset var(--color-omega);
         border: 2px solid var(--color-psi);
         background-color: var(--color-gamma);
         border-radius: 50%;
-        // opacity: 0.5;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -331,11 +328,8 @@
     .blob2 {
         width: calc(var(--baseline)*5);
         height: calc(var(--baseline)*5);
-        // box-shadow: 0 0 4px 2px var(--color-alpha);
-        // box-shadow: 0 0 2px 4px inset var(--color-omega);
         border: 2px solid var(--color-psi);
         border-radius: 50%;
-        // opacity: 0.5;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -346,11 +340,8 @@
     .blob3 {
         width: calc(var(--baseline)*5);
         height: calc(var(--baseline)*5);
-        // box-shadow: 0 0 4px 2px var(--color-alpha);
-        // box-shadow: 0 0 2px 4px inset var(--color-omega);
         border: 2px solid var(--color-psi);
         border-radius: 50%;
-        // opacity: 0.5;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -361,11 +352,8 @@
     .blob4 {
         width: calc(var(--baseline)*5);
         height: calc(var(--baseline)*5);
-        // box-shadow: 0 0 4px 2px var(--color-alpha);
-        // box-shadow: 0 0 2px 4px inset var(--color-omega);
         border: 2px solid var(--color-psi);
         border-radius: 50%;
-        // opacity: 0.5;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -376,11 +364,8 @@
     .blob5 {
         width: calc(var(--baseline)*5);
         height: calc(var(--baseline)*5);
-        // box-shadow: 0 0 4px 2px var(--color-alpha);
-        // box-shadow: 0 0 2px 4px inset var(--color-omega);
         border: 2px solid var(--color-psi);
         border-radius: 50%;
-        // opacity: 0.5;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -391,11 +376,8 @@
     .blob6 {
         width: calc(var(--baseline)*5);
         height: calc(var(--baseline)*5);
-        // box-shadow: 0 0 4px 2px var(--color-alpha);
-        // box-shadow: 0 0 2px 4px inset var(--color-omega);
         border: 2px solid var(--color-psi);
         border-radius: 50%;
-        // opacity: 0.5;
         display: flex;
         justify-content: center;
         align-items: center;
