@@ -47,6 +47,7 @@
                         { transform: "scale(1.5)", background: "var(--color-gamma)" },
                     ], {
                         duration: storeBreathIn*1000,
+                        easing: 'ease-in-out',
                         iterations: 1,
                     });
                 blobElem3.animate(
@@ -55,6 +56,7 @@
                         { transform: "scale(2)", background: "var(--color-gamma)" },
                     ], {
                         duration: storeBreathIn*1000,
+                        easing: 'ease-in-out',
                         iterations: 1,
                     });
                 blobElem4.animate(
@@ -63,6 +65,7 @@
                         { transform: "scale(2.5)", background: "var(--color-gamma)" },
                     ], {
                         duration: storeBreathIn*1000,
+                        easing: 'ease-in-out',
                         iterations: 1,
                     });
                 blobElem5.animate(
@@ -71,6 +74,7 @@
                         { transform: "scale(3)", background: "var(--color-gamma)" },
                     ], {
                         duration: storeBreathIn*1000,
+                        easing: 'ease-in-out',
                         iterations: 1,
                     });
                 blobElem6.animate(
@@ -79,6 +83,7 @@
                         { transform: "scale(3.5)", background: "var(--color-gamma)" },
                     ], {
                         duration: storeBreathIn*1000,
+                        easing: 'ease-in-out',
                         iterations: 1,
                     });
             setTimeout(() => {
@@ -107,6 +112,7 @@
                         { transform: "scale(1.5)", background: "var(--color-gamma)" },
                     ], {
                         duration: storePauseIn*1000,
+                        easing: 'ease-in-out',
                         iterations: 1,
                     });
                 blobElem3.animate(
@@ -114,6 +120,7 @@
                         { transform: "scale(2)", background: "var(--color-gamma)" },
                     ], {
                         duration: storePauseIn*1000,
+                        easing: 'ease-in-out',
                         iterations: 1,
                     });
                 blobElem4.animate(
@@ -121,6 +128,7 @@
                         { transform: "scale(2.5)", background: "var(--color-gamma)" },
                     ], {
                         duration: storePauseIn*1000,
+                        easing: 'ease-in-out',
                         iterations: 1,
                     });
                 blobElem5.animate(
@@ -128,6 +136,7 @@
                         { transform: "scale(3)", background: "var(--color-gamma)" },
                     ], {
                         duration: storePauseIn*1000,
+                        easing: 'ease-in-out',
                         iterations: 1,
                     });
                 blobElem6.animate(
@@ -135,6 +144,7 @@
                         { transform: "scale(3.5)", background: "var(--color-gamma)" },
                     ], {
                         duration: storePauseIn*1000,
+                        easing: 'ease-in-out',
                         iterations: 1,
                     });
             setTimeout(() => {
@@ -154,6 +164,7 @@
                         { transform: "scale(1)", background: "var(--color-gamma)" },
                     ], {
                         duration: storeBreathOut*1000,
+                        easing: 'ease-in-out',
                         iterations: 1,
                     });
                 blobElem3.animate(
@@ -162,6 +173,7 @@
                         { transform: "scale(1)", background: "var(--color-gamma)" },
                     ], {
                         duration: storeBreathOut*1000,
+                        easing: 'ease-in-out',
                         iterations: 1,
                     });
                 blobElem4.animate(
@@ -170,6 +182,7 @@
                         { transform: "scale(1)", background: "var(--color-gamma)" },
                     ], {
                         duration: storeBreathOut*1000,
+                        easing: 'ease-in-out',
                         iterations: 1,
                     });
                 blobElem5.animate(
@@ -178,6 +191,7 @@
                         { transform: "scale(1)", background: "var(--color-gamma)" },
                     ], {
                         duration: storeBreathOut*1000,
+                        easing: 'ease-in-out',
                         iterations: 1,
                     });
                 blobElem6.animate(
@@ -186,6 +200,7 @@
                         { transform: "scale(1)", background: "var(--color-gamma)" },
                     ], {
                         duration: storeBreathOut*1000,
+                        easing: 'ease-in-out',
                         iterations: 1,
                     });
             setTimeout(() => {
@@ -214,6 +229,7 @@
                         { transform: "scale(1)", background: "var(--color-gamma)" },
                     ], {
                         duration: storePauseOut*1000,
+                        easing: 'ease-in-out',
                         iterations: 1,
                     }); 
                 blobElem3.animate(
@@ -221,6 +237,7 @@
                         { transform: "scale(1)", background: "var(--color-gamma)" },
                     ], {
                         duration: storePauseOut*1000,
+                        easing: 'ease-in-out',
                         iterations: 1,
                     }); 
                 blobElem4.animate(
@@ -228,6 +245,7 @@
                         { transform: "scale(1)", background: "var(--color-gamma)" },
                     ], {
                         duration: storePauseOut*1000,
+                        easing: 'ease-in-out',
                         iterations: 1,
                     }); 
                 blobElem5.animate(
@@ -235,6 +253,7 @@
                         { transform: "scale(1)", background: "var(--color-gamma)" },
                     ], {
                         duration: storePauseOut*1000,
+                        easing: 'ease-in-out',
                         iterations: 1,
                     }); 
                 blobElem6.animate(
@@ -242,6 +261,7 @@
                         { transform: "scale(1)", background: "var(--color-gamma)" },
                     ], {
                         duration: storePauseOut*1000,
+                        easing: 'ease-in-out',
                         iterations: 1,
                     }); 
             setTimeout(() => {
