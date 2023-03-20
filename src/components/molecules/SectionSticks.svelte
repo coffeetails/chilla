@@ -8,15 +8,15 @@
     onMount(() => {
         const blobElems = document.querySelectorAll('.blob');
         numberOfBlobs.set(blobElems);
-        console.log(blobElems);
+        // console.log(blobElems);
+        checkViewport();
     });
 
     // console.log($numberOfBlobs);
-    function checkViewport(event) {
-        // console.log(event);
+    function checkViewport() {
         for(let blob of $numberOfBlobs) {
             const blobLocation = blob.getBoundingClientRect();
-
+            // console.log(blob.id, blobLocation.y);
             // The first with a positive y coordination is the current visible blob
             if(blobLocation.y > 0 ) {
                 console.log(blob.id);
