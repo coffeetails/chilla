@@ -15,7 +15,7 @@
             <AudioPlayer />
         </div>
         {#if footerIsActive}
-            <p>
+            <p class="license-info">
                 Alla ljudfiler är tagna från<Link target='_empty' linkPath='https://freesound.org/' linkDescription='https://freesound.org/'/>och är under<Link target='_empty' linkPath='https://creativecommons.org/publicdomain/zero/1.0/' linkDescription='Creative Commons 0 License' />
             </p>   
         {/if}
@@ -61,7 +61,7 @@
         padding: 1rem;
     }
 
-    :global(a) {
+    :global(.license-info a) {
         font-size: 12px;
     }
     
