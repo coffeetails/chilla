@@ -1,4 +1,3 @@
-
 export const audioData = [
     {
         name: "Water Stream River",
@@ -19,6 +18,10 @@ export const audioData = [
     {
         name: "Night Train",
         url: "https://cdn.freesound.org/previews/244/244382_2512043-lq.mp3",
+    },
+    {
+        name: "Slow Cargo Train",
+        url: "https://cdn.freesound.org/previews/78/78388_321967-lq.mp3",
     }
 ]
 

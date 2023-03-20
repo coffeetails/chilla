@@ -15,10 +15,9 @@
 </script>
 
     <div class="themes" class:visible={themesIsActive}>
-        <!-- <CloseIcon on:click={closeOverlay}/> -->
         <ThemeSwitch />
         <div class="buttonWrapper">
-            <Button btnClass="" btnText="Stäng" />
+            <Button on:click={closeOverlay} btnClass="" btnText="Stäng" />
         </div>
     </div>
 
