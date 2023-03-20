@@ -1,6 +1,6 @@
 <script lang=ts>
     import { onMount } from "svelte";
-    import { breathIn, pauseIn, breathOut, pauseOut } from "../../stores";
+    import { breathIn, pauseIn, breathOut, pauseOut } from "../../../stores";
     export let id = '';
     
     let blobElem: HTMLDivElement;
