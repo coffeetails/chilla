@@ -1,6 +1,6 @@
 <script lang=ts>
     import { onMount } from "svelte";
-    import { breathIn, pauseIn, breathOut, pauseOut } from "../../stores";
+    import { breathIn, pauseIn, breathOut, pauseOut } from "../../../stores";
     export let id = '';
     
     let blobElem: HTMLDivElement;
@@ -190,10 +190,10 @@
         <div class="blobSection" bind:this={blobElemFive} id={id}></div>
         <div class="blobSection" bind:this={blobElemSix} id={id}></div>
 
-        <h3 class="animText-1" bind:this={breathInElem}>Andas in 1</h3>
-        <h3 class="animText-2" bind:this={pauseInElem}>Håll andan 2</h3>
-        <h3 class="animText-3" bind:this={breathOutElem}>Andas ut 3</h3>
-        <h3 class="animText-4" bind:this={pauseOutElem}>Håll andan 4</h3>
+        <h3 class="animText-1" bind:this={breathInElem}>Andas in</h3>
+        <h3 class="animText-2" bind:this={pauseInElem}>Håll andan</h3>
+        <h3 class="animText-3" bind:this={breathOutElem}>Andas ut</h3>
+        <h3 class="animText-4" bind:this={pauseOutElem}>Håll andan</h3>
     </div>
 
 <style lang="scss">
