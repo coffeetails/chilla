@@ -281,10 +281,10 @@
         <div class="blob5" bind:this={blobElem5}></div>
         <div class="blob6" bind:this={blobElem6}></div>
 
-        <h3 class="animText-1" bind:this={breathInElem}>Andas in 1</h3>
-        <h3 class="animText-2" bind:this={pauseInElem}>Håll andan 2</h3>
-        <h3 class="animText-3" bind:this={breathOutElem}>Andas ut 3</h3>
-        <h3 class="animText-4" bind:this={pauseOutElem}>Håll andan 4</h3>
+        <h3 class="animText-1" bind:this={breathInElem}>Andas in</h3>
+        <h3 class="animText-2" bind:this={pauseInElem}>Håll andan</h3>
+        <h3 class="animText-3" bind:this={breathOutElem}>Andas ut</h3>
+        <h3 class="animText-4" bind:this={pauseOutElem}>Håll andan</h3>
     </div>
 
 <style lang="scss">
