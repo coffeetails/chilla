@@ -4,58 +4,40 @@
     import AudioVolume from "./AudioVolume.svelte";
 
     import { audioData } from "../../audioData";
-    import { onMount } from "svelte";
     import { playAudio } from "../../stores";
 
     let trackIndex = 0;
     let audioTitle = audioData[trackIndex].name;
     export let audioTrack = audioData[trackIndex].url;
     
-    let audioPlayer: any
-
-    let isPlaying: boolean;
-    playAudio.subscribe(value => isPlaying = value);
-
-    onMount(() => {
-        playAudio.set(false);
-    });
+    let audioPlayer: any;
     
     const playPause = () => {
+        
         if (audioPlayer.paused) {
             audioPlayer.play();
+            playAudio.set(true);
         } else {
             audioPlayer.pause();
+            playAudio.set(false);
         }
+    }
 
-        playAudio.update(value => !value);
-        console.log(audioTrack);
+    const loadTrack = async () => {
+        if (trackIndex == audioData.length - 1) {
+            trackIndex = 0;
+        } else {
+            trackIndex = trackIndex + 1;
+        }
+        audioTitle = audioData[trackIndex].name;
+        audioTrack = audioData[trackIndex].url;
+        await audioPlayer.load();
+        await audioPlayer.play();
         
     }
 
     const forward = () => {
-        console.log('next');
-        // audioPlayer.currentTime += 10;
-        console.log('testing');
-        // audioPlayer.pause();
-        
-        if (!isPlaying) {
-            // trackIndex = trackIndex + 1;
-            // audioTitle = audioData[trackIndex].name;
-            // audioTrack = audioData[trackIndex].url;
-            loadTrack();
-            playPause();
-            // audioPlayer.play();
-        } else {
-            isPlaying = false;
-            // audioPlayer.pause();
-            
-            loadTrack();
-            playPause();
-        }
-        
-        // audioPlayer.pause();
-        console.log(trackIndex);
-        console.log(audioTrack);
+        loadTrack(); 
     }
 
     const back = () => {
@@ -67,12 +49,6 @@
 
     const adjustVolume = () => {
         audioPlayer.volume = volume / 10;
-    }
-
-    const loadTrack = () => {
-        trackIndex = trackIndex + 1;
-        audioTitle = audioData[trackIndex].name;
-        audioTrack = audioData[trackIndex].url;
     }
 
 </script>

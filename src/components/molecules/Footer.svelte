@@ -30,6 +30,7 @@
         transition: height .3s ease-in-out;
         display: flex;
         justify-content: center;
+        z-index: 20;
     }
 
     h1 {
