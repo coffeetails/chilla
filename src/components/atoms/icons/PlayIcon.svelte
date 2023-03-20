@@ -2,7 +2,7 @@
 
 </script>
 
-    <i class="fa-solid fa-play fa-4x"></i>
+    <i class="fa-solid fa-play fa-3x"></i>
 
 <style>
 

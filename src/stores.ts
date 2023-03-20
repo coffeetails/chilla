@@ -22,6 +22,8 @@ const activeBlob = writable('');
 
 const playAudio = writable(false);
 
+const activeFooter = writable(false);
+
 // SETTINGS
 
 export const breathIn = writable(2);
@@ -29,4 +31,4 @@ export const pauseIn = writable(2);
 export const breathOut = writable(2);
 export const pauseOut = writable(2);
 
-export { theme, themes, settingsIsVisible, aboutContent, activeMenu, numberOfBlobs, playAudio, activeSettings, activeThemes, activeDimmer, activeBlob };
+export { theme, themes, settingsIsVisible, aboutContent, activeMenu, numberOfBlobs, playAudio, activeSettings, activeThemes, activeDimmer, activeBlob, activeFooter };

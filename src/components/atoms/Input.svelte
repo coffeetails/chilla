@@ -1,9 +1,10 @@
 <script lang=ts>
-    export let seconds: number;
+    export let value: number;
+    // export let name: string;
 
 </script>
 
-    <input bind:value={seconds} min="0" max="10" on:change type="range">
+    <input bind:value={value} min="0" max="10" on:input type="range">
 
 <style lang=scss>
 
@@ -18,7 +19,7 @@
             height: .7rem;
             width: .7rem;
             border-radius: 50%;
-            background-color: var(--color-beta);
+            background-color: var(--color-alpha);
         }
     }
 

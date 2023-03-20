@@ -1,5 +1,5 @@
 <script lang="ts">
-    import { activeMenu, aboutContent } from "../../stores";
+    import { activeMenu, aboutContent, activeFooter } from "../../stores";
     import Button from "../atoms/Button.svelte";
 
     import CloseIcon from "../atoms/icons/CloseIcon.svelte";
@@ -10,6 +10,12 @@
 
     let activeContent: any;
     aboutContent.subscribe(value => activeContent = value);
+
+    // let footerIsActive: boolean;
+    const activateFooter = () => {
+        activeFooter.set(true);
+        activeMenu.set(false);
+    }
 
     const closeMenu = () => {
         activeMenu.set(false);
@@ -29,7 +35,8 @@
         <div class="wrapper">
             <Link target='' on:click={closeMenu} linkDescription='Andas' linkPath='/'/>
             <Link target='' on:click={setIntro} linkDescription='Andas rätt' linkPath='/andasratt'/>
-            <Link target='' on:click={closeMenu} linkDescription='Avslappningsljud' linkPath='/avslappningsljud'/>
+            <!-- Kanske ändra nedan Link till nåt bättre nu när den egentligen inte är en "länk" -->
+            <Link target='' on:click={activateFooter} linkDescription='Avslappningsljud' linkPath=''/>
             <Link target='' on:click={closeMenu} linkDescription='Om oss' linkPath='/omoss'/>
         </div>
     </section>
