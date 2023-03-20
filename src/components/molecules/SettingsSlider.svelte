@@ -4,12 +4,12 @@
     export let labelFor: string;
     export let labelText: string;
     export let seconds: number;
-    export let name: string;
+    // export let name: string;
 
 </script>
 
     <label for={labelFor}>{labelText}: {seconds}s
-        <Input {name} bind:value={seconds} on:input />
+        <Input bind:value={seconds} on:input />
     </label>
 
 <style lang=scss>

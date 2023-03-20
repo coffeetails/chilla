@@ -1,14 +1,11 @@
 <script lang=ts>
     import AudioPlayer from "../organisms/AudioPlayer.svelte";
+    import Link from "../atoms/Link.svelte";
+
     import { activeFooter } from "../../stores";
 
     let footerIsActive: boolean;
     activeFooter.subscribe(value => footerIsActive = value);
-
-    // let audioTitle: string;
-    // let volume: number;
-    // export let audioPlayer;
-    // export let audioTrack: any;
 
 </script>
 
@@ -17,6 +14,11 @@
             <h1 class:visible={ footerIsActive }>Avslappningsljud</h1>
             <AudioPlayer />
         </div>
+        {#if footerIsActive}
+            <p>
+                Alla ljudfiler är tagna från<Link target='_empty' linkPath='https://freesound.org/' linkDescription='https://freesound.org/'/>och är under<Link target='_empty' linkPath='https://creativecommons.org/publicdomain/zero/1.0/' linkDescription='Creative Commons 0 License' />
+            </p>   
+        {/if}
     </footer>
 
 <style lang=scss>
@@ -29,26 +31,21 @@
         bottom: 0;
         transition: height .3s ease-in-out;
         display: flex;
-        justify-content: center;
-        z-index: 20;
+        flex-direction: column;
+        z-index: 12;
     }
 
     h1 {
         display: none;
-        margin-top: 5rem;
         margin-bottom: 15rem;
         text-align: center;
-        width: 100%;
     }
-    
-    .wrapper :global(.player) {
+
+    .wrapper {
+        display: flex;
         flex-direction: column;
-        gap: 1rem;
-        
-        & :global(.controls-wrapper) {
-            width: 100%;
-            padding: 0 3rem;
-        }
+        justify-content: center;
+        height: 100%;
     }
     
     .maximized {
@@ -57,6 +54,15 @@
     
     .visible {
         display: inline-block;
+    }
+
+    p {
+        font-size: 12px;
+        padding: 1rem;
+    }
+
+    :global(a) {
+        font-size: 12px;
     }
     
 </style>

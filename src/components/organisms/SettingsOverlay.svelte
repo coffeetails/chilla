@@ -45,17 +45,17 @@
         console.log('pauseTwo:', storePauseOut);
     }
 
-    let name: string;
+    // let name: string;
 
 </script>
 
     <div class="settings" class:visible={settingsIsActive}>
         <h2>Andningsintervall</h2>
         <div class="controls-wrapper">
-            <SettingsSlider {name} on:change={setBreathIn} bind:seconds={storeBreathIn} labelFor='breathIn' labelText='Inandning' />
-            <SettingsSlider {name} on:change={setPauseIn} bind:seconds={storePauseIn} labelFor='pauseIn' labelText='Paus' />
-            <SettingsSlider {name} on:change={setBreathOut} bind:seconds={storeBreathOut} labelFor='breathOut' labelText='Utandning' />
-            <SettingsSlider {name} on:change={setPauseOut} bind:seconds={storePauseOut} labelFor='pauseOut' labelText='Paus' />
+            <SettingsSlider on:input={setBreathIn} bind:seconds={storeBreathIn} labelFor='breathIn' labelText='Inandning' />
+            <SettingsSlider on:input={setPauseIn} bind:seconds={storePauseIn} labelFor='pauseIn' labelText='Paus' />
+            <SettingsSlider on:input={setBreathOut} bind:seconds={storeBreathOut} labelFor='breathOut' labelText='Utandning' />
+            <SettingsSlider on:input={setPauseOut} bind:seconds={storePauseOut} labelFor='pauseOut' labelText='Paus' />
         </div>
         <div class="techniques-wrapper">
             <h3>Andningstekniker</h3>
@@ -78,7 +78,7 @@
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        z-index: 12;
+        z-index: 14;
         padding: var(--padding-large);
         border: 2px solid var(--color-gamma);
     }

@@ -4,7 +4,10 @@
     import AudioVolume from "./AudioVolume.svelte";
 
     import { audioData } from "../../audioData";
-    import { playAudio } from "../../stores";
+    import { playAudio, activeFooter } from "../../stores";
+
+    let footerIsActive: boolean;
+    activeFooter.subscribe(value => footerIsActive = value);
 
     let trackIndex = 0;
     let audioTitle = audioData[trackIndex].name;
@@ -23,7 +26,11 @@
         }
     }
 
-    const loadTrack = async () => {
+    const loadNextTrack = async () => {
+        if (audioPlayer.paused) {
+            playAudio.set(true);
+        }
+        
         if (trackIndex == audioData.length - 1) {
             trackIndex = 0;
         } else {
@@ -33,16 +40,20 @@
         audioTrack = audioData[trackIndex].url;
         await audioPlayer.load();
         await audioPlayer.play();
-        
     }
 
-    const forward = () => {
-        loadTrack(); 
-    }
+    const loadPrevTrack = async () => {
+        if (audioPlayer.paused) {
+            playAudio.set(true);
+        }
 
-    const back = () => {
-        console.log('last');
-        audioPlayer.currentTime -= 10;
+        if (trackIndex !== 0) {
+            trackIndex = trackIndex - 1;
+        }
+        audioTitle = audioData[trackIndex].name;
+        audioTrack = audioData[trackIndex].url;
+        await audioPlayer.load();
+        await audioPlayer.play();
     }
 
     export let volume: number = 5;
@@ -53,12 +64,12 @@
 
 </script>
 
-    <div class="player">
+    <div class="player" class:visible={ footerIsActive }>
 
         <audio id="player" bind:this={audioPlayer} src={audioTrack} loop ></audio>
 
         <AudioTitle bind:audioTitle={audioTitle}/>
-        <AudioControls on:back={back} on:playPause={playPause} on:forward={forward} />
+        <AudioControls on:loadNextTrack={loadNextTrack} on:playPause={playPause} on:loadPrevTrack={loadPrevTrack} />
         <AudioVolume bind:volume={volume} on:adjustVolume={adjustVolume}/>
         
     </div>
@@ -69,6 +80,11 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    .visible {
         gap: 3rem;
     }
 

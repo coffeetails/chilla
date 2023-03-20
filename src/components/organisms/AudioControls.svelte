@@ -16,7 +16,7 @@
 </script>
 
     <div class="controls-wrapper">
-        <Button btnClass='back' on:click={() => dispatch('back')} btnText=''>
+        <Button btnClass='back' on:click={() => dispatch('loadPrevTrack')} btnText=''>
             <BackwardIcon />
         </Button>
         {#if audioPlaying}
@@ -28,7 +28,7 @@
                 <PlayIcon />
             </Button>
         {/if}
-        <Button btnClass='forward' on:click={() => dispatch('forward')} btnText=''>
+        <Button btnClass='forward' on:click={() => dispatch('loadNextTrack')} btnText=''>
             <ForwardIcon />
         </Button>
     </div>

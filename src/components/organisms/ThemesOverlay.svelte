@@ -33,7 +33,7 @@
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        z-index: 12;
+        z-index: 14;
         border: var(--border);
         border-radius: var(--radius);
 
