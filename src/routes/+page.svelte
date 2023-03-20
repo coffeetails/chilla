@@ -3,10 +3,10 @@
     import ScrollButtonUp from "../components/atoms/icons/ScrollButtonUp.svelte";
     import SectionSticks from '../components/molecules/SectionSticks.svelte';
     import Button from "../components/atoms/Button.svelte";
-    import AnimationOne from "../components/atoms/AnimationOne.svelte";
-    import AnimationTwo from "../components/atoms/AnimationTwo.svelte";
-    import AnimationThree from "../components/atoms/AnimationThree.svelte";
-    import AnimationFour from "../components/atoms/AnimationFour.svelte";
+    import AnimationOne from "../components/atoms/animations/AnimationOne.svelte";
+    import AnimationTwo from "../components/atoms/animations/AnimationTwo.svelte";
+    import AnimationThree from "../components/atoms/animations/AnimationThree.svelte";
+    import AnimationFour from "../components/atoms/animations/AnimationFour.svelte";
     
     import { settingsIsVisible, numberOfBlobs } from '../stores';
     import { onDestroy, onMount } from 'svelte';
@@ -71,18 +71,18 @@
 
 </script>
 
-    <Button btnClass='btnUp' on:click={ scrollUp } btnText=''>
+    <!-- <Button btnClass='btnUp' on:click={ scrollUp } btnText=''>
         <ScrollButtonUp />
-    </Button>
+    </Button> -->
 
     <AnimationOne id="animationOne" />
     <AnimationTwo id="animationTwo" />
     <AnimationThree id="animatonThree" />
     <AnimationFour id="animationFour" />
 
-    <Button btnClass='btnDown' on:click={ scrollDown } btnText=''>
+    <!-- <Button btnClass='btnDown' on:click={ scrollDown } btnText=''>
         <ScrollButtonDown />
-    </Button>
+    </Button> -->
 
     <SectionSticks />
 
