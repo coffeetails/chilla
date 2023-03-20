@@ -2,19 +2,14 @@
     import ScrollButtonDown from "../components/atoms/icons/ScrollButtonDown.svelte";
     import ScrollButtonUp from "../components/atoms/icons/ScrollButtonUp.svelte";
     import SectionSticks from '../components/molecules/SectionSticks.svelte';
-    
-    import { settingsIsVisible, numberOfBlobs } from '../stores';
-    import { onDestroy, onMount } from 'svelte';
     import Button from "../components/atoms/Button.svelte";
     import AnimationOne from "../components/atoms/AnimationOne.svelte";
     import AnimationTwo from "../components/atoms/AnimationTwo.svelte";
     import AnimationThree from "../components/atoms/AnimationThree.svelte";
     import AnimationFour from "../components/atoms/AnimationFour.svelte";
-
-    let blue = 'blue';
-    let red = 'red';
-    let green = 'green'
-    let yellow = 'yellow';
+    
+    import { settingsIsVisible, numberOfBlobs } from '../stores';
+    import { onDestroy, onMount } from 'svelte';
 
     onMount(() => {
         settingsIsVisible.set(true);
