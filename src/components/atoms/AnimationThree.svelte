@@ -34,9 +34,9 @@
     const polygonSquare = "polygon(70% 100%, 70% 100%, 70% 100%, 70% 100%, 70% 100%, 30% 100%, 30% 60%, 70% 60%)";
     const polygonPentagon = "polygon(80% 68%, 70% 100%, 70% 100%, 70% 100%, 70% 100%, 30% 100%, 20% 68%, 50% 44%)";
     const polygonHexagon = "polygon(70% 44%, 85% 72%, 70% 100%, 70% 100%, 70% 100%, 30% 100%, 15% 72%, 30% 44%)";
-
     const polygonHeptagon = "polygon(50% 25%, 80% 38%, 90% 69%, 70% 100%, 70% 100%, 30% 100%, 10% 69%, 20% 38%)";
-    const polygonOctagon = "polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%)";
+
+    const polygonOctagon = "polygon(30% 25%, 70% 25%, 90% 45%, 90% 75%, 70% 100%, 30% 100%, 10% 75%, 10% 45%)";
     
     onMount(() => {
         runAnimation();
@@ -57,19 +57,19 @@
                 
             blobElem.animate({
                     clipPath: [polygonLine, polygonTriangle, polygonSquare, polygonPentagon, polygonHexagon, polygonHeptagon, polygonOctagon],
-                    backgroundColor: ["var(--color-beta)", "var(--color-psi)"]
+                    backgroundColor: ["var(--color-beta)", "var(--color-alpha)"]
                 }, options);
             blobElemTwo.animate({
                     clipPath: [polygonLine, polygonTriangle, polygonSquare, polygonPentagon, polygonHexagon, polygonHeptagon],
-                    backgroundColor: ["var(--color-beta)", "var(--color-psi)"]
+                    backgroundColor: ["var(--color-beta)", "var(--color-beta)"]
                 }, options);
             blobElemThree.animate({
                     clipPath: [polygonLine, polygonTriangle, polygonSquare, polygonPentagon, polygonHexagon],
-                    backgroundColor: ["var(--color-beta)", "var(--color-psi)"]
+                    backgroundColor: ["var(--color-beta)", "var(--color-gamma)"]
                 }, options);
             blobElemFour.animate({
                     clipPath: [polygonLine, polygonTriangle, polygonSquare, polygonPentagon],
-                    backgroundColor: ["var(--color-beta)", "var(--color-psi)"]
+                    backgroundColor: ["var(--color-beta)", "var(--color-gamma)"]
                 }, options);
             blobElemFive.animate({
                     clipPath: [polygonLine, polygonTriangle, polygonSquare],
@@ -77,7 +77,7 @@
                 }, options);
             blobElemSix.animate({
                     clipPath: [polygonLine, polygonTriangle],
-                    backgroundColor: ["var(--color-beta)", "var(--color-psi)"]
+                    backgroundColor: ["var(--color-beta)", "var(--color-omega)"]
                 }, options);
             setTimeout(() => {
                 blobElem.style.clipPath = polygonOctagon;
@@ -86,10 +86,16 @@
                 blobElemFour.style.clipPath = polygonPentagon;
                 blobElemFive.style.clipPath = polygonSquare;
                 blobElemSix.style.clipPath = polygonTriangle;
-                
-                for(let elem of blobElemArray) {
-                    elem.style.background = "var(--color-psi)";
-                }
+
+                blobElem.style.background = "var(--color-alpha)";
+                blobElemTwo.style.background = "var(--color-beta)";
+                blobElemThree.style.background = "var(--color-gamma)";
+                blobElemFour.style.background = "var(--color-gamma)";
+                blobElemFive.style.background = "var(--color-psi)";
+                blobElemSix.style.background = "var(--color-omega)";
+                // for(let elem of blobElemArray) {
+                //     elem.style.background = "var(--color-psi)";
+                // }
                 animateTwo();
             }, (storeBreathIn)*1000);
         }
@@ -115,19 +121,19 @@
 
             blobElem.animate({
                     clipPath: [polygonOctagon, polygonHeptagon, polygonHexagon, polygonPentagon,polygonSquare, polygonTriangle, polygonLine],
-                    backgroundColor: ["var(--color-psi)", "var(--color-beta)"]
+                    backgroundColor: ["var(--color-alpha)", "var(--color-beta)"]
                 }, options);
             blobElemTwo.animate({
                     clipPath: [polygonHeptagon, polygonHexagon, polygonPentagon,polygonSquare, polygonTriangle, polygonLine],
-                    backgroundColor: ["var(--color-psi)", "var(--color-beta)"]
+                    backgroundColor: ["var(--color-beta)", "var(--color-beta)"]
                 }, options);
             blobElemThree.animate({
                     clipPath: [polygonHexagon, polygonPentagon,polygonSquare, polygonTriangle, polygonLine],
-                    backgroundColor: ["var(--color-psi)", "var(--color-beta)"]
+                    backgroundColor: ["var(--color-gamma)", "var(--color-beta)"]
                 }, options);
             blobElemFour.animate({
                     clipPath: [polygonPentagon,polygonSquare, polygonTriangle, polygonLine],
-                    backgroundColor: ["var(--color-psi)", "var(--color-beta)"]
+                    backgroundColor: ["var(--color-gamma)", "var(--color-beta)"]
                 }, options);
             blobElemFive.animate({
                     clipPath: [polygonSquare, polygonTriangle, polygonLine],
@@ -135,8 +141,9 @@
                 }, options);
             blobElemSix.animate({
                     clipPath: [polygonTriangle, polygonLine],
-                    backgroundColor: ["var(--color-psi)", "var(--color-beta)"]
+                    backgroundColor: ["var(--color-omega)", "var(--color-beta)"]
                 }, options);
+                
             setTimeout(() => {
                 for(let elem of blobElemArray) {
                     elem.style.clipPath = polygonLine;
@@ -176,12 +183,12 @@
     
     <div class="wrapper">
         <!-- create your animation here -->
-        <div class="blob" bind:this={blobElem} id={id}></div>
-        <div class="blob" bind:this={blobElemTwo} id={id}></div>
-        <div class="blob" bind:this={blobElemThree} id={id}></div>
-        <div class="blob" bind:this={blobElemFour} id={id}></div>
-        <div class="blob" bind:this={blobElemFive} id={id}></div>
-        <div class="blob" bind:this={blobElemSix} id={id}></div>
+        <div class="blob blobSection" bind:this={blobElem} id={id}></div>
+        <div class="blobSection" bind:this={blobElemTwo} id={id}></div>
+        <div class="blobSection" bind:this={blobElemThree} id={id}></div>
+        <div class="blobSection" bind:this={blobElemFour} id={id}></div>
+        <div class="blobSection" bind:this={blobElemFive} id={id}></div>
+        <div class="blobSection" bind:this={blobElemSix} id={id}></div>
 
         <h3 class="animText-1" bind:this={breathInElem}>Andas in 1</h3>
         <h3 class="animText-2" bind:this={pauseInElem}>Håll andan 2</h3>
@@ -198,6 +205,10 @@
 
         scroll-snap-align: center;
         scroll-snap-stop: always;
+
+        h3 {
+            margin-top: 15rem;
+        }
     }
 
     .wrapper > * {
@@ -214,12 +225,12 @@
     }
     
 
-    .blob {
+    .blobSection {
         clip-path: polygon(50% 100%, 50% 100%, 100% 100%, 0% 100%);
-        width: calc(var(--baseline)*15);
-        height: calc(var(--baseline)*15);
+        width: calc(var(--baseline)*20);
+        height: calc(var(--baseline)*20);
         background-color: gray;
-        opacity: 0.1;
+        margin-bottom: 10rem;
     }
 
 </style>
