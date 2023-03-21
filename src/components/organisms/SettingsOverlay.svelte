@@ -72,7 +72,7 @@
             pauseIn.set(16);
             breathOut.set(8);
             pauseOut.set(0);
-        } else if(event.target.id == "4-7-8") {
+        } else if(event.target.id == "fourSevenEight") {
             breathIn.set(4);
             pauseIn.set(7);
             breathOut.set(8);
@@ -84,14 +84,14 @@
 
 
     function checkTechniques() {
-        if(boxElem != null && pranayamaElem != null && fourSevenEightElem != null) {
+        // if(boxElem != null && pranayamaElem != null && fourSevenEightElem != null) {
             boxElem.checked = false;
             pranayamaElem.checked = false;
             fourSevenEightElem.checked = false;
-            
+            console.log("ohai");
             if(storeBreathIn == 4 && storePauseIn == 4 && storeBreathOut == 4 && storePauseOut == 4) {
                 console.log("box");
-            boxElem.checked = true;
+                boxElem.checked = true;
             } else if(storeBreathIn == 4 && storePauseIn == 16 && storeBreathOut == 8 && storePauseOut == 0) {
                 console.log("pranayama");
                 pranayamaElem.checked = true;
@@ -101,7 +101,7 @@
             } else {
                 console.log("odd thing happend when choosing breathing technique");
             }
-        }
+        // }
     }
 
 </script>

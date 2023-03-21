@@ -1,5 +1,6 @@
 <script lang=ts>
-    export let value: number;
+    // export let value: number;
+    export let seconds: number;
     // export let name: string;
 
 </script>
