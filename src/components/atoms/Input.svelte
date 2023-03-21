@@ -4,7 +4,7 @@
 
 </script>
 
-    <input bind:value={value} min="0" max="10" on:input type="range">
+    <input bind:value={seconds} min="0" max="20" on:change type="range">
 
 <style lang=scss>
 
