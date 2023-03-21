@@ -11,12 +11,12 @@
 	}
 
 </script>
-<!-- mouseup keyup click -->
-<!-- svelte-ignore a11y-click-events-have-key-events -->
-<!-- <div id={id+"Stick"} class:active={$activeBlob==id} on:click={navToBlob}> -->
+
 <div id={id+"Stick"} class:active={currentActiveBlob==id}>
-    <a href={`#${id}`} on:click|once={handleClick} target="_self"> </a>
     <!-- <Link href={`#${id}`} on:click|once={handleClick}> </Link> -->
+    <!-- <a href={`#${id}`} on:click|once={handleClick} target="_self"> </a> -->
+    <!-- <a href={"#" + id} on:click|once={handleClick} target="_self"> </a> -->
+    <a href={"/#" + id} on:click|once={handleClick} target="_self"> </a>
 </div>
 
 <style lang="scss">
