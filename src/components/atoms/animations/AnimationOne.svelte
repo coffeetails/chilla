@@ -111,9 +111,9 @@
         
     </script>
     
-    <div class="wrapper">
+    <div {id} class="blobWrapper">
         <!-- create your animation here -->
-        <div class="blob" bind:this={blobElem} id={id}></div>
+        <div class="blob" bind:this={blobElem} ></div>
 
         <h3 class="animText-1" bind:this={breathInElem}>Andas in</h3>
         <h3 class="animText-2" bind:this={pauseInElem}>Håll andan</h3>
@@ -123,8 +123,9 @@
 
 <style lang="scss">
 
-    .wrapper {
-        min-height: 100dvh;
+    .blobWrapper {
+        min-height: 80vh;
+        margin: 10vh 0;
         display: grid;
         place-items: center;
 
@@ -132,7 +133,7 @@
         scroll-snap-stop: always;
     }
 
-    .wrapper > * {
+    .blobWrapper > * {
         grid-column: 1 / -1;
         grid-row: 1 / -1;
     }

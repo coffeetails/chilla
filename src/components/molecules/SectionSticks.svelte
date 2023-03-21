@@ -5,21 +5,27 @@
     import { numberOfBlobs, activeBlob } from "../../stores";
     import Stick from "../atoms/Stick.svelte";
 
-    onMount(() => {
-        const blobElems = document.querySelectorAll('.blob');
-        numberOfBlobs.set(blobElems);
-        // console.log(blobElems);
+    let testBlob = [];
+    numberOfBlobs.subscribe(value => {
+        testBlob = value;
         checkViewport();
     });
 
-    // console.log($numberOfBlobs);
+    // onMount(() => {
+        // const blobElems = document.querySelectorAll('.blob');
+        // numberOfBlobs.set(blobElems);
+        // console.log(blobElems);
+        // checkViewport();
+    // });
+
     function checkViewport() {
-        for(let blob of $numberOfBlobs) {
+    console.log(testBlob);
+        for(let blob of testBlob) {
             const blobLocation = blob.getBoundingClientRect();
-            // console.log(blob.id, blobLocation.y);
+            console.log(blob.id, blobLocation.y);
             // The first with a positive y coordination is the current visible blob
-            if(blobLocation.y > 0 ) {
-                console.log(blob.id);
+            if(blobLocation.y >= -5 ) {
+                console.log('vanlig text', blob.id);
                 activeBlob.set(blob.id);
                 break;
             }

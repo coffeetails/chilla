@@ -272,9 +272,9 @@
         
     </script>
     
-    <div class="wrapper">
+    <div {id} class="blobWrapper">
         <!-- create your animation here -->
-        <div class="blob blobSection animOne" id={id}></div>
+        <div class="blob blobSection animOne"></div>
         <div class="blobSection animTwo" bind:this={blobElem2}></div>
         <div class="blobSection animThree" bind:this={blobElem3}></div>
         <div class="blobSection animFour" bind:this={blobElem4}></div>
@@ -289,8 +289,9 @@
 
 <style lang="scss">
 
-    .wrapper {
-        min-height: 100dvh;
+    .blobWrapper {
+        min-height: 80vh;
+        margin: 10vh 0;
         display: grid;
         place-items: center;
         padding-top: 12rem;
@@ -299,7 +300,7 @@
         scroll-snap-stop: always;
     }
 
-    .wrapper > * {
+    .blobWrapper > * {
         grid-column: 1 / -1;
         grid-row: 1 / -1;
     }

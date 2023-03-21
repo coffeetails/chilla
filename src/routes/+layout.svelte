@@ -44,7 +44,7 @@
         flex-direction: column;
         align-items: center;
         justify-content: space-between;
-        min-height: 100dvh;
+        min-height: 100vh;
         background-color: var(--bg-color);
     }
 </style>

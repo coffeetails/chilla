@@ -14,9 +14,10 @@
     onMount(() => {
         settingsIsVisible.set(true);
         
-        const blobElems = document.querySelectorAll('.blob');
+        const blobElems = document.querySelectorAll('.blobWrapper');
         // @ts-ignore
         numberOfBlobs.set(blobElems);
+        console.log(blobElems);
     });
 
     function disableVisibleSettings() {
@@ -79,6 +80,7 @@
     <AnimationTwo id="animationTwo" />
     <AnimationThree id="animatonThree" />
     <AnimationFour id="animationFour" />
+    <div class="box"></div>
 
     <!-- <Button btnClass='btnDown' on:click={ scrollDown } btnText=''>
         <ScrollButtonDown />
@@ -97,5 +99,14 @@
         position: fixed;
         bottom: calc(var(--baseline)*5); 
     }
+
+    // .box {
+    //     height: 50dvh;
+    //     width: 2em;
+    //     background-color: red;
+    //     position: fixed;
+    //     top: 10em;
+    //     left: 10em;
+    // }
 
 </style>
