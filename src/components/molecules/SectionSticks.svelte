@@ -48,7 +48,8 @@
 .wrapper {
     position: fixed;
     right: var(--margin-small);
-    top: 7rem;
+    top: 0rem;
+    height: 100vh;
     // bottom: 0;
 
     display: flex;
