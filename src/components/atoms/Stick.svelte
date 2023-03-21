@@ -7,15 +7,23 @@
     activeBlob.subscribe(value => currentActiveBlob = value);
 
     function handleClick() {
-        document.querySelector("#" + id)?.scrollIntoView();
+        let elem = document.querySelector("#" + id);
+        console.log("#" + id);
+        console.log("OHAI1", elem);
+        if(elem !=null) {
+            elem.scrollIntoView();
+            console.log("OHAI2", elem);
+        }
 		// alert('no more alerts');
 	}
 
 </script>
 
-<div id={id+"Stick"} class:active={currentActiveBlob==id}>
+<!-- <div id={id+"Stick"} class:active={currentActiveBlob==id}> -->
+<!-- svelte-ignore a11y-click-events-have-key-events -->
+<div id={id+"Stick"} class:active={currentActiveBlob==id} on:click={handleClick}>
     <!-- <Link href={"#" + id} on:click|once={handleClick}> </Link> -->
-    <a href={"#" + id} on:click|once={handleClick}> </a>
+    <!-- <a href={"#" + id} on:click|once={handleClick}> </a> -->
     <!-- <a href={"#" + id} on:click|once={handleClick} target="_self"> </a> -->
     <!-- <a href={"/#" + id} on:click|once={handleClick} target="_self"> </a> -->
 </div>
@@ -31,13 +39,13 @@
         border-radius: var(--baseline);
         transition: 0.25s;
 
-        a {
-            display: block;
-            margin: 0;
-            padding: 0;
-            width: calc(var(--baseline)*0.75);
-            height: calc(var(--baseline)*4);
-        }
+        // a {
+        //     display: block;
+        //     margin: 0;
+        //     padding: 0;
+        //     width: calc(var(--baseline)*0.75);
+        //     height: calc(var(--baseline)*4);
+        // }
     }
 
 </style>
