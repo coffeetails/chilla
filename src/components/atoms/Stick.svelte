@@ -5,12 +5,16 @@
     let currentActiveBlob: string;
     activeBlob.subscribe(value => currentActiveBlob = value);
 
+    function handleClick() {
+		alert('no more alerts')
+	}
+
 </script>
 <!-- mouseup keyup click -->
 <!-- svelte-ignore a11y-click-events-have-key-events -->
 <!-- <div id={id+"Stick"} class:active={$activeBlob==id} on:click={navToBlob}> -->
 <div id={id+"Stick"} class:active={currentActiveBlob==id}>
-    <a href={`#${id}`}> </a>
+    <a href={`#${id}`} on:click|once={handleClick}> </a>
 </div>
 
 <style lang="scss">
