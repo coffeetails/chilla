@@ -48,8 +48,8 @@
 .wrapper {
     position: fixed;
     right: var(--margin-small);
-    top: 0;
-    bottom: 0;
+    top: 7rem;
+    // bottom: 0;
 
     display: flex;
     justify-content: center;
