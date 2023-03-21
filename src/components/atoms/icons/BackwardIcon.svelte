@@ -2,7 +2,7 @@
 
 </script>
 
-    <i class="fa-solid fa-backward fa-4x"></i>
+    <i class="fa-solid fa-backward-fast fa-3x"></i>
 
 <style>
 

@@ -1,4 +1,4 @@
-<script>
+<!-- <script>
     
     import AudioPlayer from "../../components/organisms/AudioPlayer.svelte";
 
@@ -19,4 +19,4 @@
         gap: calc(var(--baseline) * 5);
     }
 
-</style>
+</style> -->

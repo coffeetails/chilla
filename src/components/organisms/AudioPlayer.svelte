@@ -1,66 +1,77 @@
 <script lang="ts">
-    import BackwardIcon from "../../components/atoms/icons/BackwardIcon.svelte";
-    import ForwardIcon from "../../components/atoms/icons/ForwardIcon.svelte";
-    import PlayIcon from "../../components/atoms/icons/PlayIcon.svelte";
-    import PauseIcon from "../atoms/icons/PauseIcon.svelte";
-    import Button from "../atoms/Button.svelte";
+    import AudioTitle from "../atoms/AudioTitle.svelte";
+    import AudioControls from "./AudioControls.svelte";
+    import AudioVolume from "./AudioVolume.svelte";
 
-    import { playAudio } from "../../stores";
+    import { audioData } from "../../audioData";
+    import { playAudio, activeFooter } from "../../stores";
 
-    let audioPlaying: boolean;
-    playAudio.subscribe(value => audioPlaying = value);
+    let footerIsActive: boolean;
+    activeFooter.subscribe(value => footerIsActive = value);
 
-    let title = 'Raindrops';
-
-    const play = () => {
-        console.log('play');
-        playAudio.set(true);
+    let trackIndex = 0;
+    let audioTitle = audioData[trackIndex].name;
+    export let audioTrack = audioData[trackIndex].url;
+    
+    let audioPlayer: any;
+    
+    const playPause = () => {
+        
+        if (audioPlayer.paused) {
+            audioPlayer.play();
+            playAudio.set(true);
+        } else {
+            audioPlayer.pause();
+            playAudio.set(false);
+        }
     }
 
-    const pause = () => {
-        console.log('pause');
-        playAudio.set(false);
+    const loadNextTrack = async () => {
+        if (audioPlayer.paused) {
+            playAudio.set(true);
+        }
+        
+        if (trackIndex == audioData.length - 1) {
+            trackIndex = 0;
+        } else {
+            trackIndex = trackIndex + 1;
+        }
+        audioTitle = audioData[trackIndex].name;
+        audioTrack = audioData[trackIndex].url;
+        await audioPlayer.load();
+        await audioPlayer.play();
     }
 
-    const next = () => {
-        console.log('next');
+    const loadPrevTrack = async () => {
+        if (audioPlayer.paused) {
+            playAudio.set(true);
+        }
 
+        if (trackIndex !== 0) {
+            trackIndex = trackIndex - 1;
+        }
+        audioTitle = audioData[trackIndex].name;
+        audioTrack = audioData[trackIndex].url;
+        await audioPlayer.load();
+        await audioPlayer.play();
     }
 
-    const last = () => {
-        console.log('last');
+    export let volume: number = 5;
 
+    const adjustVolume = () => {
+        audioPlayer.volume = volume / 10;
     }
 
 </script>
 
-    <div class="player">
+    <div class="player" class:visible={ footerIsActive }>
 
-        <audio id="player" src=""></audio>
+        <audio id="player" bind:this={audioPlayer} src={audioTrack} loop ></audio>
 
-        <div class="title-wrapper">
-            <h3>{title}</h3>
-        </div>
-        <div class="controls-wrapper">
-            <Button btnClass='' on:click={last} btnText=''>
-                <BackwardIcon />
-            </Button>
-            {#if audioPlaying}
-                <Button btnClass='' on:click={pause} btnText=''>
-                    <PauseIcon /> 
-                </Button> 
-            {:else}
-                <Button btnClass='' on:click={play} btnText=''>
-                    <PlayIcon />
-                </Button>
-            {/if}
-            <Button btnClass='' btnText=''>
-                <ForwardIcon on:click={next} />
-            </Button>
-        </div>
-        <div class="progress-bar">
-            <input type="range">
-        </div>
+        <AudioTitle bind:audioTitle={audioTitle}/>
+        <AudioControls on:loadNextTrack={loadNextTrack} on:playPause={playPause} on:loadPrevTrack={loadPrevTrack} />
+        <AudioVolume bind:volume={volume} on:adjustVolume={adjustVolume}/>
+        
     </div>
 
 <style lang="scss">
@@ -69,46 +80,12 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 3rem;
-    }
-
-    .controls-wrapper {
-        display: flex;
-        justify-content: space-between;
-        gap: 3rem;
-    }
-
-    .controls-wrapper :global(button:nth-child(2)) {
-        width: 3.75rem;
-    }
-
-    .controls-wrapper :global(i) {
-        color: var(--color-beta);
-
-        &:active {
-            opacity: .5;
-        }
-    }
-
-    .progress-bar {
-        width: 100%;
-        display: flex;
         justify-content: center;
+        gap: 1rem;
     }
 
-    .progress-bar input {
-        appearance: none;
-        height: .2rem;
-        background-color: var(--color-omega);
-        width: 80%;
-
-        &::-webkit-slider-thumb {
-            appearance: none;
-            height: .7rem;
-            width: .7rem;
-            border-radius: 50%;
-            background-color: var(--color-beta);
-        }
+    .visible {
+        gap: 3rem;
     }
 
 </style>

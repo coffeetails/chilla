@@ -52,25 +52,37 @@
 
 <style lang="scss">
     h3 {
-        padding: 0rem var(--padding-small) var(--padding-small);
+        padding: var(--padding-small) var(--padding-small);
     }
 
     .wrapper {
         display: flex;
         flex-wrap: wrap;
-        justify-content: center;
+        // gap: 1rem;
         
         .radiobutton {
+            display: flex;
             flex-grow: 1;
             text-align: center;
             // width: fit-content;
+            & *{
+                margin: var(--margin-small);
+                border: var(--border);
+                border-radius: var(--radius-small);
+                padding: var(--padding-small) var(--padding);
+                
+                color: var(--font-color);
+                cursor: pointer;
 
-            margin: var(--margin-small);
-            border: var(--border);
-            border-radius: var(--radius-small);
-            padding: 0 var(--padding);
+                &:hover {
+                    opacity: .5;
+                }
+            }
+            
+        }
 
-            color: var(--font-color);
+        .radiobutton > * {
+            cursor: pointer;
         }
     }
 

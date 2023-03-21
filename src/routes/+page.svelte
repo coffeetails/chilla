@@ -1,17 +1,15 @@
 <script>
-    import Blob from "../components/atoms/Blob.svelte";
     import ScrollButtonDown from "../components/atoms/icons/ScrollButtonDown.svelte";
     import ScrollButtonUp from "../components/atoms/icons/ScrollButtonUp.svelte";
     import SectionSticks from '../components/molecules/SectionSticks.svelte';
-
+    import Button from "../components/atoms/Button.svelte";
+    import AnimationOne from "../components/atoms/animations/AnimationOne.svelte";
+    import AnimationTwo from "../components/atoms/animations/AnimationTwo.svelte";
+    import AnimationThree from "../components/atoms/animations/AnimationThree.svelte";
+    import AnimationFour from "../components/atoms/animations/AnimationFour.svelte";
+    
     import { settingsIsVisible, numberOfBlobs } from '../stores';
     import { onDestroy, onMount } from 'svelte';
-    import Button from "../components/atoms/Button.svelte";
-
-    let blue = 'blue';
-    let red = 'red';
-    let green = 'green'
-    let yellow = 'yellow';
 
     onMount(() => {
         settingsIsVisible.set(true);
@@ -60,8 +58,10 @@
             const newY = startY + (endY - startY) * progress;
 
             window.scroll(0, newY);
+            //Ändra newY till 100
 
             if (progress < 1) {
+                // Behöver kika på progress och se om animate körs
                 requestAnimationFrame(animate);
             }
         }
@@ -71,18 +71,18 @@
 
 </script>
 
-    <Button btnClass='btnUp' on:click={ scrollUp } btnText=''>
+    <!-- <Button btnClass='btnUp' on:click={ scrollUp } btnText=''>
         <ScrollButtonUp />
-    </Button>
+    </Button> -->
 
-    <Blob blobBgr={blue} id="blueBlob"/>
-    <Blob blobBgr={red} id="redBlob"/>
-    <Blob blobBgr={green} id="greenBlob"/>
-    <Blob blobBgr={yellow} id="yellowBlob"/>
+    <AnimationOne id="animationOne" />
+    <AnimationTwo id="animationTwo" />
+    <AnimationThree id="animatonThree" />
+    <AnimationFour id="animationFour" />
 
-    <Button btnClass='btnDown' on:click={ scrollDown } btnText=''>
+    <!-- <Button btnClass='btnDown' on:click={ scrollDown } btnText=''>
         <ScrollButtonDown />
-    </Button>
+    </Button> -->
 
     <SectionSticks />
 

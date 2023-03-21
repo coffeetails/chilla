@@ -1,36 +1,10 @@
 <script lang=ts>
-    import Button from "../../components/atoms/Button.svelte";
-    import BoxContent from "../../components/molecules/BoxContent.svelte";
-    import FourSevenEightContent from "../../components/molecules/FourSevenEightContent.svelte";
-    import IntroContent from "../../components/molecules/IntroContent.svelte";
-    import PranayamaContent from "../../components/molecules/PranayamaContent.svelte";
-    
-    import { aboutContent } from "../../stores";
-
-    let content: String;
-    aboutContent.subscribe(value => content = value);
-
-    function setIntro() {
-        aboutContent.set('intro');
-    }
-
-    let btnText = 'Tillbaka'
+    import InfoContent from "../../components/molecules/InfoContent.svelte";
 
 </script>
 
     <div class="wrapper">
-        {#if content == '478'}
-            <FourSevenEightContent />
-            <Button btnClass='' on:click={setIntro} {btnText} />
-        {:else if content == 'pranayama'}
-            <PranayamaContent />
-            <Button btnClass='' on:click={setIntro} {btnText} />
-        {:else if content == 'box'}
-            <BoxContent />
-            <Button btnClass='' on:click={setIntro} {btnText} />
-        {:else}
-            <IntroContent />
-        {/if}
+        <InfoContent />
     </div>
 
 <style lang="scss">
@@ -63,6 +37,12 @@
                 flex-direction: column;
                 gap: 1rem;
                 align-items: center;
+            }
+
+            & :global(button) {
+                align-self: flex-start;
+                border: 1px solid var(--color-psi);
+                padding: var(--padding-small) var(--padding);
             }
         }
 </style>
