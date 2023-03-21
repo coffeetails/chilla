@@ -84,7 +84,8 @@
 
 
     function checkTechniques() {
-        // if(boxElem != null && pranayamaElem != null && fourSevenEightElem != null) {
+        console.log("checkTechniques()");
+        if(boxElem != null && pranayamaElem != null && fourSevenEightElem != null) {
             boxElem.checked = false;
             pranayamaElem.checked = false;
             fourSevenEightElem.checked = false;
@@ -101,7 +102,7 @@
             } else {
                 console.log("odd thing happend when choosing breathing technique");
             }
-        // }
+        }
     }
 
 </script>

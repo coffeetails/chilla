@@ -9,7 +9,7 @@
 </script>
 
     <label for={labelFor}>{labelText}: {seconds}s
-        <Input bind:seconds={seconds} on:input />
+        <Input bind:value={seconds} on:input />
     </label>
 
 <style lang=scss>

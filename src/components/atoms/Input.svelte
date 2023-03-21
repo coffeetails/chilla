@@ -1,11 +1,11 @@
 <script lang=ts>
-    // export let value: number;
-    export let seconds: number;
+    export let value: number;
+    // export let seconds: number;
     // export let name: string;
 
 </script>
 
-    <input bind:value={seconds} min="0" max="20" on:change type="range">
+    <input bind:value={value} min="0" max="20" on:input type="range">
 
 <style lang=scss>
 
