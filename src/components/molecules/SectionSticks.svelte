@@ -19,13 +19,13 @@
     // });
 
     function checkViewport() {
-    console.log(testBlob);
+    // console.log(testBlob);
         for(let blob of testBlob) {
             const blobLocation = blob.getBoundingClientRect();
-            console.log(blob.id, blobLocation.y);
+            // console.log(blob.id, blobLocation.y);
             // The first with a positive y coordination is the current visible blob
             if(blobLocation.y >= -5 ) {
-                console.log('vanlig text', blob.id);
+                // console.log('vanlig text', blob.id);
                 activeBlob.set(blob.id);
                 break;
             }
