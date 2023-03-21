@@ -1,5 +1,6 @@
 <script lang=ts>
-    export let seconds: number;
+    export let value: number;
+    // export let name: string;
 
 </script>
 
@@ -18,7 +19,7 @@
             height: .7rem;
             width: .7rem;
             border-radius: 50%;
-            background-color: var(--color-beta);
+            background-color: var(--color-alpha);
         }
     }
 

@@ -9,6 +9,15 @@
     let settingsIsActive: Boolean;
     activeSettings.subscribe(value => settingsIsActive = value);
 
+    let boxElem: HTMLInputElement | null;
+    let pranayamaElem: HTMLInputElement | null;
+    let fourSevenEightElem: HTMLInputElement | null;
+    onMount(() => {
+        boxElem = document.querySelector('#box') as HTMLInputElement;
+        pranayamaElem = document.querySelector('#pranayama') as HTMLInputElement;
+        fourSevenEightElem = document.querySelector('#fourSevenEight') as HTMLInputElement;
+    });
+
     const closeOverlay = () => {
         activeSettings.set(false);
         activeDimmer.set(false);
@@ -73,15 +82,7 @@
         }
     }
 
-    let boxElem: HTMLInputElement | null;
-    let pranayamaElem: HTMLInputElement | null;
-    let fourSevenEightElem: HTMLInputElement | null;
-    onMount(() => {
-        boxElem = document.querySelector('#box') as HTMLInputElement;
-        pranayamaElem = document.querySelector('#pranayama') as HTMLInputElement;
-        fourSevenEightElem = document.querySelector('#fourSevenEight') as HTMLInputElement;
-    });
-    
+
     function checkTechniques() {
         if(boxElem != null && pranayamaElem != null && fourSevenEightElem != null) {
             boxElem.checked = false;
@@ -108,10 +109,10 @@
     <div class="settings" class:visible={settingsIsActive}>
         <h2>Andningsintervall</h2>
         <div class="controls-wrapper">
-            <SettingsSlider on:change={setBreathIn} bind:seconds={storeBreathIn} labelFor='breathIn' labelText='Inandning' />
-            <SettingsSlider on:change={setPauseIn} bind:seconds={storePauseIn} labelFor='pauseIn' labelText='Paus' />
-            <SettingsSlider on:change={setBreathOut} bind:seconds={storeBreathOut} labelFor='breathOut' labelText='Utandning' />
-            <SettingsSlider on:change={setPauseOut} bind:seconds={storePauseOut} labelFor='pauseOut' labelText='Paus' />
+            <SettingsSlider on:input={setBreathIn} bind:seconds={storeBreathIn} labelFor='breathIn' labelText='Inandning' />
+            <SettingsSlider on:input={setPauseIn} bind:seconds={storePauseIn} labelFor='pauseIn' labelText='Paus' />
+            <SettingsSlider on:input={setBreathOut} bind:seconds={storeBreathOut} labelFor='breathOut' labelText='Utandning' />
+            <SettingsSlider on:input={setPauseOut} bind:seconds={storePauseOut} labelFor='pauseOut' labelText='Paus' />
         </div>
         <div class="techniques-wrapper">
             <h3>Andningstekniker</h3>
@@ -134,7 +135,7 @@
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        z-index: 12;
+        z-index: 14;
         padding: var(--padding-large);
         border: 2px solid var(--color-gamma);
     }

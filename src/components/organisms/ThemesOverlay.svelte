@@ -15,11 +15,9 @@
 </script>
 
     <div class="themes" class:visible={themesIsActive}>
-        <!-- <CloseIcon on:click={closeOverlay}/> -->
         <ThemeSwitch />
         <div class="buttonWrapper">
-        <Button btnClass="" btnText="Spara" />
-        <Button btnClass="" btnText="Stäng" />
+            <Button on:click={closeOverlay} btnClass="" btnText="Stäng" />
         </div>
     </div>
 
@@ -33,21 +31,27 @@
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        z-index: 12;
+        z-index: 14;
         border: var(--border);
         border-radius: var(--radius);
+        flex-direction: column;
+        // align-items: center;
+        gap: var(--padding);
 
         .buttonWrapper {
-            width: 100%;
-
+            padding: 1rem 2rem;
             display: flex;
-            flex-direction: row;
-            justify-content: space-around;
+            justify-content: center;
+
+            & :global(button) {
+                border: 1px solid var(--color-beta);
+                padding: var(--padding-small) var(--padding);
+            }
         }
     }
 
     .visible {
-        display: inline-block;
+        display: flex;
     }
 
 </style>

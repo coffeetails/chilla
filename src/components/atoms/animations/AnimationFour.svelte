@@ -274,12 +274,12 @@
     
     <div class="wrapper">
         <!-- create your animation here -->
-        <div class="blob" id={id}></div>
-        <div class="blob2" bind:this={blobElem2}></div>
-        <div class="blob3" bind:this={blobElem3}></div>
-        <div class="blob4" bind:this={blobElem4}></div>
-        <div class="blob5" bind:this={blobElem5}></div>
-        <div class="blob6" bind:this={blobElem6}></div>
+        <div class="blob blobSection animOne" id={id}></div>
+        <div class="blobSection animTwo" bind:this={blobElem2}></div>
+        <div class="blobSection animThree" bind:this={blobElem3}></div>
+        <div class="blobSection animFour" bind:this={blobElem4}></div>
+        <div class="blobSection animFive" bind:this={blobElem5}></div>
+        <div class="blobSection animSix" bind:this={blobElem6}></div>
 
         <h3 class="animText-1" bind:this={breathInElem}>Andas in</h3>
         <h3 class="animText-2" bind:this={pauseInElem}>Håll andan</h3>
@@ -311,9 +311,8 @@
             transition: 0.5s;
         }
     }
-    
 
-    .blob {
+    .blobSection {
         width: calc(var(--baseline)*5);
         height: calc(var(--baseline)*5);
         border: 2px solid var(--color-psi);
@@ -322,66 +321,31 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        transform-origin: bottom;
+    }
+    
+
+    .animOne {
         z-index: 10;
     }
 
-    .blob2 {
-        width: calc(var(--baseline)*5);
-        height: calc(var(--baseline)*5);
-        border: 2px solid var(--color-psi);
-        border-radius: 50%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        transform-origin: bottom;
+    .animTwo {
         z-index: 9;
     }
 
-    .blob3 {
-        width: calc(var(--baseline)*5);
-        height: calc(var(--baseline)*5);
-        border: 2px solid var(--color-psi);
-        border-radius: 50%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        transform-origin: bottom;
+    .animThree {
         z-index: 8;
     }
 
-    .blob4 {
-        width: calc(var(--baseline)*5);
-        height: calc(var(--baseline)*5);
-        border: 2px solid var(--color-psi);
-        border-radius: 50%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        transform-origin: bottom;
+    .animFour {
         z-index: 7;
     }
 
-    .blob5 {
-        width: calc(var(--baseline)*5);
-        height: calc(var(--baseline)*5);
-        border: 2px solid var(--color-psi);
-        border-radius: 50%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        transform-origin: bottom;
+    .animFive {
         z-index: 6;
     }
 
-    .blob6 {
-        width: calc(var(--baseline)*5);
-        height: calc(var(--baseline)*5);
-        border: 2px solid var(--color-psi);
-        border-radius: 50%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        transform-origin: bottom;
+    .animSix {
         z-index: 5;
     }
 
