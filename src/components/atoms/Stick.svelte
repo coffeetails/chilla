@@ -1,12 +1,13 @@
 <script lang=ts>
     export let id = '';
     import { activeBlob } from "../../stores";
+    import Link from "./Link.svelte";
 
     let currentActiveBlob: string;
     activeBlob.subscribe(value => currentActiveBlob = value);
 
     function handleClick() {
-		alert('no more alerts')
+		// alert('no more alerts');
 	}
 
 </script>
@@ -14,7 +15,8 @@
 <!-- svelte-ignore a11y-click-events-have-key-events -->
 <!-- <div id={id+"Stick"} class:active={$activeBlob==id} on:click={navToBlob}> -->
 <div id={id+"Stick"} class:active={currentActiveBlob==id}>
-    <a href={`#${id}`} on:click|once={handleClick}> </a>
+    <a href={`#${id}`} on:click|once={handleClick} target="_self"> </a>
+    <!-- <Link href={`#${id}`} on:click|once={handleClick}> </Link> -->
 </div>
 
 <style lang="scss">
