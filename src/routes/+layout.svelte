@@ -10,9 +10,6 @@
     
     import { theme } from '../stores';    
 
-    // let audioPlayer: any;
-    // let audioTrack: any;
-
 </script>
 
 <svelte:head>

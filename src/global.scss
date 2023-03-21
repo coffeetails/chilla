@@ -36,9 +36,10 @@
 }
 
 html {
-    transform: 5s;
     scroll-snap-type: y mandatory;
     scroll-behavior: smooth;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
 }
 
 * {
