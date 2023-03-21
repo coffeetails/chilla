@@ -7,6 +7,7 @@
     activeBlob.subscribe(value => currentActiveBlob = value);
 
     function handleClick() {
+        document.querySelector("#" + id)?.scrollIntoView();
 		// alert('no more alerts');
 	}
 
@@ -14,8 +15,9 @@
 
 <div id={id+"Stick"} class:active={currentActiveBlob==id}>
     <!-- <Link href={"#" + id} on:click|once={handleClick}> </Link> -->
+    <a href={"#" + id} on:click|once={handleClick}> </a>
     <!-- <a href={"#" + id} on:click|once={handleClick} target="_self"> </a> -->
-    <a href={"/#" + id} on:click|once={handleClick} target="_self"> </a>
+    <!-- <a href={"/#" + id} on:click|once={handleClick} target="_self"> </a> -->
 </div>
 
 <style lang="scss">
