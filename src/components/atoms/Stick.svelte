@@ -22,10 +22,11 @@
 <!-- <div id={id+"Stick"} class:active={currentActiveBlob==id}> -->
 <!-- svelte-ignore a11y-click-events-have-key-events -->
 <div id={id+"Stick"} class:active={currentActiveBlob==id} on:click={handleClick}>
-    <!-- <Link href={"#" + id} on:click|once={handleClick}> </Link> -->
-    <!-- <a href={"#" + id} on:click|once={handleClick}> </a> -->
-    <!-- <a href={"#" + id} on:click|once={handleClick} target="_self"> </a> -->
-    <!-- <a href={"/#" + id} on:click|once={handleClick} target="_self"> </a> -->
+    <!-- <Link href={"#" + id} on:click={handleClick}> </Link> -->
+    <!-- <a href={"#" + id}> </a> -->
+    <!-- <a href={"#" + id} on:click={handleClick}> </a> -->
+    <!-- <a href={"#" + id} on:click={handleClick} target="_self"> </a> -->
+    <!-- <a href={"/#" + id} on:click={handleClick} target="_self"> </a> -->
 </div>
 
 <style lang="scss">

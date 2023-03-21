@@ -296,8 +296,8 @@
         place-items: center;
         padding-top: 12rem;
 
-        scroll-snap-align: center;
-        scroll-snap-stop: always;
+        // scroll-snap-align: center;
+        // scroll-snap-stop: always;
     }
 
     .blobWrapper > * {

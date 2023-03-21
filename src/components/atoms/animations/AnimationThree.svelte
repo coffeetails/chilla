@@ -204,8 +204,8 @@
         display: grid;
         place-items: center;
 
-        scroll-snap-align: center;
-        scroll-snap-stop: always;
+        // scroll-snap-align: center;
+        // scroll-snap-stop: always;
 
         h3 {
             margin-top: 15rem;

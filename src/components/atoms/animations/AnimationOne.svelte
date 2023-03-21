@@ -129,8 +129,8 @@
         display: grid;
         place-items: center;
 
-        scroll-snap-align: center;
-        scroll-snap-stop: always;
+        // scroll-snap-align: center;
+        // scroll-snap-stop: always;
     }
 
     .blobWrapper > * {
