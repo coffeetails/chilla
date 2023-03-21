@@ -7,8 +7,8 @@
     }
 
 </script>
-
-<div id={id+"Stick"} class:active={$activeBlob==id} on:mouseup={navToBlob}>
+<!-- mouseup keyup click -->
+<div id={id+"Stick"} class:active={$activeBlob==id} on:click={navToBlob}>
     <a href={"#"+ id }> </a>
 </div>
 
