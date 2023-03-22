@@ -129,7 +129,6 @@
         margin: 10vh 0;
         display: grid;
         place-items: center;
-        // width: 80%;
 
         scroll-snap-align: center;
         scroll-snap-stop: always;

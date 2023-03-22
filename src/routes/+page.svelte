@@ -1,8 +1,5 @@
 <script lang="ts">
-    import ScrollButtonDown from "../components/atoms/icons/ScrollButtonDown.svelte";
-    import ScrollButtonUp from "../components/atoms/icons/ScrollButtonUp.svelte";
     import SectionSticks from '../components/molecules/SectionSticks.svelte';
-    import Button from "../components/atoms/Button.svelte";
     import AnimationOne from "../components/atoms/animations/AnimationOne.svelte";
     import AnimationTwo from "../components/atoms/animations/AnimationTwo.svelte";
     import AnimationThree from "../components/atoms/animations/AnimationThree.svelte";
@@ -26,65 +23,9 @@
 
     onDestroy(disableVisibleSettings);
 
-    const scrollUp = () => {
-        const startY = window.pageYOffset;
-        const endY = startY - window.innerHeight;
-        const duration = 0;
-        const startTime = performance.now();
-
-        function animate() {
-            const elapsed = performance.now() - startTime;
-            const progress = Math.min(elapsed / duration, 1);
-            const newY = startY + (endY - startY) * progress;
-
-            window.scroll(0, newY);
-
-            if (progress < 1) {
-                requestAnimationFrame(animate);
-            }
-        }
-
-        requestAnimationFrame(animate);
-    }
-
-    const scrollDown = () => {
-        const startY = window.pageYOffset;
-        const endY = startY + window.innerHeight;
-        const duration = 0;
-        const startTime = performance.now();
-
-        function animate() {
-            const elapsed = performance.now() - startTime;
-            const progress = Math.min(elapsed / duration, 1);
-            const newY = startY + (endY - startY) * progress;
-
-            window.scroll(0, newY);
-            //Ändra newY till 100
-
-            if (progress < 1) {
-                // Behöver kika på progress och se om animate körs
-                requestAnimationFrame(animate);
-            }
-        }
-
-        requestAnimationFrame(animate);
-    }
 
 
-
-//   function disableMouseWheel(e: any) {
-//     e.preventDefault();
-//   }
-
-//   window.addEventListener('wheel', disableMouseWheel, { passive: false });
-
-//   onDestroy(() => {
-//     window.removeEventListener('wheel', disableMouseWheel);
-//   });
-
-    // document.addEventListener('mousewheel', function(e) {
-    //     e.preventDefault();
-    // }, { passive: false });
+    // TODO: Förenkla koden nedan iom att det inte ska gå att toggla!
 
 	let scrollable = false;
 	
@@ -111,18 +52,12 @@
 
 <svelte:window use:wheel={{scrollable}} />
 
-    <!-- <Button btnClass='btnUp' on:click={ scrollUp } btnText=''>
-        <ScrollButtonUp />
-    </Button> -->
     <div>
         <AnimationOne id="animationOne" />
         <AnimationTwo id="animationTwo" />
         <AnimationThree id="animatonThree" />
         <AnimationFour id="animationFour" />
     </div>
-    <!-- <Button btnClass='btnDown' on:click={ scrollDown } btnText=''>
-        <ScrollButtonDown />
-    </Button> -->
 
     <SectionSticks />
 
