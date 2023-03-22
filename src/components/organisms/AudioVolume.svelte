@@ -19,7 +19,7 @@
         <div class="icon-wrapper">
         {#if volume == 0}
             <VolumeIconOff />
-        {:else if volume >= 7}
+        {:else if volume >= 14}
             <VolumeIconHigh />
         {:else}
             <VolumeIconLow />

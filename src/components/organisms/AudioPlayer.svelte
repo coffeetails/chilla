@@ -59,7 +59,7 @@
     export let volume: number = 5;
 
     const adjustVolume = () => {
-        audioPlayer.volume = volume / 10;
+        audioPlayer.volume = volume / 20;
     }
 
 </script>

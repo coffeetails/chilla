@@ -19,7 +19,6 @@
         cursor: pointer;
 
         &:hover {
-            // color: rgba(var(--font-color), 0.5);
             opacity: .5;
         }
     }

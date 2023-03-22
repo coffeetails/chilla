@@ -122,7 +122,6 @@
             <RadioButton radioGroup='tech' on:change={techniques} labelFor='fourSevenEight' labelText='4-7-8-andning'/>
         </div>
         <div class="btn-wrapper">
-            <Button btnClass='' btnText='Spara' />
             <Button btnClass='' on:click={closeOverlay} btnText='Stäng' />
         </div>
     </div>
@@ -152,10 +151,6 @@
             padding: var(--padding-small) var(--padding);
         }
 
-    .settings :global(button:nth-child(1)) {
-        background-color: var(--color-omega);
-    }
-
     .visible {
         display: inline-block;
     }
@@ -180,7 +175,7 @@
 
     .btn-wrapper {
         display: flex;
-        justify-content: space-between;
+        justify-content: center;
     }
 
 </style>
