@@ -19,6 +19,8 @@
 
 </script>
 
+<!-- NOTE FÖR IMORGON: Testa att sätta name={id} på blobWrapper alt. en a-tag att länka till -->
+
 <!-- <div id={id+"Stick"} class:active={currentActiveBlob==id}> -->
 <!-- svelte-ignore a11y-click-events-have-key-events -->
 <div id={id+"Stick"} class:active={currentActiveBlob==id} on:click={handleClick}>
@@ -34,11 +36,12 @@
         background-color: var(--color-alpha);
     }
     div {
-        width: calc(var(--baseline)*0.75);
+        width: calc(var(--baseline)*1.5);
         height: calc(var(--baseline)*4);
         background-color: var(--color-psi);
         border-radius: var(--baseline);
         transition: 0.25s;
+        opacity: 0.5;
 
         // a {
         //     display: block;

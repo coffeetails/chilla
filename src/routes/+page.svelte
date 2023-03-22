@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
     import ScrollButtonDown from "../components/atoms/icons/ScrollButtonDown.svelte";
     import ScrollButtonUp from "../components/atoms/icons/ScrollButtonUp.svelte";
     import SectionSticks from '../components/molecules/SectionSticks.svelte';
@@ -70,17 +70,56 @@
         requestAnimationFrame(animate);
     }
 
+
+
+//   function disableMouseWheel(e: any) {
+//     e.preventDefault();
+//   }
+
+//   window.addEventListener('wheel', disableMouseWheel, { passive: false });
+
+//   onDestroy(() => {
+//     window.removeEventListener('wheel', disableMouseWheel);
+//   });
+
+    // document.addEventListener('mousewheel', function(e) {
+    //     e.preventDefault();
+    // }, { passive: false });
+
+	let scrollable = false;
+	
+	const wheel = (node: { addEventListener: (arg0: string, arg1: (e: any) => void, arg2: { passive: boolean; }) => void; removeEventListener: (arg0: string, arg1: (e: any) => void, arg2: { passive: boolean; }) => void; }, options: { scrollable: any; }) => {
+		let { scrollable } = options;
+		
+		const handler = (e: { preventDefault: () => void; }) => {
+			if (!scrollable) e.preventDefault();
+		};
+		
+		node.addEventListener('wheel', handler, { passive: false });
+		
+		return {
+			update(options: { scrollable: any; }) {
+				scrollable = options.scrollable;
+			},
+			destroy() {
+				node.removeEventListener('wheel', handler, { passive: false });
+			}
+		};
+  };
+
 </script>
+
+<svelte:window use:wheel={{scrollable}} />
 
     <!-- <Button btnClass='btnUp' on:click={ scrollUp } btnText=''>
         <ScrollButtonUp />
     </Button> -->
-
-    <AnimationOne id="animationOne" />
-    <AnimationTwo id="animationTwo" />
-    <AnimationThree id="animatonThree" />
-    <AnimationFour id="animationFour" />
-
+    <div>
+        <AnimationOne id="animationOne" />
+        <AnimationTwo id="animationTwo" />
+        <AnimationThree id="animatonThree" />
+        <AnimationFour id="animationFour" />
+    </div>
     <!-- <Button btnClass='btnDown' on:click={ scrollDown } btnText=''>
         <ScrollButtonDown />
     </Button> -->
@@ -88,6 +127,10 @@
     <SectionSticks />
 
 <style lang="scss">
+
+    // div {
+    //     touch-action: none;  
+    // }
 
     :global(.btnUp) {
         position: fixed;

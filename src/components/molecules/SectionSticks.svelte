@@ -47,9 +47,10 @@
 <style lang="scss">
 .wrapper {
     position: fixed;
-    right: var(--margin-small);
+    right: var(--margin);
     top: 0rem;
     height: 100vh;
+    z-index: 2;
     // bottom: 0;
 
     display: flex;

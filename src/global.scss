@@ -36,7 +36,7 @@
 }
 
 html {
-    scroll-snap-type: y mandatory;
+    scroll-snap-type: mandatory;
     scroll-behavior: smooth;
     overflow-y: scroll;
     -webkit-overflow-scrolling: touch;

@@ -33,6 +33,7 @@
         display: flex;
         flex-direction: column;
         z-index: 12;
+        touch-action: none;  
     }
 
     h1 {
