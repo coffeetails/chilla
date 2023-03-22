@@ -128,9 +128,10 @@
 
 <style lang="scss">
 
-    // div {
-    //     touch-action: none;  
-    // }
+    div {
+        touch-action: none; 
+        width: 100%;
+    }
 
     :global(.btnUp) {
         position: fixed;

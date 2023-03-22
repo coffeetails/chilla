@@ -34,22 +34,21 @@
 <style lang="scss">
     .active {
         background-color: var(--color-alpha);
+        &:hover {
+            opacity: 0.5;
+        }
     }
     div {
+        cursor: pointer;
         width: calc(var(--baseline)*1.5);
         height: calc(var(--baseline)*4);
         background-color: var(--color-psi);
-        border-radius: var(--baseline);
+        border-radius: calc(var(--baseline)*1);
         transition: 0.25s;
         opacity: 0.5;
-
-        // a {
-        //     display: block;
-        //     margin: 0;
-        //     padding: 0;
-        //     width: calc(var(--baseline)*0.75);
-        //     height: calc(var(--baseline)*4);
-        // }
+        &:hover {
+            opacity: 1;
+        }
     }
 
 </style>
