@@ -59,6 +59,7 @@
             display: flex;
             flex-grow: 1;
             text-align: center;
+            justify-content: center;
             // width: fit-content;
             & *{
                 margin: var(--margin-small);
