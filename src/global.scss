@@ -1,13 +1,3 @@
-// @use '../static/theme/system.scss' as *;
-// @use '../static/theme/light.scss' as *;
-// @use '../static/theme/dark.scss' as *;
-// @import "../theme/theme";
-
-// $color-gamma: var(--color-gamma);
-// .testElem {
-    // background-color: $color-gamma;
-    // background-color: var(--color-gamma); 
-// }
 
 // Colors to choose from:
 // var(--font-color)
@@ -36,7 +26,7 @@
 }
 
 html {
-    scroll-snap-type: y mandatory;
+    scroll-snap-type: mandatory;
     scroll-behavior: smooth;
     overflow-y: scroll;
     -webkit-overflow-scrolling: touch;

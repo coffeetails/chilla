@@ -1,34 +1,40 @@
-<script>
+<script lang=ts>
     export let id = '';
     import { activeBlob } from "../../stores";
 
-    function navToBlob() {
-        
-    }
+    let currentActiveBlob: string;
+    activeBlob.subscribe(value => currentActiveBlob = value);
+
+    function handleClick() {
+        let elem = document.querySelector("#" + id);
+        if(elem !=null) {
+            elem.scrollIntoView();
+        }
+	}
 
 </script>
 
-<div id={id+"Stick"} class:active={$activeBlob==id} on:mouseup={navToBlob}>
-    <a href={"#"+ id }> </a>
+<!-- svelte-ignore a11y-click-events-have-key-events -->
+<div id={id+"Stick"} class:active={currentActiveBlob==id} on:click={handleClick}>
 </div>
 
 <style lang="scss">
     .active {
         background-color: var(--color-alpha);
+        &:hover {
+            opacity: 0.5;
+        }
     }
     div {
-        width: calc(var(--baseline)*0.75);
+        cursor: pointer;
+        width: calc(var(--baseline)*1.5);
         height: calc(var(--baseline)*4);
         background-color: var(--color-psi);
-        border-radius: var(--baseline);
+        border-radius: calc(var(--baseline)*1);
         transition: 0.25s;
-
-        a {
-            display: block;
-            margin: 0;
-            padding: 0;
-            width: calc(var(--baseline)*0.75);
-            height: calc(var(--baseline)*4);
+        opacity: 0.5;
+        &:hover {
+            opacity: 1;
         }
     }
 
