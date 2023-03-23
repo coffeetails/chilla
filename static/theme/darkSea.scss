@@ -1,9 +1,9 @@
 :root {
-    --font-color: #e4e6c3;
-    --color-alpha: #B7C9AB;
-    --color-beta: #84B094;
-    --color-gamma: #5BA287;
-    --color-psi: #22757D;
-    --color-omega: #205A7A;
-    --bg-color: #0A193B;
+    --font-color: var(--darksea-font-color);
+    --color-alpha: var(--darksea-color-alpha);
+    --color-beta: var(--darksea-color-beta);
+    --color-gamma: var(--darksea-color-gamma);
+    --color-psi: var(--darksea-color-psi);
+    --color-omega: var(--darksea-color-omega);
+    --bg-color: var(--darksea-bg-color);
 }

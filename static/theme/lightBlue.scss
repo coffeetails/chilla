@@ -1,9 +1,9 @@
 :root {
-    --font-color: #08152C;
-    --color-alpha: #162F4A;
-    --color-beta: #2A637D;
-    --color-gamma: #5BB2BF;
-    --color-psi: #95D1DA;
-    --color-omega: #BEE3EC;
-    --bg-color: #E6FDFC;
+    --font-color: var(--lightblue-font-color);
+    --color-alpha: var(--lightblue-color-alpha);
+    --color-beta: var(--lightblue-color-beta);
+    --color-gamma: var(--lightblue-color-gamma);
+    --color-psi: var(--lightblue-color-psi);
+    --color-omega:var(--lightblue-color-omega);
+    --bg-color: var(--lightblue-bg-color);
 }

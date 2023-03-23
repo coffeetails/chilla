@@ -1,0 +1,56 @@
+:root {
+
+    /* ---   LIGHT BLUE THEME    --- */
+    --lightblue-font-color: #08152C;
+    --lightblue-color-alpha: #162F4A;
+    --lightblue-color-beta: #2A637D;
+    --lightblue-color-gamma: #5BB2BF;
+    --lightblue-color-psi: #95D1DA;
+    --lightblue-color-omega: #BEE3EC;
+    --lightblue-bg-color: #E6FDFC;
+    
+    /* ---   DARK BLUE THEME    --- */
+    --darkblue-font-color: #E6FDFC;
+    --darkblue-color-alpha: #BEE3EC;
+    --darkblue-color-beta: #95D1DA;
+    --darkblue-color-gamma: #5BB2BF;
+    --darkblue-color-psi: #2A637D;
+    --darkblue-color-omega: #162F4A;
+    --darkblue-bg-color: #08152C;
+
+    /* ---   LIGHT SEA THEME    --- */
+    --lightsea-font-color: #0A193B;
+    --lightsea-color-alpha: #205A7A;
+    --lightsea-color-beta: #22757D;
+    --lightsea-color-gamma: #5BA287;
+    --lightsea-color-psi: #84B094;
+    --lightsea-color-omega: #B7C9AB;
+    --lightsea-bg-color: #e4e6c3;
+
+    /* ---   DARK SEA THEME    --- */
+    --darksea-font-color: #e4e6c3;
+    --darksea-color-alpha: #B7C9AB;
+    --darksea-color-beta: #84B094;
+    --darksea-color-gamma: #5BA287;
+    --darksea-color-psi: #22757D;
+    --darksea-color-omega: #205A7A;
+    --darksea-bg-color: #0A193B;
+
+    /* ---   LIGHT GREEN THEME    --- */
+    --lightgreen-font-color: #0E160D;
+    --lightgreen-color-alpha: #153315;
+    --lightgreen-color-beta: #476E3A;
+    --lightgreen-color-gamma: #819E62;
+    --lightgreen-color-psi: #A9C990;
+    --lightgreen-color-omega: #CBDDAF;
+    --lightgreen-bg-color: #EDF1D6;
+
+    /* ---   DARK GREEN THEME    --- */
+    --darkgreen-font-color: #EDF1D6;
+    --darkgreen-color-alpha: #CBDDAF;
+    --darkgreen-color-beta: #A9C990;
+    --darkgreen-color-gamma: #819E62;
+    --darkgreen-color-psi: #476E3A;
+    --darkgreen-color-omega: #153315;
+    --darkgreen-bg-color: #0E160D;
+}
