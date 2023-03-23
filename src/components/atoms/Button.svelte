@@ -17,9 +17,11 @@
         color: var(--font-color);
         border: none;
         cursor: pointer;
+        transition: 0.5s;
+        border-radius: 0.25rem;
 
         &:hover {
-            opacity: .5;
+            opacity: 0.5;
         }
     }
 

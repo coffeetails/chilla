@@ -1,7 +1,6 @@
 <script lang=ts>
     import { activeDimmer, activeThemes } from "../../stores";
     import Button from "../atoms/Button.svelte";
-    import CloseIcon from "../atoms/icons/CloseIcon.svelte";
     import ThemeSwitch from "../molecules/ThemeSwitch.svelte";
 
     let themesIsActive: Boolean;
@@ -15,6 +14,7 @@
 </script>
 
     <div class="themes" class:visible={themesIsActive}>
+        <h2>Färgtema</h2>
         <ThemeSwitch />
         <div class="buttonWrapper">
             <Button on:click={closeOverlay} btnClass="" btnText="Stäng" />
@@ -37,7 +37,11 @@
         flex-direction: column;
         // align-items: center;
         gap: var(--padding);
-
+        width: 90%;
+        max-width: calc(var(--baseline)*30);
+        h2 {
+            margin-right: auto;
+        }
         .buttonWrapper {
             padding: 1rem 2rem;
             display: flex;
@@ -52,6 +56,7 @@
 
     .visible {
         display: flex;
+        align-items: center;
     }
 
 </style>
