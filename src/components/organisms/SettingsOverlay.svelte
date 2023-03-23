@@ -138,6 +138,11 @@
         z-index: 14;
         padding: var(--padding-large);
         border: 2px solid var(--color-gamma);
+        width: 90%;
+        max-width: calc(var(--baseline)*30);
+        h2 {
+            margin-right: auto;
+        }
     }
 
     .settings :global(i) {
