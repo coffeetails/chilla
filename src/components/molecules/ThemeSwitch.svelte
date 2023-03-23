@@ -9,30 +9,46 @@
     onMount(() => {
         theme.subscribe(() => {
             displayThemes = [];
-            console.log("current theme: ", $theme);
+            console.log("theme.subscribe() ", $theme);
 
-            if(window.matchMedia('(prefers-color-scheme: light)').matches || $theme.includes("light")) {
+            if($theme.includes("light")) {
                 colorValueSwitch = "mörkt";
                 for(let themePick of themes) {
                     if(themePick.includes("light")) {
                         displayThemes.push(themePick);
                     }
                 }
-            } else if(window.matchMedia('(prefers-color-scheme: dark)').matches || $theme.includes("dark")) {
+            } else if($theme.includes("dark")) {
                 colorValueSwitch = "ljust";
                 for(let themePick of themes) {
                     if(themePick.includes("dark")) {
                         displayThemes.push(themePick);
                     }
                 }
-            } else {
-                console.log("what is going on?");
+            } else if($theme.includes("system")) {
+
+                if(window.matchMedia('(prefers-color-scheme: light)').matches) {
+                    colorValueSwitch = "mörkt";
+                    for(let themePick of themes) {
+                        if(themePick.includes("light")) {
+                            displayThemes.push(themePick);
+                        }
+                    }
+                } else if(window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                    colorValueSwitch = "ljust";
+                    for(let themePick of themes) {
+                        if(themePick.includes("dark")) {
+                            displayThemes.push(themePick);
+                        }
+                    }
+                } 
             }
+            console.log("theme.subscribe() ", $theme);
         });
     });
 
     function handleClick() {
-        console.log($theme);
+        console.log("handleClick() ", $theme);
         if($theme == "system") {
             if(window.matchMedia('(prefers-color-scheme: light)').matches) {
                 theme.set("darkGreen");
@@ -46,6 +62,7 @@
         } else {
             console.log("this was a bit unexpected.. ", $theme);
         }
+        console.log("handleClick() ", $theme);
     }
 
 </script>
