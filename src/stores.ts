@@ -2,7 +2,7 @@ import { writable } from 'svelte/store';
 
 const theme = writable('system');
 
-const themes = ['system', 'light', 'dark', 'lightSea', 'darkSea', 'lightBlue', 'darkBlue'];
+const themes = ['system', 'lightGreen', 'darkGreen', 'lightSea', 'darkSea', 'lightBlue', 'darkBlue'];
 
 const settingsIsVisible = writable(false);
 
