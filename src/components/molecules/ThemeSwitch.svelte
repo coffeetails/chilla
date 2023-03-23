@@ -26,7 +26,7 @@
                     }
                 }
             } else {
-                console.log("what?");
+                console.log("what is going on?");
             }
         });
     });
