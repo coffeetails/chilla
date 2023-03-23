@@ -14,7 +14,6 @@
         const blobElems = document.querySelectorAll('.blobWrapper');
         // @ts-ignore
         numberOfBlobs.set(blobElems);
-        console.log(blobElems);
     });
 
     function disableVisibleSettings() {

@@ -44,138 +44,152 @@
     });
 
     function runAnimation() {
-        console.log("start animation");
         animateOne();
 
         function animateOne() {
-            breathInElem.setAttribute("style", "opacity: 1;");
-            pauseInElem.setAttribute("style", "opacity: 0;");
-            breathOutElem.setAttribute("style", "opacity: 0;");
-            pauseOutElem.setAttribute("style", "opacity: 0;");
+            if (breathInElem && pauseInElem && breathOutElem && pauseOutElem && blobElem) {
+
+                breathInElem.setAttribute("style", "opacity: 1;");
+                pauseInElem.setAttribute("style", "opacity: 0;");
+                breathOutElem.setAttribute("style", "opacity: 0;");
+                pauseOutElem.setAttribute("style", "opacity: 0;");
             
-            const options = { duration: storeBreathIn*1000, iterations: 1, } ;
-                
-            blobElem.animate({
-                    clipPath: [polygonLine, polygonTriangle, polygonSquare, polygonPentagon, polygonHexagon, polygonHeptagon, polygonOctagon],
-                    backgroundColor: ["var(--color-beta)", "var(--color-alpha)"]
-                }, options);
-            blobElemTwo.animate({
-                    clipPath: [polygonLine, polygonTriangle, polygonSquare, polygonPentagon, polygonHexagon, polygonHeptagon],
-                    backgroundColor: ["var(--color-beta)", "var(--color-beta)"]
-                }, options);
-            blobElemThree.animate({
-                    clipPath: [polygonLine, polygonTriangle, polygonSquare, polygonPentagon, polygonHexagon],
-                    backgroundColor: ["var(--color-beta)", "var(--color-gamma)"]
-                }, options);
-            blobElemFour.animate({
-                    clipPath: [polygonLine, polygonTriangle, polygonSquare, polygonPentagon],
-                    backgroundColor: ["var(--color-beta)", "var(--color-gamma)"]
-                }, options);
-            blobElemFive.animate({
-                    clipPath: [polygonLine, polygonTriangle, polygonSquare],
-                    backgroundColor: ["var(--color-beta)", "var(--color-psi)"]
-                }, options);
-            blobElemSix.animate({
-                    clipPath: [polygonLine, polygonTriangle],
-                    backgroundColor: ["var(--color-beta)", "var(--color-omega)"]
-                }, options);
-            setTimeout(() => {
-                blobElem.style.clipPath = polygonOctagon;
-                blobElemTwo.style.clipPath = polygonHeptagon;
-                blobElemThree.style.clipPath = polygonHexagon;
-                blobElemFour.style.clipPath = polygonPentagon;
-                blobElemFive.style.clipPath = polygonSquare;
-                blobElemSix.style.clipPath = polygonTriangle;
+                const options = { duration: storeBreathIn*1000, iterations: 1, } ;
+            
+                blobElem.animate({
+                        clipPath: [polygonLine, polygonTriangle, polygonSquare, polygonPentagon, polygonHexagon, polygonHeptagon, polygonOctagon],
+                        backgroundColor: ["var(--color-beta)", "var(--color-alpha)"]
+                    }, options);
+                    blobElemTwo.animate({
+                        clipPath: [polygonLine, polygonTriangle, polygonSquare, polygonPentagon, polygonHexagon, polygonHeptagon],
+                        backgroundColor: ["var(--color-beta)", "var(--color-beta)"]
+                    }, options);
+                    blobElemThree.animate({
+                        clipPath: [polygonLine, polygonTriangle, polygonSquare, polygonPentagon, polygonHexagon],
+                        backgroundColor: ["var(--color-beta)", "var(--color-gamma)"]
+                    }, options);
+                    blobElemFour.animate({
+                        clipPath: [polygonLine, polygonTriangle, polygonSquare, polygonPentagon],
+                        backgroundColor: ["var(--color-beta)", "var(--color-gamma)"]
+                    }, options);
+                    blobElemFive.animate({
+                        clipPath: [polygonLine, polygonTriangle, polygonSquare],
+                        backgroundColor: ["var(--color-beta)", "var(--color-psi)"]
+                    }, options);
+                    blobElemSix.animate({
+                        clipPath: [polygonLine, polygonTriangle],
+                        backgroundColor: ["var(--color-beta)", "var(--color-omega)"]
+                    }, options);
+                setTimeout(() => {
+                    if (blobElem && blobElemTwo && blobElemThree && blobElemFour && blobElemFive && blobElemSix) {
 
-                blobElem.style.background = "var(--color-alpha)";
-                blobElemTwo.style.background = "var(--color-beta)";
-                blobElemThree.style.background = "var(--color-gamma)";
-                blobElemFour.style.background = "var(--color-gamma)";
-                blobElemFive.style.background = "var(--color-psi)";
-                blobElemSix.style.background = "var(--color-omega)";
-                // for(let elem of blobElemArray) {
-                //     elem.style.background = "var(--color-psi)";
-                // }
-                animateTwo();
-            }, (storeBreathIn)*1000);
+                        blobElem.style.clipPath = polygonOctagon;
+                        blobElemTwo.style.clipPath = polygonHeptagon;
+                        blobElemThree.style.clipPath = polygonHexagon;
+                        blobElemFour.style.clipPath = polygonPentagon;
+                        blobElemFive.style.clipPath = polygonSquare;
+                        blobElemSix.style.clipPath = polygonTriangle;
+                        
+                        blobElem.style.background = "var(--color-alpha)";
+                        blobElemTwo.style.background = "var(--color-beta)";
+                        blobElemThree.style.background = "var(--color-gamma)";
+                        blobElemFour.style.background = "var(--color-gamma)";
+                        blobElemFive.style.background = "var(--color-psi)";
+                        blobElemSix.style.background = "var(--color-omega)";
+                        
+                        animateTwo();
+                    }
+                }, (storeBreathIn)*1000);
+            }
         }
-
+            
         function animateTwo() {
-            breathInElem.setAttribute("style", "opacity: 0;");
-            pauseInElem.setAttribute("style", "opacity: 1;");
-            breathOutElem.setAttribute("style", "opacity: 0;");
-            pauseOutElem.setAttribute("style", "opacity: 0;");
 
-            setTimeout(() => {
-                animateThree();
-            }, (storePauseIn)*1000);
+            if (breathInElem && pauseInElem && breathOutElem && pauseOutElem && blobElem) {
+
+                breathInElem.setAttribute("style", "opacity: 0;");
+                pauseInElem.setAttribute("style", "opacity: 1;");
+                breathOutElem.setAttribute("style", "opacity: 0;");
+                pauseOutElem.setAttribute("style", "opacity: 0;");
+                
+                setTimeout(() => {
+                    animateThree();
+                }, (storePauseIn)*1000);
+            }
         }
 
         function animateThree() {
-            breathInElem.setAttribute("style", "opacity: 0;");
-            pauseInElem.setAttribute("style", "opacity: 0;");
-            breathOutElem.setAttribute("style", "opacity: 1;");
-            pauseOutElem.setAttribute("style", "opacity: 0;");
+            if (breathInElem && pauseInElem && breathOutElem && pauseOutElem && blobElem) {
 
-            const options = { duration: storeBreathOut*1000, iterations: 1, } ;
+                breathInElem.setAttribute("style", "opacity: 0;");
+                pauseInElem.setAttribute("style", "opacity: 0;");
+                breathOutElem.setAttribute("style", "opacity: 1;");
+                pauseOutElem.setAttribute("style", "opacity: 0;");
 
-            blobElem.animate({
+                const options = { duration: storeBreathOut*1000, iterations: 1, } ;
+                
+                blobElem.animate({
                     clipPath: [polygonOctagon, polygonHeptagon, polygonHexagon, polygonPentagon,polygonSquare, polygonTriangle, polygonLine],
                     backgroundColor: ["var(--color-alpha)", "var(--color-beta)"]
                 }, options);
-            blobElemTwo.animate({
+                blobElemTwo.animate({
                     clipPath: [polygonHeptagon, polygonHexagon, polygonPentagon,polygonSquare, polygonTriangle, polygonLine],
                     backgroundColor: ["var(--color-beta)", "var(--color-beta)"]
                 }, options);
-            blobElemThree.animate({
+                blobElemThree.animate({
                     clipPath: [polygonHexagon, polygonPentagon,polygonSquare, polygonTriangle, polygonLine],
                     backgroundColor: ["var(--color-gamma)", "var(--color-beta)"]
                 }, options);
-            blobElemFour.animate({
+                blobElemFour.animate({
                     clipPath: [polygonPentagon,polygonSquare, polygonTriangle, polygonLine],
                     backgroundColor: ["var(--color-gamma)", "var(--color-beta)"]
                 }, options);
-            blobElemFive.animate({
+                blobElemFive.animate({
                     clipPath: [polygonSquare, polygonTriangle, polygonLine],
                     backgroundColor: ["var(--color-psi)", "var(--color-beta)"]
                 }, options);
-            blobElemSix.animate({
+                blobElemSix.animate({
                     clipPath: [polygonTriangle, polygonLine],
                     backgroundColor: ["var(--color-omega)", "var(--color-beta)"]
                 }, options);
                 
-            setTimeout(() => {
-                for(let elem of blobElemArray) {
-                    elem.style.clipPath = polygonLine;
-                    elem.style.background = "var(--color-beta)";
-                }
-                animateFour();
-            }, (storeBreathOut)*1000);
+                setTimeout(() => {
+                    for(let elem of blobElemArray) {
+                        elem.style.clipPath = polygonLine;
+                        elem.style.background = "var(--color-beta)";
+                    }
+                    animateFour();
+                }, (storeBreathOut)*1000);
+            }
         }
-
+        
         function animateFour() {
+
+            if (breathInElem && pauseInElem && breathOutElem && pauseOutElem && blobElem) {
+
                 breathInElem.setAttribute("style", "opacity: 0;");
                 pauseInElem.setAttribute("style", "opacity: 0;");
                 breathOutElem.setAttribute("style", "opacity: 0;");
                 pauseOutElem.setAttribute("style", "opacity: 1;");
 
                 const options =  { duration: storePauseOut*1000, iterations: 1};
-
+                
                 blobElem.animate([
-                        { 
-                            clipPath: polygonLine, 
-                            background: "var(--color-beta)" 
-                        },
-                    ], options); 
+                    { 
+                        clipPath: polygonLine, 
+                        background: "var(--color-beta)" 
+                    },
+                ], options); 
                 blobElemTwo.animate([
-                        { 
-                            clipPath: polygonLine, 
-                            background: "var(--color-beta)" 
-                        },
-                    ], options); 
-            setTimeout(() => {
-                animateOne();
-            }, (storePauseOut)*1000);
+                    { 
+                        clipPath: polygonLine, 
+                        background: "var(--color-beta)" 
+                    },
+                ], options); 
+                setTimeout(() => {
+                    animateOne();
+                }, (storePauseOut)*1000);
+            }
         }
     }
         

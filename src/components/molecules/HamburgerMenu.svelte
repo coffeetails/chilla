@@ -8,10 +8,6 @@
     let menuIsActive: Boolean;
     activeMenu.subscribe(value => menuIsActive = value);
 
-    let activeContent: any;
-    aboutContent.subscribe(value => activeContent = value);
-
-    // let footerIsActive: boolean;
     const activateFooter = () => {
         activeFooter.set(true);
         activeMenu.set(false);
@@ -35,7 +31,6 @@
         <div class="wrapper">
             <Link target='' on:click={closeMenu} linkDescription='Andas' linkPath='/'/>
             <Link target='' on:click={setIntro} linkDescription='Andas rätt' linkPath='/andasratt'/>
-            <!-- Kanske ändra nedan Link till nåt bättre nu när den egentligen inte är en "länk" -->
             <Link target='' on:click={activateFooter} linkDescription='Avslappningsljud' linkPath=''/>
             <Link target='' on:click={closeMenu} linkDescription='Om oss' linkPath='/omoss'/>
         </div>

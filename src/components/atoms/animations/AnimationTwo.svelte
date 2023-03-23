@@ -27,10 +27,11 @@
     });
 
     function runAnimation() {
-        console.log("start animation");
         animateOne();
 
         function animateOne() {
+            if (breathInElem && pauseInElem && breathOutElem && pauseOutElem && blobElem) {
+
                 breathInElem.setAttribute("style", "opacity: 1;");
                 pauseInElem.setAttribute("style", "opacity: 0;");
                 breathOutElem.setAttribute("style", "opacity: 0;");
@@ -44,19 +45,24 @@
                         duration: storeBreathIn*1000,
                         iterations: 1,
                     });
-            setTimeout(() => {
-                blobElem.style.transform = "translate(-150%, -200%)";
-                blobElem.style.background = "var(--color-beta)";
-                animateTwo();
-            }, (storeBreathIn)*1000);
+                setTimeout(() => {
+                    if (blobElem) {
+                        blobElem.style.transform = "translate(-150%, -200%)";
+                        blobElem.style.background = "var(--color-beta)";
+                        animateTwo();
+                    }
+                }, (storeBreathIn)*1000);
+            }
         }
 
         function animateTwo() {
+            if (breathInElem && pauseInElem && breathOutElem && pauseOutElem && blobElem) {
+
                 breathInElem.setAttribute("style", "opacity: 0;");
                 pauseInElem.setAttribute("style", "opacity: 1;");
                 breathOutElem.setAttribute("style", "opacity: 0;");
                 pauseOutElem.setAttribute("style", "opacity: 0;");
-
+                
                 blobElem.animate(
                     [
                         { transform: "translate(150%, -200%)", background: "var(--color-psi)" },
@@ -64,19 +70,24 @@
                         duration: storePauseIn*1000,
                         iterations: 1,
                     });
-            setTimeout(() => {
-                blobElem.style.transform = "translate(150%, -200%)";
-                blobElem.style.background = "var(--color-psi)";
-                animateThree();
-            }, (storePauseIn)*1000);
+                setTimeout(() => {
+                    if (blobElem) {
+                        blobElem.style.transform = "translate(150%, -200%)";
+                        blobElem.style.background = "var(--color-psi)";
+                        animateThree();
+                    }
+                }, (storePauseIn)*1000);
+            }
         }
 
         function animateThree() {
+            if (breathInElem && pauseInElem && breathOutElem && pauseOutElem && blobElem) {
+
                 breathInElem.setAttribute("style", "opacity: 0;");
                 pauseInElem.setAttribute("style", "opacity: 0;");
                 breathOutElem.setAttribute("style", "opacity: 1;");
                 pauseOutElem.setAttribute("style", "opacity: 0;");
-
+                
                 blobElem.animate(
                     [
                         { transform: "translate(150%, 200%)", background: "var(--color-beta)" },
@@ -84,19 +95,24 @@
                         duration: storeBreathOut*1000,
                         iterations: 1,
                     });
-            setTimeout(() => {
-                blobElem.style.transform = "translate(150%, 200%)";
-                blobElem.style.background = "var(--color-beta)";
-                animateFour();
-            }, (storeBreathOut)*1000);
+                setTimeout(() => {
+                    if (blobElem) {
+                        blobElem.style.transform = "translate(150%, 200%)";
+                        blobElem.style.background = "var(--color-beta)";
+                        animateFour();
+                    }
+                }, (storeBreathOut)*1000);
+            }
         }
 
         function animateFour() {
+            if (breathInElem && pauseInElem && breathOutElem && pauseOutElem && blobElem) {
+
                 breathInElem.setAttribute("style", "opacity: 0;");
                 pauseInElem.setAttribute("style", "opacity: 0;");
                 breathOutElem.setAttribute("style", "opacity: 0;");
                 pauseOutElem.setAttribute("style", "opacity: 1;");
-
+                
                 blobElem.animate(
                     [
                         { transform: "translate(-150%, 200%)", background: "var(--color-psi)" },
@@ -104,9 +120,10 @@
                         duration: storePauseOut*1000,
                         iterations: 1,
                     }); 
-            setTimeout(() => {
-                animateOne();
-            }, (storePauseOut)*1000);
+                setTimeout(() => {
+                    animateOne();
+                }, (storePauseOut)*1000);
+            }
         }
     }
         

@@ -39,29 +39,25 @@
     function setBreathIn(event: any) {
         breathIn.set(event.target.value);
         checkTechniques();
-        console.log('inandning:', storeBreathIn);
     }
 
     function setPauseIn(event: any) {
         pauseIn.set(event.target.value);
         checkTechniques();
-        console.log('pauseOne:', storePauseIn);
     }
 
     function setBreathOut(event: any) {
         breathOut.set(event.target.value);
         checkTechniques();
-        console.log('utandning:', storeBreathOut);
     }
 
     function setPauseOut(event: any) {
         pauseOut.set(event.target.value);
         checkTechniques();
-        console.log('pauseTwo:', storePauseOut);
     }
 
     function techniques(event: any) {
-        console.log(event.target.id);
+        
         if(event.target.id == "box") {
             breathIn.set(4);
             pauseIn.set(4);
@@ -78,29 +74,25 @@
             breathOut.set(8);
             pauseOut.set(0);
         } else {
-            console.log("odd thing happend when choosing breathing technique");
+            console.log("odd thing happened when choosing breathing technique");
         }
     }
 
 
     function checkTechniques() {
-        console.log("checkTechniques()");
+        
         if(boxElem != null && pranayamaElem != null && fourSevenEightElem != null) {
             boxElem.checked = false;
             pranayamaElem.checked = false;
             fourSevenEightElem.checked = false;
-            console.log("ohai");
             if(storeBreathIn == 4 && storePauseIn == 4 && storeBreathOut == 4 && storePauseOut == 4) {
-                console.log("box");
                 boxElem.checked = true;
             } else if(storeBreathIn == 4 && storePauseIn == 16 && storeBreathOut == 8 && storePauseOut == 0) {
-                console.log("pranayama");
                 pranayamaElem.checked = true;
             } else if(storeBreathIn == 4 && storePauseIn == 7 && storeBreathOut == 8 && storePauseOut == 0) {
-                console.log("4-7-8");
                 fourSevenEightElem.checked = true;
             } else {
-                console.log("odd thing happend when choosing breathing technique");
+                console.log("odd thing happened when choosing breathing technique");
             }
         }
     }
