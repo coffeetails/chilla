@@ -10,15 +10,12 @@
     let activeContent: String;
     aboutContent.subscribe(value => activeContent = value);
     
-    console.log(data);
-    
     let heading: String = data.intro.heading;
     let content: String = data.intro.content;
     let linkHeading: String = 'Våra andningsövningar';
     let links: any;
     
     function updateContent() {
-        console.log(activeContent);
         
         if (activeContent == '478') {
             heading = data.fourSevenEight.heading;

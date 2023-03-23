@@ -3,7 +3,7 @@
     import { breathIn, pauseIn, breathOut, pauseOut } from "../../../stores";
     export let id = '';
     
-    let blobElem: HTMLDivElement;
+    // let blobElem: HTMLDivElement;
     let blobElem2: HTMLDivElement;
     let blobElem3: HTMLDivElement;
     let blobElem4: HTMLDivElement;
@@ -32,10 +32,10 @@
     });
 
     function runAnimation() {
-        console.log("start animation");
         animateOne();
 
         function animateOne() {
+            if (breathInElem && pauseInElem && breathOutElem && pauseOutElem) {
                 breathInElem.setAttribute("style", "opacity: 1;");
                 pauseInElem.setAttribute("style", "opacity: 0;");
                 breathOutElem.setAttribute("style", "opacity: 0;");
@@ -86,22 +86,29 @@
                         easing: 'ease-in-out',
                         iterations: 1,
                     });
-            setTimeout(() => {
-                blobElem2.style.transform = "scale(1.5)";
-                blobElem2.style.background = "var(--color-gamma)";
-                blobElem3.style.transform = "scale(2)";
-                blobElem3.style.background = "var(--color-gamma)";
-                blobElem4.style.transform = "scale(2.5)";
-                blobElem4.style.background = "var(--color-gamma)";
-                blobElem5.style.transform = "scale(3)";
-                blobElem5.style.background = "var(--color-gamma)";
-                blobElem6.style.transform = "scale(3.5)";
-                blobElem6.style.background = "var(--color-gamma)";
-                animateTwo();
-            }, (storeBreathIn)*1000);
+                setTimeout(() => {
+                    if (blobElem2 && blobElem3 && blobElem4 && blobElem5 && blobElem6) {
+                        blobElem2.style.transform = "scale(1.5)";
+                        blobElem2.style.background = "var(--color-gamma)";
+                        blobElem3.style.transform = "scale(2)";
+                        blobElem3.style.background = "var(--color-gamma)";
+                        blobElem4.style.transform = "scale(2.5)";
+                        blobElem4.style.background = "var(--color-gamma)";
+                        blobElem5.style.transform = "scale(3)";
+                        blobElem5.style.background = "var(--color-gamma)";
+                        blobElem6.style.transform = "scale(3.5)";
+                        blobElem6.style.background = "var(--color-gamma)";
+                        animateTwo();
+                    }
+                    
+                }, (storeBreathIn)*1000);
+            }
+                
         }
 
         function animateTwo() {
+            if (breathInElem && pauseInElem && breathOutElem && pauseOutElem) {
+
                 breathInElem.setAttribute("style", "opacity: 0;");
                 pauseInElem.setAttribute("style", "opacity: 1;");
                 breathOutElem.setAttribute("style", "opacity: 0;");
@@ -147,12 +154,16 @@
                         easing: 'ease-in-out',
                         iterations: 1,
                     });
-            setTimeout(() => {
-                animateThree();
-            }, (storePauseIn)*1000);
+                setTimeout(() => {
+                    animateThree();
+                }, (storePauseIn)*1000);
+            }
+                
         }
 
         function animateThree() {
+            if (breathInElem && pauseInElem && breathOutElem && pauseOutElem) {
+
                 breathInElem.setAttribute("style", "opacity: 0;");
                 pauseInElem.setAttribute("style", "opacity: 0;");
                 breathOutElem.setAttribute("style", "opacity: 1;");
@@ -203,22 +214,29 @@
                         easing: 'ease-in-out',
                         iterations: 1,
                     });
-            setTimeout(() => {
-                blobElem2.style.transform = "scale(1)";
-                blobElem2.style.background = "var(--color-gamma)";
-                blobElem3.style.transform = "scale(1)";
-                blobElem3.style.background = "var(--color-gamma)";
-                blobElem4.style.transform = "scale(1)";
-                blobElem4.style.background = "var(--color-gamma)";
-                blobElem5.style.transform = "scale(1)";
-                blobElem5.style.background = "var(--color-gamma)";
-                blobElem6.style.transform = "scale(1)";
-                blobElem6.style.background = "var(--color-gamma)";
-                animateFour();
-            }, (storeBreathOut)*1000);
+                setTimeout(() => {
+                    if (blobElem2 && blobElem3 && blobElem4 && blobElem5 && blobElem6) {
+                        blobElem2.style.transform = "scale(1)";
+                        blobElem2.style.background = "var(--color-gamma)";
+                        blobElem3.style.transform = "scale(1)";
+                        blobElem3.style.background = "var(--color-gamma)";
+                        blobElem4.style.transform = "scale(1)";
+                        blobElem4.style.background = "var(--color-gamma)";
+                        blobElem5.style.transform = "scale(1)";
+                        blobElem5.style.background = "var(--color-gamma)";
+                        blobElem6.style.transform = "scale(1)";
+                        blobElem6.style.background = "var(--color-gamma)";
+                        animateFour();
+                    }
+                    
+                }, (storeBreathOut)*1000);
+            }
+                
         }
 
-        function animateFour() {
+        function animateFour() { 
+            if (breathInElem && pauseInElem && breathOutElem && pauseOutElem) {
+
                 breathInElem.setAttribute("style", "opacity: 0;");
                 pauseInElem.setAttribute("style", "opacity: 0;");
                 breathOutElem.setAttribute("style", "opacity: 0;");
@@ -264,9 +282,11 @@
                         easing: 'ease-in-out',
                         iterations: 1,
                     }); 
-            setTimeout(() => {
-                animateOne();
-            }, (storePauseOut)*1000);
+                setTimeout(() => {
+                    animateOne();
+                }, (storePauseOut)*1000);
+            }
+                
         }
     }
         
