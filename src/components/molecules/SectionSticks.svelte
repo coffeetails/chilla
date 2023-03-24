@@ -36,6 +36,7 @@
     right: var(--margin);
     top: 0rem;
     height: 100vh;
+    touch-action: none;
 
     display: flex;
     justify-content: center;

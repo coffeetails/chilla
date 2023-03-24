@@ -63,7 +63,7 @@
 <style lang="scss">
 
     div {
-        touch-action: none; 
+        touch-action: none;
         width: 100%;
     }
 

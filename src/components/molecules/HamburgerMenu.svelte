@@ -32,7 +32,7 @@
             <Link target='' on:click={closeMenu} linkDescription='Andas' linkPath='/'/>
             <Link target='' on:click={setIntro} linkDescription='Andas rätt' linkPath='/andasratt'/>
             <Link target='' on:click={activateFooter} linkDescription='Avslappningsljud' linkPath=''/>
-            <Link target='' on:click={closeMenu} linkDescription='Om oss' linkPath='/omoss'/>
+            <Link target='' on:click={closeMenu} linkDescription='Om sidan' linkPath='/omsidan'/>
         </div>
     </section>
 
