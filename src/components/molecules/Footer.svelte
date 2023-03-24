@@ -38,14 +38,14 @@
 
     h1 {
         display: none;
-        margin-bottom: 15rem;
+        // margin-bottom: 10rem;
         text-align: center;
     }
 
     .wrapper {
         display: flex;
         flex-direction: column;
-        justify-content: center;
+        justify-content: space-between;
         height: 100%;
     }
     

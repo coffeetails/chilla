@@ -17,20 +17,13 @@
         width: 100%;
         display: flex;
         flex-direction: column;
-        gap: 1rem;
+        justify-content: center;
+        align-items: flex-start;
+        gap: .5rem;
     }
 
-    label :global(input) {
-        background-color: var(--color-alpha);
-        height: .3rem;
-        border-radius: .5rem;
-
-        &::-webkit-slider-thumb {
-            background-color: var(--color-beta);
-            width: 1.5rem;
-            height: 1.5rem;
-            cursor: pointer;
-        }
+    label::before {
+        margin-right: auto;
     }
 
 </style>

@@ -130,10 +130,15 @@
         z-index: 14;
         padding: var(--padding-large);
         border: 2px solid var(--color-gamma);
-        width: 90%;
+        width: 80%;
         max-width: calc(var(--baseline)*30);
+        flex-direction: column;
+        scroll-behavior: none;
+        touch-action: none;
+    
         h2 {
-            margin-right: auto;
+            // margin-right: auto;
+            align-self: center;
         }
     }
 
@@ -142,27 +147,28 @@
     }
 
     .settings :global(button) {
-            
             margin-top: var(--margin-large);
             border: 1px solid var(--color-beta);
             padding: var(--padding-small) var(--padding);
         }
 
     .visible {
-        display: inline-block;
+        display: flex;
     }
 
     .controls-wrapper {
         display: flex;
         flex-direction: column;
-        gap: 2rem;
-        padding-left: 2rem;
+        justify-content: center;
+        align-items: center;
+        // gap: .5rem;
+        // padding-left: 2rem;
     }
 
     .techniques-wrapper {
         display: flex;
         flex-direction: column;
-        gap: .5rem;
+        // gap: .5rem;
     }
 
     h3 {

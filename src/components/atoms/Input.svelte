@@ -10,13 +10,13 @@
     input {
         appearance: none;
         height: .2rem;
-        background-color: var(--color-omega);
-        width: 80%;
+        background-color: var(--color-gamma);
+        width: 100%;
 
         &::-webkit-slider-thumb {
             appearance: none;
-            height: .7rem;
-            width: .7rem;
+            height: 1.5rem;
+            width: 1.5rem;
             border-radius: 50%;
             background-color: var(--color-alpha);
         }
