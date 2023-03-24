@@ -1,6 +1,7 @@
 <script lang=ts>
+    export const prerender = true;
+
     import '../global.scss';
-    
     import Header from '../components/molecules/Header.svelte';
     import Footer from '../components/molecules/Footer.svelte';
     import HamburgerMenu from '../components/molecules/HamburgerMenu.svelte';
@@ -13,7 +14,7 @@
 </script>
 
 <svelte:head>
-    <meta name="color-scheme" content={$theme == 'system' ? 'light dark' : $theme}/> <link rel="stylesheet" href={`/theme/${$theme}.scss`} />
+    <meta name="color-scheme" content={$theme == 'system' ? 'light dark' : $theme}/> <link rel="stylesheet" href={`/theme/${$theme}.css`} />
 </svelte:head>
 
 <div class="app">
