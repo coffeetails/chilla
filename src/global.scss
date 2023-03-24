@@ -1,5 +1,7 @@
 @use './colors.css';
 
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&display=swap');
+
 // Colors to choose from:
 // var(--font-color)
 // var(--color-alpha)
@@ -66,19 +68,32 @@ h1, h2, h3 {
 }
 
 h1 {
-    font-size: calc(var(--baseline)*2.3);
+    font-size: calc(var(--baseline)*3.3);
+    font-family: 'Caveat', cursive;
 }
 
 h2 {
-    font-size: calc(var(--baseline)*1.75);
+    font-size: calc(var(--baseline)*2.75);
+    font-family: 'Caveat', cursive;
 
 }
 
 h3 {
-    font-size: calc(var(--baseline)*1.3);
+    font-size: calc(var(--baseline)*1.8);
+    font-family: 'Caveat', cursive;
 }
 
 i {
     color: var(--font-color);
     cursor: pointer;
+}
+
+.animText {
+    font-weight: 700;
+    letter-spacing: .5rem;
+    font-size: 2.5rem;
+    font-family: 'Caveat', cursive;
+    z-index: 1;
+    opacity: 0;
+    transition: 0.5s;
 }

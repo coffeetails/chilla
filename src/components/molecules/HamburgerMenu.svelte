@@ -66,8 +66,9 @@
     }
 
     .wrapper :global(a) {
+        font-family: 'Caveat', cursive;
         text-decoration: none;
-        font-size: 28px;
+        font-size: 36px;
         font-weight: 600;
     }
 

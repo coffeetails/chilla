@@ -301,10 +301,10 @@
         <div class="blobSection animFive" bind:this={blobElem5}></div>
         <div class="blobSection animSix" bind:this={blobElem6}></div>
 
-        <h3 class="animText-1" bind:this={breathInElem}>Andas in</h3>
-        <h3 class="animText-2" bind:this={pauseInElem}>Håll andan</h3>
-        <h3 class="animText-3" bind:this={breathOutElem}>Andas ut</h3>
-        <h3 class="animText-4" bind:this={pauseOutElem}>Håll andan</h3>
+        <h3 class="animText" bind:this={breathInElem}>Andas in</h3>
+        <h3 class="animText" bind:this={pauseInElem}>Håll andan</h3>
+        <h3 class="animText" bind:this={breathOutElem}>Andas ut</h3>
+        <h3 class="animText" bind:this={pauseOutElem}>Håll andan</h3>
     </div>
 
 <style lang="scss">
@@ -324,15 +324,7 @@
         grid-column: 1 / -1;
         grid-row: 1 / -1;
     }
-    
-    @for $i from 1 through 4 {
-        .animText-#{$i} {
-            z-index: 1;
-            opacity: 0;
-            transition: 0.5s;
-        }
-    }
-
+   
     .blobSection {
         width: calc(var(--baseline)*5);
         height: calc(var(--baseline)*5);
