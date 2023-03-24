@@ -20,9 +20,14 @@
         gap: 1rem;
     }
 
+    label {
+        padding: 0;
+    }
+
     input[type=radio] {
         width: calc(var(--baseline)*1.25);
         height: calc(var(--baseline)*1.25);
+        
         &:checked {
             accent-color: var(--color-beta);
         }
