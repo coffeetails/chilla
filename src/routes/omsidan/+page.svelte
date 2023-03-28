@@ -1,5 +1,6 @@
 <script>
     import data from '../../content.json';
+    import Link from '../../components/atoms/Link.svelte';
 
 </script>
 
@@ -9,7 +10,7 @@
         <h2>{data.whyBreathing.heading}</h2>
         <p>{data.whyBreathing.content}</p>
         <h2>Om oss</h2>
-        <p>Sidan är gjord av <a href="https://github.com/Hampus83">Hampus Egecioglu</a> och <a href="https://github.com/MonBjo">Monica Björk</a> som ett examenarbete 2023 för utbildning till Frontendutvecklare.</p>
+        <p>Sidan är gjord av <Link target='_blank' linkPath="https://github.com/Hampus83" linkDescription='Hampus Egecioglu' /> och <Link  target='_blank' linkPath="https://github.com/MonBjo" linkDescription='Monica Björk' /> som ett examenarbete 2023 för utbildning till Frontendutvecklare.</p>
     </div>
 
 <style lang="scss">
