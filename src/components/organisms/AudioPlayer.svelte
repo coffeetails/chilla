@@ -1,7 +1,7 @@
 <script lang="ts">
     import AudioTitle from "../atoms/AudioTitle.svelte";
-    import AudioControls from "./AudioControls.svelte";
-    import AudioVolume from "./AudioVolume.svelte";
+    import AudioControls from "../molecules/AudioControls.svelte";
+    import AudioVolume from "../molecules/AudioVolume.svelte";
 
     import { audioData } from "../../audioData";
     import { playAudio, activeFooter } from "../../stores";
