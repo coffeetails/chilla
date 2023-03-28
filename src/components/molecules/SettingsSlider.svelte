@@ -1,5 +1,5 @@
 <script lang=ts>
-    import Input from "../atoms/Input.svelte";
+    import Slider from "../atoms/Slider.svelte";
 
     export let labelFor: string;
     export let labelText: string;
@@ -8,7 +8,7 @@
 </script>
 
     <label for={labelFor}>{labelText}: {seconds}s
-        <Input bind:value={seconds} on:input />
+        <Slider bind:value={seconds} on:input />
     </label>
 
 <style lang=scss>

@@ -1,5 +1,5 @@
 <script lang=ts>
-    import Input from "../atoms/Input.svelte";
+    import Slider from "../atoms/Slider.svelte";
     import { createEventDispatcher } from "svelte";
     import { activeFooter } from "../../stores";
     import VolumeIconLow from "../atoms/icons/VolumeIconLow.svelte";
@@ -25,7 +25,7 @@
             <VolumeIconLow />
         {/if}
         </div>
-        <Input on:input={() => { dispatch('adjustVolume') }} bind:value={volume} />
+        <Slider on:input={() => { dispatch('adjustVolume') }} bind:value={volume} />
         <label for="volume">{volume}</label>
     </div>
 
